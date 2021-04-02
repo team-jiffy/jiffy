@@ -2,13 +2,6 @@ import React from "react";
 import "../static/css/addressbox.css";
 
 class AddressBox extends React.Component {
-  //   constructor(props) {
-  //     super(props);
-  //     this.state = {
-  //         opacity: '1'
-  //     };
-  //   }
-
   state = {
     opacity: "0",
   };
