@@ -1,8 +1,7 @@
 import React from "react";
-import "../static/css/header.css";
+import "./About.css";
 
-
-class Header extends React.Component {
+class About extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,11 +11,11 @@ class Header extends React.Component {
 
   render() {
     return (
-        <div className="header">
-            HEADER/HOME
+        <div className="about">
+            ABOUT
         </div>
     );
   }
 }
 
-export default Header;
+export default About;

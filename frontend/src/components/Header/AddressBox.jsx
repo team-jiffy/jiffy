@@ -1,5 +1,5 @@
 import React from "react";
-import "../static/css/addressbox.css";
+import "./AddressBox.css";
 
 class AddressBox extends React.Component {
   state = {
@@ -12,7 +12,7 @@ class AddressBox extends React.Component {
               let currentScrollPos = window.pageYOffset;
               let maxScroll = document.body.scrollHeight - window.innerHeight;
               // console.log(currentScrollPos);
-              console.log(window.innerHeight);
+              // console.log(window.innerHeight);
               if(currentScrollPos >= document.body.scrollHeight / 4){
                   this.setState({ opacity: '1' });
                   console.log(currentScrollPos);
