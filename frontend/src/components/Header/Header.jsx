@@ -1,47 +1,86 @@
 import React from "react";
 import "./Header.css";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    //   loading: true,
+      //   loading: true,
     };
   }
 
   render() {
     return (
-        <div className="header">
-            <div className="guest-header">
-              <div class="row">
-                <div class="col">
-                  <div className="logo"></div>
-                </div>
-                <div class="col">
-                  <div className="address-search-box">
-                  <i className="fa fa-search fa-2x" aria-hidden="true"></i>
-                </div>
-                <div class="col">
-                  <span>
-                    <Button className="my-button">Log in</Button>
-                    <Button className="my-button">Sign Up</Button>
-                  </span>
-                </div>
-              </div>
-              {/* <div className="logo"></div>
-              <div className="address-search-box">
-                  <i className="fa fa-search fa-2x" aria-hidden="true"></i>
-              </div>
-              {/* <div className="header-btns"> 
-              <span style={{marginLeft: "800px"}}>
-                  <Button>Log in</Button>
-                  <Button>Sign Up</Button>
-              {/* </div> 
-              </span> */}
+      <div className="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <div class="row">
+              <a class="navbar-brand" href="#">
+                <div className="logo" alt="JIFFY" />
+              </a>
+              <form>
+                <input
+                  className="address-search-box"
+                  type="search"
+                  placeholder="Enter your tracking number"
+                  aria-label="Search"
+                />
+                <i
+                  className="fa fa-search fa-2x"
+                  aria-hidden="true"
+                  style={{ marginLeft: "-40px" }}
+                ></i>
+              </form>
+              <div className="header-buttons">
+                <Button>
+                  <b>Log in</b>
+                </Button>
+                <Button>
+                  <b>Sign up</b>
+                </Button>
               </div>
             </div>
+          </div>
+        </nav>
+        <div className="catch-line">Fly your pack in a moment</div>
+        <div>
+          <div class="container">
+            <div class="row">
+              {/* <div class="input-group">
+                <form>
+
+                    <i
+                      className="fa fa-search fa-2x"
+                      aria-hidden="true"
+                    ></i>
+                    <input className="header-address" type="search" placeholder="Enter your address">
+                    </input>
+     
+                </form>
+              </div> */}
+              <div className="header-address">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-search"></i>
+                    </div>
+                  </div>
+                  <input
+                    class="form-control py-2 border-right-0 border"
+                    type="search"
+                    placeholder="Enter your address here"
+                  />
+                  <div></div>
+                </div>
+                <div className="header-address-btn">
+                  <Button><b>Request Delivery</b></Button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     );
   }
 }
