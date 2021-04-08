@@ -1,9 +1,0 @@
-.address-box {
-    position: fixed;
-    top: 0;
-    bottom: 0; 
-    background-color: bisque;
-    width: 200px;
-    height: 100px;
-    transition: opacity .2s ease;
-}
