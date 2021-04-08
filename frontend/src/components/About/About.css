@@ -1,5 +1,53 @@
 .about {
     width: 100vw;
     height: 100vh;
-    background-color: pink;
+    background-color: #E2EFFF;
+    padding-top: 42px;
+}
+
+.ourMission {
+    padding-left: 55px;
+    padding-right: 57px;
+}
+
+.ourService {
+    padding-left: 55px;
+    padding-right: 57px;
+    margin-top: 40px;
+}
+.content {
+    background: #fff;
+    padding: 20px;
+    min-height: 280px;
+    border-radius: 25px;
+}
+
+h1 {
+    font-family: Monaco, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #000000;
+    padding-bottom: 17px;
+}
+
+h3 {
+    text-align: center;
+    align-items: center;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 17px;
+    letter-spacing: -0.015em;
+}
+
+span {
+    display: inline-block;
 }
