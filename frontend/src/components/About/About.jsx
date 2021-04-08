@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
-import { Layout, Col, Row } from 'antd';
+import { Layout} from 'antd';
+import 'boxicons'
 
 const { Content } = Layout;
 
@@ -28,13 +29,14 @@ class About extends React.Component {
             <Content className="ourService">
               <div className="content">
                   <h1> Our Service </h1>
-                  <Col span={6}>
-                      <Row><img src="../../assets/images/Ellipse.svg"/> </Row>
-                      <Row> b</Row>
-                  </Col>
-                  <Col span={6}> </Col>
-                  <Col span={6}> </Col>
-                  <Col span={6}> </Col>
+                  <div className="container">
+                      <ul className="timeline">
+                          <li ></li>
+                          <li></li>
+                          <li></li>
+                          <li></li>
+                      </ul>
+                  </div>
               </div>
             </Content>
         </div>
