@@ -15,6 +15,7 @@
     width: 100vw;
     height: 74.06px;
     background-color: #65EECD !important;
+    position: fixed;
 }
 
 .logo {

@@ -13,7 +13,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar">
           <div class="container-fluid">
             <div class="row">
               <a class="navbar-brand" href="#">
