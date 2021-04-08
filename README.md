@@ -1,5 +1,11 @@
 # Jiffy
 
+## Router file loading completed
+Routes shows in ReactRouter.js
+Please use < Link to="/page"> </ Link> to connect the target page.
+
+
+
 ## React-router-demo
 a demo about page switch
 + Set < BrowserRoutr> in index.js, and import a routes control file.
