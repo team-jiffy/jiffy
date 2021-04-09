@@ -1,0 +1,56 @@
+.tracking-no-header .navbar {
+    width: 100vw;
+    height: 74.06px;
+    background-color: #65EECD !important;
+}
+
+.default-header .navbar {
+    width: 100vw;
+    height: 74.06px;
+    background-color: #65EECD !important;
+}
+
+.delivery-address-header .navbar {
+    width: 100vw;
+    height: 74.06px;
+    background-color: #65EECD !important;
+}
+
+.logo {
+    content: url('../../assets/images/jiffy-logo.png');
+    width: 162.5px;
+    height: 23px;
+    position: absolute;
+    margin-top: 15px;
+    /* margin-left: 30px; */
+    /* margin-top: 24px;
+    margin-bottom: 27.43px; */
+}
+
+.address-search-box {
+    height: 45.94285583496094px;
+    width: 500px;
+    margin-left: 243px;
+    margin-top: 14.399993896484375px;
+    background-color: #FFFFFF;
+    border: none;
+    margin-top: 8px;
+}
+
+.header-buttons Button{
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 30px;
+    width: 110px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.header-buttons {
+    margin-left: 200px;
+}
+
+
+ 
