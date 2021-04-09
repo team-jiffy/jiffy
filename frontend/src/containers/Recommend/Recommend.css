@@ -1,0 +1,45 @@
+@import "~antd/dist/antd.css";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.recommend-box {
+    padding: 50px;
+}
+
+.recommend-msg {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.recommend-form-box {
+    align-items: center;
+}
+
+.profile {
+    padding-top: 50px;
+    align-items: center;
+}
+
+.ADVType {
+    padding-top: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.recommend-form {
+    padding-top: 50px;
+    align-items: center;
+}
+
+.request-delivery-btn {
+    background-color: #65EECD;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    height: 41px;
+    width: 191px;
+    border: #f1f1f1;
+}
