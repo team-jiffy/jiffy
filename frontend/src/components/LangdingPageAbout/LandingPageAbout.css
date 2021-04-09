@@ -1,6 +1,4 @@
 .about {
-    width: 100vw;
-    height: 100vh;
     background-color: #E2EFFF;
     padding-top: 42px;
 }
@@ -13,7 +11,7 @@
 .content {
     background: #fff;
     padding: 20px;
-    min-height: 280px;
+    height: auto;
     border-radius: 25px;
 }
 
@@ -43,16 +41,16 @@ h3 {
     letter-spacing: -0.015em;
 }
 
-span {
-    display: inline-block;
-}
+/*span {*/
+/*    display: inline-block;*/
+/*}*/
 
 .container{
-    width: 1200px;
-    margin: auto;
+
 }
 
 .ourService {
+    height: auto;
     padding-left: 55px;
     padding-right: 57px;
     margin-top: 40px;
@@ -64,15 +62,74 @@ span {
 
 .timeline li{
     content: url("../../assets/images/Ellipse.svg");
-    width: 50px;
     height: 50px;
-    list-style: none;
+
     float: left;
     width: 25%;
     position: relative;
     text-align: center;
-    text-transform: uppercase;
 }
 
+.steps-icon li:nth-child(1){
+    content: url("../../assets/images/step1-check.svg");
 
+}
+
+.steps-icon li:nth-child(2){
+    content: url("../../assets/images/step2&3-drone.svg");
+
+}
+
+.steps-icon li:nth-child(3){
+    content: url("../../assets/images/step2&3-drone.svg");
+
+}
+
+.steps-icon li:nth-child(4){
+    content: url("../../assets/images/step4-recipient-clicks.svg");
+
+}
+
+.steps-icon li{
+    height: 50px;
+
+    float: left;
+    width: 25%;
+    position: relative;
+    text-align: center;
+}
+
+.steps p{
+    height: 22px;
+
+    float: left;
+    width: 25%;
+    position: relative;
+    text-align: center;
+}
+
+.steps-description p{
+    height: 50px;
+
+    float: left;
+    width: 25%;
+    position: relative;
+    text-align: center;
+}
+
+.steps p:nth-child(1)::after{
+    content: "Step1";
+}
+
+.steps p:nth-child(2)::after{
+    content: "Step2";
+}
+
+.steps p:nth-child(3)::after{
+    content: "Step3";
+}
+
+.steps p:nth-child(4)::after{
+    content: "Step4";
+}
 

@@ -37,17 +37,24 @@ class LandingPageAbout extends Component {
                             </div>
 
                             <div className="steps">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <p></p>
+                                <p></p>
+                                <p></p>
+                                <p></p>
                             </div>
 
                             <div className="steps-description">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <p>sign in your account
+                                    place delivery order</p>
+                                <p>drone/robot picks up the package
+                                    sender enters pin code
+                                    to put the package into drone/robot</p>
+                                <p>drone/robot
+                                    delivers the package</p>
+                                <p>recipient clicks
+                                    “confirm delivered”
+                                    on mobile to get the package </p>
+
                             </div>
                         </div>
                     </div>
