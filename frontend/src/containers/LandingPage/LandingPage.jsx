@@ -1,6 +1,8 @@
 import React from "react";
 import "./LandingPage.css";
 import Button from "react-bootstrap/Button";
+import LandingPageAbout from '../../components/LangdingPageAbout/LandingPageAbout'
+import DefaultFooter from '../../components/DefaultFooter/DefaultFooter'
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -12,6 +14,7 @@ class LandingPage extends React.Component {
 
   render() {
     return (
+        <div>
       <div className="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
@@ -81,6 +84,9 @@ class LandingPage extends React.Component {
           </div>
         </div>
       </div>
+          <LandingPageAbout/>
+          <DefaultFooter/>
+        </div>
     );
   }
 }

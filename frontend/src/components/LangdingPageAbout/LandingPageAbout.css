@@ -9,7 +9,7 @@
 }
 
 .ourService {
-    height: 80vh;
+    height: auto;
     padding-left: 55px;
     padding-right: 57px;
     margin-top: 40px;
@@ -22,7 +22,7 @@
 }
 
 .directory {
-    height: 55vh;
+    height: 340px;
     background: #fff;
     padding: 20px;
     border-radius: 25px;
@@ -113,22 +113,22 @@ h3 {
 }
 
 .steps-icon li:nth-child(1){
-    content: url("../assets/images/step1-check.svg");
+    content: url("../../assets/images/step1-check.svg");
 
 }
 
 .steps-icon li:nth-child(2){
-    content: url("../assets/images/step2&3-drone.svg");
+    content: url("../../assets/images/step2&3-drone.svg");
 
 }
 
 .steps-icon li:nth-child(3){
-    content: url("../assets/images/step2&3-drone.svg");
+    content: url("../../assets/images/step2&3-drone.svg");
 
 }
 
 .steps-icon li:nth-child(4){
-    content: url("../assets/images/step4-recipient-clicks.svg");
+    content: url("../../assets/images/step4-recipient-clicks.svg");
 
 }
 
