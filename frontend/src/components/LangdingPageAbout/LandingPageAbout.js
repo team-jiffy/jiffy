@@ -19,36 +19,47 @@ class LandingPageAbout extends Component {
                     </div>
                 </Content>
                 <Content className="ourService">
-                    <div className="content">
+                    <div className="directory">
                         <h1> Our Service </h1>
-                        <div className="container">
-                            <div className="timeline">
-                                <li ></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </div>
+                        <div className="cont">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
 
-                            <div className="steps-icon">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </div>
+                        {/*<div className="timeline">*/}
+                        {/*    <li ></li>*/}
+                        {/*    <li></li>*/}
+                        {/*    <li></li>*/}
+                        {/*    <li></li>*/}
+                        {/*</div>*/}
 
-                            <div className="steps">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </div>
+                        <div className="steps-icon">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </div>
 
-                            <div className="steps-description">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </div>
+                        <div className="steps">
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                        </div>
+
+                        <div className="steps-description">
+                            <p>sign in your account
+                                place delivery order</p>
+                            <p>drone/robot picks up the package
+                                sender enters pin code
+                                to put the package into drone/robot</p>
+                            <p>drone/robot
+                                delivers the package</p>
+                            <p>recipient clicks
+                                “confirm delivered”
+                                on mobile to get the package </p>
                         </div>
                     </div>
                 </Content>

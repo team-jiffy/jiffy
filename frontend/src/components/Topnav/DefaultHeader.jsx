@@ -1,12 +1,11 @@
 import React from "react";
-import "./DefaultHeader.css";
+import "./TrackingNumberHeader.css";
 import Button from "react-bootstrap/Button";
 
 class DefaultHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //   loading: true,
     };
   }
 
@@ -19,6 +18,12 @@ class DefaultHeader extends React.Component {
               <a class="navbar-brand" href="#">
                 <div className="logo" alt="JIFFY" />
               </a>
+              <Button className="back-button">
+                <i
+                  id="back-icon"
+                  className="fa fa-chevron-left"
+                ></i>
+              </Button>
               <form>
                 <input
                   className="address-search-box"

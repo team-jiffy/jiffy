@@ -1,6 +1,4 @@
 .about {
-    width: 100vw;
-    height: 100vh;
     background-color: #E2EFFF;
     padding-top: 42px;
 }
@@ -10,10 +8,23 @@
     padding-right: 57px;
 }
 
+.ourService {
+    height: auto;
+    padding-left: 55px;
+    padding-right: 57px;
+    margin-top: 40px;
+}
+
 .content {
     background: #fff;
     padding: 20px;
-    min-height: 280px;
+    border-radius: 25px;
+}
+
+.directory {
+    height: 370px;
+    background: #fff;
+    padding: 20px;
     border-radius: 25px;
 }
 
@@ -29,7 +40,9 @@ h1 {
     letter-spacing: -0.015em;
 
     color: #000000;
-    padding-bottom: 17px;
+
+    margin-top: 0;
+    margin-bottom: 36px;
 }
 
 h3 {
@@ -43,36 +56,126 @@ h3 {
     letter-spacing: -0.015em;
 }
 
-span {
-    display: inline-block;
-}
 
-.container{
-    width: 1200px;
-    margin: auto;
-}
+/*.timeline{*/
+/*    position: relative;*/
+/*}*/
 
-.ourService {
-    padding-left: 55px;
-    padding-right: 57px;
-    margin-top: 40px;
-}
 
-.timeline{
+/*.timeline li{*/
+
+/*    content: url("../assets/images/Ellipse.svg");*/
+/*    height: 40px;*/
+
+/*    float: left;*/
+/*    width: 25%;*/
+/*    position: relative;*/
+/*    text-align: center;*/
+
+/*    margin-bottom: 40px;*/
+/*}*/
+
+.cont {
+    margin-left: 110px;
     position: relative;
+    width: 79%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    border-top: 2px dashed #65EECD;
+    padding-top: 20px;
+    margin-top: 20px;
 }
 
-.timeline li{
-    content: url("../../assets/images/Ellipse.svg");
-    width: 50px;
+.cont div {
+    background-color: #65EECD;
+    font-weight: bold;
+    margin-top: -40px;
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+
+    margin-bottom: 40px;
+}
+
+.steps-icon li:nth-child(1){
+    content: url("../../assets/images/step1-check.svg");
+
+}
+
+.steps-icon li:nth-child(2){
+    content: url("../../assets/images/step2&3-drone.svg");
+
+}
+
+.steps-icon li:nth-child(3){
+    content: url("../../assets/images/step2&3-drone.svg");
+
+}
+
+.steps-icon li:nth-child(4){
+    content: url("../../assets/images/step4-recipient-clicks.svg");
+
+}
+
+.steps-icon li{
     height: 50px;
-    list-style: none;
+
     float: left;
     width: 25%;
     position: relative;
     text-align: center;
-    text-transform: uppercase;
 }
 
+.steps p{
+
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+
+    float: left;
+    width: 25%;
+    position: relative;
+    text-align: center;
+
+    margin-top: 20px;
+    margin-bottom: 9px;
+}
+
+.steps p:nth-child(1)::after{
+    content: "Step1";
+}
+
+.steps p:nth-child(2)::after{
+    content: "Step2";
+}
+
+.steps p:nth-child(3)::after{
+    content: "Step3";
+}
+
+.steps p:nth-child(4)::after{
+    content: "Step4";
+}
+
+.steps-description p{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    float: left;
+    width: 25%;
+    position: relative;
+    text-align: center;
+
+    margin: 0;
+}
 
 
