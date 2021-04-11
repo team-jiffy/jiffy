@@ -22,9 +22,27 @@
     height: 23px;
     position: absolute;
     margin-top: 15px;
+    margin-left: 30px;
     /* margin-left: 30px; */
     /* margin-top: 24px;
     margin-bottom: 27.43px; */
+}
+
+.back-button {
+    width: 46px;
+    height: 46px;
+    margin-left: 200px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+
+#back-icon {
+    font-size: 25px;
+    color: black;
+    margin-left: -5px;
+    border-radius: 15px;
 }
 
 .address-search-box {
