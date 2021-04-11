@@ -1,6 +1,6 @@
 import React from "react";
-import "./DeliveryAddressHeader.css";
 import Button from "react-bootstrap/Button";
+import "./TrackingNumberHeader.css";
 
 class DeliveryAddressHeader extends React.Component {
   constructor(props) {
@@ -23,11 +23,11 @@ class DeliveryAddressHeader extends React.Component {
                 <input
                   className="address-search-box"
                   type="search"
-                  placeholder="Enter your tracking number"
+                  placeholder="Enter your address"
                   aria-label="Search"
                 />
                 <i
-                  className="fa fa-search fa-2x"
+                  className="fa fa-map-marker fa-2x"
                   style={{ marginLeft: "-40px" }}
                 ></i>
               </form>
