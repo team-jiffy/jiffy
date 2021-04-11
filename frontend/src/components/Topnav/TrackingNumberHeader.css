@@ -10,6 +10,11 @@
     background-color: #65EECD !important;
 }
 
+.delivery-address-header {
+    position: fixed;
+    top: 0;
+}
+
 .delivery-address-header .navbar {
     width: 100vw;
     height: 74.06px;

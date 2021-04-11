@@ -6,13 +6,34 @@ class DeliveryAddressHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //   loading: true,
+      opacity: 1,
     };
+  }
+
+  componentDidMount() {
+    if (typeof window !== "undefined") {
+      window.onscroll = () => {
+        let currentScrollPos = window.pageYOffset;
+        let maxScroll = document.body.scrollHeight - window.innerHeight;
+        console.log(currentScrollPos);
+        console.log(window.innerHeight);
+        if (currentScrollPos >= document.body.scrollHeight / 4) {
+          this.setState({ opacity: "1" });
+          console.log(currentScrollPos);
+        } else {
+          this.setState({ opacity: "0" });
+        }
+      };
+    }
   }
 
   render() {
     return (
-      <div className="delivery-address-header">
+      <div
+        className="delivery-address-header"
+        id="delivery-address-header"
+        style={{ opacity: `${this.state.opacity}` }}
+      >
         <nav class="navbar">
           <div class="container-fluid">
             <div class="row">
