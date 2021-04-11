@@ -91,7 +91,6 @@ class LandingPage extends React.Component {
         </div>
         <DeliveryAddressHeader style={{position: "fixed"}}/>
         <LandingPageAbout />
-        <LandingPageAbout />
         <DefaultFooter />
       </div>
     );
