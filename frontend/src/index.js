@@ -10,9 +10,9 @@ import DeliveryAddressHeader from './components/Topnav/DeliveryAddressHeader.jsx
 
 ReactDOM.render(
   <BrowserRouter>
-    {/* <DeliveryAddressHeader /> */}
-    <LandingPage />
-    {/* <ReactRouter /> */}
+    {/* Use Router instead of <LandingPage /> */}
+    <ReactRouter /> 
+   
   </BrowserRouter>,
   document.getElementById('root')
 );
