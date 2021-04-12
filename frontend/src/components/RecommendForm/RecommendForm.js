@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import {List, Spin, Select, Form} from 'antd';
+import {List, Spin, Select, Form, Button, Row, Col} from 'antd';
 import drone_profile from '../../assets/images/drone_profile.svg';
 import robot_profile from '../../assets/images/robot_profile.svg';
 import "./RecommendForm.css";
-import axios from "axios";
-import {RECO_URL} from "../../constants"
 
 class RecommendForm extends Component {
     constructor(props) {
@@ -21,19 +19,13 @@ class RecommendForm extends Component {
         // 1. string ADVType(privateDrone, privateRobot, sharedRobot)
         // 2. int price
         // 3. string ETA
-        axios
-            .get(RECO_URL)
-            .then(res => {
-                const {data} = res;        // list
-                this.setState({
-                    isLoading: true,
-                    ETAOpts: this.getETAList(data.map(item => item.ETA))
-                })
 
-            })
-            .catch(e => {
-                console.log("err in fetch recommendation data ", e.message);
-            });
+        const {data} = this.props;        // list
+        this.setState({
+            // isLoading: true
+            // ETAOpts: this.getETAList(data.map(item => item.ETA))
+        })
+
     }
 
     getETAList = ETA => {
@@ -78,19 +70,17 @@ class RecommendForm extends Component {
                 ETA: '14:30'
             }, {
                 ADVType: 'shared robot',
-                price: '$ 7.98'
+                price: '$ 10.15',
+                ETA: '14:50'
             }
         ];
 
         const formItemLayout = {
-            // responsive
             labelCol: {
-                xs: {span: 24},
-                sm: {span: 11},
+                span: 16
             },
             wrapperCol: {
-                xs: {span: 24},
-                sm: {span: 13},
+                span: 8
             }
         }
 
@@ -102,77 +92,90 @@ class RecommendForm extends Component {
 
         return (
 
-            <div className="recommend-box">
+            <div className="recommendContainer">
                 {isLoading ?
                     <div className="spin-box">
                         <Spin tip="Loading..." size="large"/>
                     </div>
                     :
-                    <div className="recommend-form-box">
-                        <List
-                            // grid={{gutter: 4, column: this.props.data.length}}
-                            grid={{gutter: 4, column: recommendData.length}}
-                            size="large"
-                            dataSource={recommendData}
-                            renderItem={item => (
-                                <List.Item>
+                    <div className="recommend-form-container">
+                        <div className="recommend-form-message">
+                            Our robots are ready to deliver the packs for you!
+                        </div>
+                        <div className="recommend-item">
+                            <List
+                                // grid={{column: this.props.data.length}}
+                                grid={{column: recommendData.length}}
+                                size="default"
+                                dataSource={recommendData}
+                                renderItem={item => (
                                     <List.Item>
-                                        <img className="profile" alt="example"
-                                             src={item.ADVType === 'private drone' ? drone_profile : robot_profile}/>
-                                    </List.Item>
+                                        <Row>
+                                            <List.Item>
+                                                <img className="profile" alt="example"
+                                                     src={item.ADVType === 'private drone' ? drone_profile : robot_profile}/>
+                                            </List.Item>
+                                        </Row>
 
-                                    <br/>
-                                    <br/>
+                                        <Row>
+                                            <List.Item>
+                                                <span className="ADVType">{item.ADVType}</span>
+                                            </List.Item>
+                                        </Row>
 
-                                    <List.Item>
-                                        <span className="ADVType">{item.ADVType}</span>
-                                    </List.Item>
+                                        <Row>
+                                            <List.Item>
+                                                <Form
+                                                    {...formItemLayout}
+                                                    className="recommend-form">
+                                                    <Row>
+                                                        <Form.Item label="Total delivery fee:">
+                                                            {item.price}
+                                                        </Form.Item>
+                                                        <Form.Item label="Estimated delivery time:"
+                                                                   rules={[{
+                                                                       required: true,
+                                                                       message: 'Please choose a delivery time'
+                                                                   }]}>
+                                                            <Select defaultValue="default"
+                                                                    style={{width: 120}}
+                                                                    onChange={handleChange}
+                                                                    showArrow={true}>
+                                                                <Option
+                                                                    value="default">{this.state.ETAOpts[0]}</Option>
+                                                                {this.state.ETAOpts.length > 1 ?
+                                                                    <Option
+                                                                        value="opt1">this.state.ETAOpts[1]</Option> : console.log('no options anymore')}
+                                                                {this.state.ETAOpts.length > 2 ?
+                                                                    <Option
+                                                                        value="opt2">this.state.ETAOpts[2]</Option> : console.log('no options anymore')}
+                                                            </Select>
+                                                        </Form.Item>
 
-                                    <br/>
+                                                    </Row>
+                                                </Form>
+                                            </List.Item>
+                                        </Row>
 
-                                    <List.Item>
-                                        <Form
-                                            {...formItemLayout}
-                                            className="recommend-form"
-                                        >
-                                            <Form.Item label="Total delivery fee:"
-                                                       wrapperCol={{span: 12, offset: 0}}>
-                                                {item.price}
-                                            </Form.Item>
-
-                                            <Form.Item label="Estimated delivery time:"
-                                                       rules={[{
-                                                           required: true,
-                                                           message: 'Please choose a delivery time'
-                                                       }]}>
-                                                <Select defaultValue="default" style={{width: 150}}
-                                                        onChange={handleChange}
-                                                        showArrow={true}>
-                                                    <Option value="default">{this.state.ETAOpts[0]}</Option>
-                                                    {this.state.ETAOpts.length > 1 ? <Option
-                                                        value="opt1">this.state.ETAOpts[1]</Option> : console.log('no options anymore')}
-                                                    {this.state.ETAOpts.length > 2 ? <Option
-                                                        value="opt2">this.state.ETAOpts[2]</Option> : console.log('no options anymore')}
-                                                </Select>
-                                            </Form.Item>
-
-                                            <br/>
-                                            <br/>
-
-                                        </Form>
-
-                                    </List.Item>
-                                </List.Item>
-                            )}
-                        />
+                                        <Row>
+                                            <Col>
+                                                <List.Item>
+                                                    <Button className="request-delivery-btn"
+                                                            htmlType="submit">
+                                                        Request Delivery
+                                                    </Button>
+                                                </List.Item>
+                                            </Col>
+                                        </Row>
+                                    </List.Item>)}
+                            />
+                        </div>
                     </div>
                 }
             </div>
         )
     }
 
-
-    // event handler
     onSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -183,4 +186,5 @@ class RecommendForm extends Component {
     }
 }
 
-export default RecommendForm;
+const RecommendForm1 = Form.create({name: 'recommend-form'})(RecommendForm);
+export default RecommendForm1;

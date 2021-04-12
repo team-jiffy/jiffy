@@ -1,1 +1,0 @@
-export const RECO_URL = "/order/getReco";

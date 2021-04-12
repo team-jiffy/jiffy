@@ -4,18 +4,36 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.recommend-box {
-    padding: 50px;
-}
-
-.recommend-form {
+.recommendContainer {
     align-items: center;
 }
 
-.ADVType {
+.recommend-form-container {
+    margin: 50px;
+    background-color: #fff;
+    width: 1380px;
+    align-items: center;
+    height: 750px;
+}
+
+.recommend-form-message {
+    margin-left:50px;
+    padding-top:30px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.recommend-item {
+    padding: 50px;
+    align-items: center;
     text-align: center;
+    justify-content: center;
+}
+
+.ADVType {
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
 }
 
 .request-delivery-btn {
@@ -24,6 +42,6 @@ body {
     font-size: 18px;
     text-align: center;
     height: 41px;
-    width: 191px;
-    border: #f1f1f1;
+    width: 200px;
+    border: #fff;
 }
