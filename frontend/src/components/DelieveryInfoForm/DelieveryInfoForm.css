@@ -191,8 +191,8 @@ color: #040404;
 }
 
 .deliveryInfoForm .deliveryInfo-button{
-    position: absolute;
-    width: 190.74px;
+    position: relative;
+    width: 230.74px;
     height: 40.5px;
     left: 180.56px;
     top: -230px;
@@ -204,7 +204,7 @@ font-size: 18px;
 line-height: 22px;
 display: flex;
 align-items: center;
-
+text-align: center;
 letter-spacing: -0.015em;
 color: #000000;
     border: 0;
