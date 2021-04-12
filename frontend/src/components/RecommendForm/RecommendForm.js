@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {List, Spin, Select, Form, Button, Row, Col} from 'antd';
+import {List, Spin, Select, Form, Button} from 'antd';
 import drone_profile from '../../assets/images/drone_profile.svg';
 import robot_profile from '../../assets/images/robot_profile.svg';
 import "./RecommendForm.css";
@@ -76,12 +76,12 @@ class RecommendForm extends Component {
         ];
 
         const formItemLayout = {
-            labelCol: {
-                span: 16
-            },
-            wrapperCol: {
-                span: 8
-            }
+            labelCol: {span: 12},
+            wrapperCol: {span: 4}
+        }
+
+        const listItemLayout = {
+            wrapperCol: {offset: 6, span: 8}
         }
 
         const {Option} = Select;
@@ -110,63 +110,52 @@ class RecommendForm extends Component {
                                 dataSource={recommendData}
                                 renderItem={item => (
                                     <List.Item>
-                                        <Row>
-                                            <List.Item>
+
+                                        <Form className="recommend-form">
+
+                                            <Form.Item {...listItemLayout}>
                                                 <img className="profile" alt="example"
                                                      src={item.ADVType === 'private drone' ? drone_profile : robot_profile}/>
-                                            </List.Item>
-                                        </Row>
+                                            </Form.Item>
 
-                                        <Row>
-                                            <List.Item>
+                                            <Form.Item {...listItemLayout}>
                                                 <span className="ADVType">{item.ADVType}</span>
-                                            </List.Item>
-                                        </Row>
+                                            </Form.Item>
 
-                                        <Row>
-                                            <List.Item>
-                                                <Form
-                                                    {...formItemLayout}
-                                                    className="recommend-form">
-                                                    <Row>
-                                                        <Form.Item label="Total delivery fee:">
-                                                            {item.price}
-                                                        </Form.Item>
-                                                        <Form.Item label="Estimated delivery time:"
-                                                                   rules={[{
-                                                                       required: true,
-                                                                       message: 'Please choose a delivery time'
-                                                                   }]}>
-                                                            <Select defaultValue="default"
-                                                                    style={{width: 120}}
-                                                                    onChange={handleChange}
-                                                                    showArrow={true}>
-                                                                <Option
-                                                                    value="default">{this.state.ETAOpts[0]}</Option>
-                                                                {this.state.ETAOpts.length > 1 ?
-                                                                    <Option
-                                                                        value="opt1">this.state.ETAOpts[1]</Option> : console.log('no options anymore')}
-                                                                {this.state.ETAOpts.length > 2 ?
-                                                                    <Option
-                                                                        value="opt2">this.state.ETAOpts[2]</Option> : console.log('no options anymore')}
-                                                            </Select>
-                                                        </Form.Item>
+                                            <Form.Item {...formItemLayout} label="Total delivery fee:">
+                                                {item.price}
+                                            </Form.Item>
 
-                                                    </Row>
-                                                </Form>
-                                            </List.Item>
-                                        </Row>
+                                            <Form.Item {...formItemLayout} label="Estimated delivery time:"
+                                                       rules={[{
+                                                           required: true,
+                                                           message: 'Please choose a delivery time'
+                                                       }]}>
+                                                <Select defaultValue="default"
+                                                        style={{width: 120}}
+                                                        onChange={handleChange}
+                                                        showArrow={true}>
+                                                    <Option
+                                                        value="default">{this.state.ETAOpts[0]}</Option>
+                                                    {this.state.ETAOpts.length > 1 ?
+                                                        <Option
+                                                            value="opt1">this.state.ETAOpts[1]</Option> : console.log('no options anymore')}
+                                                    {this.state.ETAOpts.length > 2 ?
+                                                        <Option
+                                                            value="opt2">this.state.ETAOpts[2]</Option> : console.log('no options anymore')}
+                                                </Select>
+                                            </Form.Item>
 
-                                        <Row>
-                                            <Col>
-                                                <List.Item>
-                                                    <Button className="request-delivery-btn"
-                                                            htmlType="submit">
-                                                        Request Delivery
-                                                    </Button>
-                                                </List.Item>
-                                            </Col>
-                                        </Row>
+                                            <Form.Item  {...listItemLayout}>
+                                                <Button className="request-delivery-btn"
+                                                        htmlType="submit">
+                                                    Request Delivery
+                                                </Button>
+                                            </Form.Item>
+
+
+                                        </Form>
+
                                     </List.Item>)}
                             />
                         </div>

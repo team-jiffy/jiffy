@@ -11,9 +11,7 @@ body {
 .recommend-form-container {
     margin: 50px;
     background-color: #fff;
-    width: 1380px;
     align-items: center;
-    height: 750px;
 }
 
 .recommend-form-message {
