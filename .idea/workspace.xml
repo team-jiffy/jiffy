@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f51e0d65-52e2-44a1-a49f-d093a70aa534" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/drone_profile.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/robot_profile.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/RecommendForm/RecommendForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/RecommendForm/RecommendForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/constants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/containers/Recommend/Recommend.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/containers/Recommend/Recommend.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/containers/Recommend/Recommend.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/AccountHelpForm/AccountHelpForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/AccountHelpForm/AccountHelpForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/OrderTrackingProcess/OrderTrackingProcess.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/OrderTrackingProcess/OrderTrackingProcess.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +47,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -40,13 +55,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -54,5 +71,34 @@
   </component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1000" height="176" key="GridCell.Tab.0.bottom" timestamp="1618170859864">
+      <screen x="1366" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1000" height="176" key="GridCell.Tab.0.bottom/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618170859864" />
+    <state width="1000" height="176" key="GridCell.Tab.0.center" timestamp="1618170859864">
+      <screen x="1366" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1000" height="176" key="GridCell.Tab.0.center/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618170859864" />
+    <state width="1000" height="176" key="GridCell.Tab.0.left" timestamp="1618170859863">
+      <screen x="1366" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1000" height="176" key="GridCell.Tab.0.left/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618170859863" />
+    <state width="1000" height="176" key="GridCell.Tab.0.right" timestamp="1618170859864">
+      <screen x="1366" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1000" height="176" key="GridCell.Tab.0.right/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618170859864" />
   </component>
 </project>
