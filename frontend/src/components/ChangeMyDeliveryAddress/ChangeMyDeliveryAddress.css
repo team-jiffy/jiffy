@@ -1,0 +1,48 @@
+.change-address-or-payment {
+    height: 644px;
+    width: 732px;
+    left: 360px;
+    top: 111px;
+    border-radius: 10px;
+    position: absolute;
+    width: 732px;
+    height: 644px;
+    left: 360px;
+    top: 111px;
+    background: #FFFFFF;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px 0px #00000040;
+    /* set for debugging purposes  */
+    background-color: antiquewhite;
+}
+
+.change-title {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    text-align: left;
+    
+    margin-top: 23px;
+    margin-left: 32px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    
+    color: #040404;
+}
+
+.line3 {
+    position: absolute;
+    width: 124px;
+    height: 0px;
+    margin-left: 32px;
+    
+    border: 1px solid #000000;
+}
