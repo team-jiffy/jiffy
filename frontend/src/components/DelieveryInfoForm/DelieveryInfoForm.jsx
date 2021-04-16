@@ -48,7 +48,10 @@ class DeliveryInfoForm extends React.Component {
                         <Col>
                             <Form.Item >
                                 {getFieldDecorator(' ', {
-                                                rules: [{ required: false }],
+                                                rules: [{ required: true,
+                                                    message: "*"
+                                                
+                                                }],
                                                 })(
                                                 // <Input
                                                 //     className="deliveryInfo-senderAutoComplete"
@@ -69,7 +72,8 @@ class DeliveryInfoForm extends React.Component {
                             <Col>
                                 <Form.Item >
                                 {getFieldDecorator(' ', {
-                                                rules: [{ required: false }],
+                                                rules: [{ required: true,
+                                                    message: "*" }],
                                                 })(
                                                 <Input
                                                     className="deliveryInfo-senderEmail"      
@@ -81,7 +85,8 @@ class DeliveryInfoForm extends React.Component {
                             <Col>
                                 <Form.Item >
                                 {getFieldDecorator(' ', {
-                                                rules: [{ required: false }],
+                                                rules: [{ required: true,
+                                                    message: "*" }],
                                                 })(
                                                 <Input
                                                     className="deliveryInfo-senderPhone"
@@ -110,7 +115,8 @@ class DeliveryInfoForm extends React.Component {
                         <Col>
                             <Form.Item >
                                 {getFieldDecorator(' ', {
-                                                rules: [{ required: false }],
+                                                rules: [{ required: true,
+                                                    message: "*" }],
                                                 })(
                                                 // <Input
                                                 //     className="deliveryInfo-recipientAutoComplete"
@@ -128,11 +134,12 @@ class DeliveryInfoForm extends React.Component {
                             <Col>
                                 <Form.Item >
                                 {getFieldDecorator(' ', {
-                                                rules: [{ required: false }],
+                                                rules: [{ required: true,
+                                                    message: "*" }],
                                                 })(
                                                 <Input
                                                     className="deliveryInfo-recipientEmail"      
-                                                    placeholder="Enter sender's email"
+                                                    placeholder="Enter recipient's email"
                                                 />,
                                                 )}
                                 </Form.Item>
@@ -140,11 +147,12 @@ class DeliveryInfoForm extends React.Component {
                             <Col>
                                 <Form.Item >
                                 {getFieldDecorator(' ', {
-                                                rules: [{ required: false }],
+                                                rules: [{ required: true,
+                                                    message: "*" }],
                                                 })(
                                                 <Input
                                                     className="deliveryInfo-recipientPhone"
-                                                    placeholder="Enter sender's phone"
+                                                    placeholder="Enter recipient's phone"
                                                 />,
                                                 )}
                                  </Form.Item>
@@ -160,45 +168,54 @@ class DeliveryInfoForm extends React.Component {
                             <Row>
                                 <Col>
                                 <Form.Item >
+                                {getFieldDecorator('gender', {
+                                    rules: [{ required: true, message: '*' }],
+                                 })(
                                     <Select
                                         className="deliveryInfoForm-select-size"
-                                        showSearch
+                                        // showSearch
                                         placeholder="Choose package size"
-                                        optionFilterProp="children"
-                                        onChange={onChange}
-                                        onFocus={onFocus}
-                                        onBlur={onBlur}
-                                        onSearch={onSearch}
-                                        filterOption={(input, option) =>
-                                                        option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                                    }
+                                     //   optionFilterProp="children"
+                                     //   onChange={onChange}
+                                     //   onFocus={onFocus}
+                                     //   onBlur={onBlur}
+                                     //   onSearch={onSearch}
+                                     //   filterOption={(input, option) =>
+                                      //                  option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                       //             }
                                         >
                                     <Option value="1" style={{background:'#F5F5F5'}}>Small (12 x 12 x 14 inches)</Option>
                                     <Option value="2" style={{background:'#F5F5F5'}}>Medium (15 x 15 x 18 inches)</Option>
                                     <Option value="3" style={{background:'#F5F5F5'}}>Large (18 x 18 x 20 inches)</Option>
                                     </Select>
+
+                                 )}
                                 </Form.Item>
                                 </Col>
                                 
                                 <Col>
                                 <Form.Item>
+                                {getFieldDecorator('gender', {
+                                    rules: [{ required: true, message: '*' }],
+                                 })(
                                 <Select
                                         className="deliveryInfoForm-select-weight"
-                                        showSearch
+                                      //  showSearch
                                         placeholder="Choose package weight"
                                         optionFilterProp="children"
-                                        onChange={onChange}
-                                        onFocus={onFocus}
-                                        onBlur={onBlur}
-                                        onSearch={onSearch}
-                                        filterOption={(input, option) =>
-                                                        option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                                    }
+                                        // onChange={onChange}
+                                        // onFocus={onFocus}
+                                        // onBlur={onBlur}
+                                        // onSearch={onSearch}
+                                        // filterOption={(input, option) =>
+                                        //                 option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        //             }
                                         >
                                     <Option value="1" style={{background:'#F5F5F5'}}> &lt; 5 lb </Option>
                                     <Option value="2" style={{background:'#F5F5F5'}}> &lt; 10 lb </Option>
                                     <Option value="3" style={{background:'#F5F5F5'}}> &lt; 25 lb </Option>
                                     </Select>
+                                 )}
                                     </Form.Item>
                                 </Col>
                                 

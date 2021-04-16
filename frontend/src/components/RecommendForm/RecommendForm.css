@@ -4,8 +4,13 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+
 .recommendContainer {
-    align-items: center;
+    position: absolute;
+    top:20%;
+    width: 1500px;
+    left: 3%;
+    z-index: 30;
 }
 
 .recommend-form-container {

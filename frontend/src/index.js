@@ -18,7 +18,7 @@ ReactDOM.render(
    {/* <ChangeMyDeliveryAddress /> */}
    {/* <ChangeMyDeliveryAddress />
    <ChangeMyPickupAddress />  */}
-   <ChangeMyPayment />
+   {/* <ChangeMyPayment /> */}
    {/* <DeliveryInfo /> */}
     {/* <SignUp /> */}
     {/* <SignIn /> */}

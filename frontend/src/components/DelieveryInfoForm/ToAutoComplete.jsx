@@ -55,7 +55,7 @@ class ToAutoComplete extends Component {
           <div>
             <input
               {...getInputProps({
-                placeholder: 'Enter deli address',
+                placeholder: 'Enter delivery address',
                 className:'deliveryInfo-recipientAutoComplete'
               })}
             />

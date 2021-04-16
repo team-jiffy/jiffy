@@ -91,8 +91,8 @@ class RecommendForm extends Component {
         }
 
         return (
-
             <div className="recommendContainer">
+            
                 {isLoading ?
                     <div className="spin-box">
                         <Spin tip="Loading..." size="large"/>
@@ -162,6 +162,7 @@ class RecommendForm extends Component {
                     </div>
                 }
             </div>
+            
         )
     }
 
