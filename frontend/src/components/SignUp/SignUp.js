@@ -19,7 +19,7 @@ class SignUpForm extends React.Component {
                 <Form.Item>
                     <img src={ close_icon1 } className="close-logo1" />
                     <img src={ close_icon2 } className="close-logo2" />
-                    <span className="signUp-title">Sign up your account</span>
+                    <span className="signUp-title">Sign up for your account</span>
                 </Form.Item>
                 <Form.Item> 
                     {getFieldDecorator('email', {
