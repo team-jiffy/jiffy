@@ -16,11 +16,16 @@ import ChangeMyPayment from './components/ChangeMyPayment/ChangeMyPayment.jsx';
 // import SignUp from './components/SignUp/SignUp';
 // import SignIn from './components/SignIn/SignIn';
 
+import DeliveryInfo from './containers/DeliveryInfo/DeliveryInfo';
+
 ReactDOM.render(
   <BrowserRouter>
     {/* <ReactRouter /> */}
    {/* <ChangeMyDeliveryAddress /> */}
+   {/* <ChangeMyDeliveryAddress />
+   <ChangeMyPickupAddress />  */}
    <ChangeMyPayment />
+   {/* <DeliveryInfo /> */}
     {/* <SignUp /> */}
     {/* <SignIn /> */}
   </BrowserRouter>,

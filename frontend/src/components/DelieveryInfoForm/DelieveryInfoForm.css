@@ -1,228 +1,215 @@
-.deliveryInfoForm{
-    position: absolute;
-    background-color: white;
-    width: 568.76px;
-    height: 523.54px;
-    left: 10%;
-    top: 27%;
-    z-index: 10;
+.deliveryInfoForm {
+  position: absolute;
+  background-color: white;
+  width: 568.76px;
+  height: 523.54px;
+  left: 10%;
+  top: 27%;
+  z-index: 10;
 }
-.position-icon{
-    content: url('../../assets/images/Vector.svg');
+.position-icon {
+  content: url("../../assets/images/Vector.svg");
 }
-.switch-icon{
-    position: relative;
-    top: -85px;
-   left: 470px;
-    
-    
+.switch-icon {
+  position: relative;
+  top: -85px;
+  left: 470px;
 }
 
-
-.min-icon{
-    position: relative;
-    top: -10px;
-    left: 530px;
+.min-icon {
+  position: relative;
+  top: -10px;
+  left: 530px;
 }
 
-.deliveryInfoForm .ant-input{
-    background: #E5E5E5;
+.deliveryInfoForm .ant-input {
+  background: #e5e5e5;
 }
 
-.deliveryInfoForm .ant-select-selection{
-
-    background-color:  #E5E5E5;
+.deliveryInfoForm .ant-select-selection {
+  background-color: #e5e5e5;
 }
 
-.deliveryInfoForm-from-text{
-    position: absolute;
-width: 89.98px;
-height: 49.19px;
-left: 26.69px;
-top: 17.08px;
+.deliveryInfoForm-from-text {
+  position: absolute;
+  width: 89.98px;
+  height: 49.19px;
+  left: 26.69px;
+  top: 17.08px;
 
-font-family: Montserrat;
-font-style: normal;
-font-weight: bold;
-font-size: 24px;
-line-height: 29px;
-display: flex;
-align-items: center;
-letter-spacing: -0.015em;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
 
-color: #040404;
+  color: #040404;
 }
 .deliveryInfoForm .deliveryInfo-senderAutoComplete {
-    position: relative;
-    width: 508.31px;
-    height: 36.46px;
-    left: 13.00px;
-    top: 11.94px;
-
+  position: relative;
+  width: 508.31px;
+  height: 36.46px;
+  left: 13px;
+  top: 11.94px;
 }
 
+.deliveryInfoForm .deliveryInfo-senderEmail {
+  position: relative;
+  width: 246.6px;
+  height: 36.46px;
+  left: 26.69px;
+  top: 13.94px;
 
-.deliveryInfoForm .deliveryInfo-senderEmail{
-    position: relative;
-    width: 246.6px;
-    height: 36.46px;
-    left: 26.69px;
-    top: 13.94px;
-    
-    background: #E5E5E5;
+  background: #e5e5e5;
 }
 
 .deliveryInfoForm .deliveryInfo-senderPhone {
-    position: relative;
-    width: 246.6px;
-    height: 36.46px;
-    left: 287.4px;
-    top: -50px;
-    
-    background: #E5E5E5;
+  position: relative;
+  width: 246.6px;
+  height: 36.46px;
+  left: 287.4px;
+  top: -50px;
+
+  background: #e5e5e5;
 }
 
+.deliveryInfoForm-to-text {
+  position: absolute;
+  width: 89.98px;
+  height: 49.19px;
+  left: 26.69px;
+  top: -70.08px;
 
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
 
-.deliveryInfoForm-to-text{
-    position: absolute;
-width: 89.98px;
-height: 49.19px;
-left: 26.69px;
-top: -70.08px;
-
-font-family: Montserrat;
-font-style: normal;
-font-weight: bold;
-font-size: 24px;
-line-height: 29px;
-display: flex;
-align-items: center;
-letter-spacing: -0.015em;
-
-color: #040404;
+  color: #040404;
 }
 .deliveryInfoForm .deliveryInfo-recipientAutoComplete {
-    position: relative;
-    width: 508.31px;
-    height: 36.46px;
-    left: 12.69px;
-top: -32.94px;
-
+  position: relative;
+  width: 508.31px;
+  height: 36.46px;
+  left: 12.69px;
+  top: -32.94px;
 }
 
+.deliveryInfoForm .deliveryInfo-recipientEmail {
+  position: relative;
+  width: 246.6px;
+  height: 36.46px;
+  left: 26.69px;
+  top: -76.94px;
 
-.deliveryInfoForm .deliveryInfo-recipientEmail{
-    position: relative;
-    width: 246.6px;
-    height: 36.46px;
-    left: 26.69px;
-    top: -76.94px;
-    
-    background: #E5E5E5;
+  background: #e5e5e5;
 }
 
 .deliveryInfoForm .deliveryInfo-recipientPhone {
-    position: relative;
-    width: 246.6px;
-    height: 36.46px;
-    left: 287.4px;
-    top: -141px;
-    
-    background: #E5E5E5;
+  position: relative;
+  width: 246.6px;
+  height: 36.46px;
+  left: 287.4px;
+  top: -141px;
+
+  background: #e5e5e5;
 }
 
-.deliveryInfoForm-package-text{
-    position: absolute;
-    width: 290.56px;
-    height: 48.85px;
-    left: 28.06px;
-    top: -165.79px;
-    
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.015em;
-    
-    color: #000000;
-    
+.deliveryInfoForm-package-text {
+  position: absolute;
+  width: 290.56px;
+  height: 48.85px;
+  left: 28.06px;
+  top: -165.79px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
+
+  color: #000000;
 }
 
-
-.deliveryInfoForm .deliveryInfoForm-select-size{
-
-    position: relative;
-    width: 246.6px;
-    height: 40.46px;
-    left: 26.69px;
-    top: -140.94px;
-    
-   
+.deliveryInfoForm .deliveryInfoForm-select-size {
+  position: relative;
+  width: 246.6px;
+  height: 40.46px;
+  left: 26.69px;
+  top: -140.94px;
 }
 
-.deliveryInfoForm .deliveryInfoForm-select-weight{
-    position: relative;
-    width: 246.6px;
-    height: 36.46px;
-    left: 287.4px;
-    top: -210.0px;
+.deliveryInfoForm .deliveryInfoForm-select-weight {
+  position: relative;
+  width: 246.6px;
+  height: 36.46px;
+  left: 287.4px;
+  top: -210px;
 }
 
-.deliveryInfoForm .deliveryInfoForm-checkbox{
-    position: relative;
-width: 400.74px;
-height: 17.5px;
-left: 120.56px;
-top: -220px;
+.deliveryInfoForm .deliveryInfoForm-checkbox {
+  position: relative;
+  width: 400.74px;
+  height: 17.5px;
+  left: 120.56px;
+  top: -220px;
 
-font-family: Montserrat;
-font-style: normal;
-font-weight: bold;
-font-size: 12px;
-line-height: 12px;
-display: flex;
-align-items: center;
-letter-spacing: -0.015em;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 12px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
 
-color: #040404;
-
+  color: #040404;
 }
 
-.deliveryInfoForm .deliveryInfo-button{
-    position: relative;
-    width: 230.74px;
-    height: 40.5px;
-    left: 180.56px;
-    top: -230px;
-    
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -0.015em;
-    color: #000000;
-    border: 0;
-    background: #65EECD;
-    justify-content: center;
+.deliveryInfoForm .deliveryInfo-button {
+  position: relative;
+  width: 230.74px;
+  height: 40.5px;
+  left: 180.56px;
+  top: -230px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #000000;
+  border: 0;
+  background: #65eecd;
+  justify-content: center;
 }
 
 .autocomplete-dropdown-container {
-    
-
+    z-index: 20;
 }
-.main-autocomplete-list{
- background-color: red;
- 
-    
+
+/* .main-autocomplete-list {
+  background-color: red;
+  z-index: 100000 !important;
 }
 .ps-pinBack {
-    background-color: aqua;
+  background-color: aqua;
 }
+
+.deliveryInfoForm .ant-form ant-form-horizontal .ant-row .ant-col .ant-row ant-form-item{
+    z-index: 50 !important;
+} */

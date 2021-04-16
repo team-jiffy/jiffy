@@ -122,7 +122,7 @@ settingDeliveryCoordinate = (value) => {
              deliveryCoordinate = {dCoordinate}
              />
             <DeliveryInfoForm 
-             
+              id="my-form"
               settingPickupCoordinate={this.settingPickupCoordinate}
               settingDeliveryCoordinate={this.settingDeliveryCoordinate}
               />
