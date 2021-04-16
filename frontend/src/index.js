@@ -12,7 +12,8 @@ import ChangeMyDeliveryAddress from './components/ChangeMyDeliveryAddress/Change
 
 ReactDOM.render(
   <BrowserRouter>
-   <ChangeMyDeliveryAddress />
+    <ReactRouter />
+   {/* <ChangeMyDeliveryAddress /> */}
   </BrowserRouter>,
   document.getElementById('root')
 );
