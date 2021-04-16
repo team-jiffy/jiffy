@@ -1,0 +1,149 @@
+.avatar{
+  position: relative;
+  width: 98px;
+  height: 98px;
+  left: 91px;
+  top: 27px;
+
+  background: #C4C4C4;
+
+}
+
+#AccountInfo{
+  /* position: absolute; */
+  width: 280px;
+  height: 606px;
+  /* left: 48px;
+  top: 111px; */
+
+  background: #FFFFFF;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.line{
+  position: absolute;
+  width: 161px;
+  height: 0px;
+  left: 57px;
+  top: 161.5px;
+  border:solid #000000;
+  border-width: 0.1px;
+  border-style: inset;
+}
+
+#content{
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  width: 230px;
+  height: 400px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:110px
+}
+
+
+a {
+  vertical-align:bottom;
+  float:right;
+  padding-right:20px;
+  font-size: 12px;
+  color: #6594EE;
+  font-weight: bold;
+  font-family: Montserrat;
+}
+span{
+  vertical-align: middle;
+  display: inline-block;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+
+
+#landmark{
+  width: 14%;
+  height:auto;
+  float: right;
+  padding-right:20px;
+}
+
+#button-group{
+  width:210px;
+  display: flex;
+  justify-content:center;
+}
+
+#ChangePass{
+  position: relative;
+  width: 251px;
+  height: 210px;
+  border-radius: 10px;
+  background: #F5F5F5;
+  margin-bottom: 10px;
+  left:-11px;
+}
+#cptitle{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  position: relative;
+  left:5px;
+  top:20px;
+}
+
+form{
+  position: relative;
+  left:12px;
+  top:15px
+}
+
+label{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  position:relative;
+  top:17px;
+}
+
+input{
+  position:relative;
+  top:20px;
+  width: 223px;
+  height: 25px;
+  border: 0;
+  font-size:12px;
+}
+#button-group{
+
+  width: 200px;
+}
+
+button{
+  height: 25px;
+  width: 70px;
+  border: none;
+  border-radius: 20px;
+  color:white;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  top:29px
+}
+#button1{
+  position:relative;
+  background: #7997F2;
+  left:34px;
+}
+#button2{
+  position:relative;
+  background: #C4C4C4;
+  left:53px;
+}
