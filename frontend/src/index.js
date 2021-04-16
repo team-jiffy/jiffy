@@ -9,14 +9,18 @@ import { BrowserRouter } from 'react-router-dom';
 // import AddressBox from './containers/LandingPage/AddressBox';
 // import DeliveryAddressHeader from './components/Topnav/DeliveryAddressHeader.jsx';
 
-// import ChangeMyDeliveryAddress from './components/ChangeMyDeliveryAddress/ChangeMyDeliveryAddress.jsx';
+import ChangeMyDeliveryAddress from './components/ChangeMyDeliveryAddress/ChangeMyDeliveryAddress.jsx';
+import ChangeMyPickupAddress from './components/ChangeMyPickupAddress/ChangeMyPickupAddress.jsx';
+import ChangeMyPayment from './components/ChangeMyPayment/ChangeMyPayment.jsx';
+
 // import SignUp from './components/SignUp/SignUp';
 // import SignIn from './components/SignIn/SignIn';
 
 ReactDOM.render(
   <BrowserRouter>
-    <ReactRouter />
+    {/* <ReactRouter /> */}
    {/* <ChangeMyDeliveryAddress /> */}
+   <ChangeMyPayment />
     {/* <SignUp /> */}
     {/* <SignIn /> */}
   </BrowserRouter>,
