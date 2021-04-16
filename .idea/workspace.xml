@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,11 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51e0d65-52e2-44a1-a49f-d093a70aa534" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/AccountHelpForm/AccountHelpForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/AccountHelpForm/AccountHelpForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/OrderTrackingProcess/OrderTrackingProcess.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/OrderTrackingProcess/OrderTrackingProcess.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +43,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectId" id="1rEMR9z1dW8cBXZTS9vDZe0G1CH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -55,20 +65,36 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f51e0d65-52e2-44a1-a49f-d093a70aa534" name="Default Changelist" comment="" />
+      <created>1618536786385</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618536786385</updated>
+      <workItem from="1618536794113" duration="260000" />
+      <workItem from="1618542366487" duration="3562000" />
+      <workItem from="1618581382229" duration="12765000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -80,23 +106,28 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1000" height="176" key="GridCell.Tab.0.bottom" timestamp="1618170859864">
+    <state width="1000" height="176" key="GridCell.Tab.0.bottom" timestamp="1618581419261">
       <screen x="1366" y="40" width="1920" height="1040" />
     </state>
-    <state width="1000" height="176" key="GridCell.Tab.0.bottom/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618170859864" />
-    <state width="1000" height="176" key="GridCell.Tab.0.center" timestamp="1618170859864">
+    <state width="1000" height="176" key="GridCell.Tab.0.bottom/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618581419261" />
+    <state width="1000" height="176" key="GridCell.Tab.0.center" timestamp="1618581419261">
       <screen x="1366" y="40" width="1920" height="1040" />
     </state>
-    <state width="1000" height="176" key="GridCell.Tab.0.center/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618170859864" />
-    <state width="1000" height="176" key="GridCell.Tab.0.left" timestamp="1618170859863">
+    <state width="1000" height="176" key="GridCell.Tab.0.center/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618581419261" />
+    <state width="1000" height="176" key="GridCell.Tab.0.left" timestamp="1618581419260">
       <screen x="1366" y="40" width="1920" height="1040" />
     </state>
-    <state width="1000" height="176" key="GridCell.Tab.0.left/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618170859863" />
-    <state width="1000" height="176" key="GridCell.Tab.0.right" timestamp="1618170859864">
+    <state width="1000" height="176" key="GridCell.Tab.0.left/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618581419260" />
+    <state width="1000" height="176" key="GridCell.Tab.0.right" timestamp="1618581419261">
       <screen x="1366" y="40" width="1920" height="1040" />
     </state>
-    <state width="1000" height="176" key="GridCell.Tab.0.right/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618170859864" />
+    <state width="1000" height="176" key="GridCell.Tab.0.right/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618581419261" />
+    <state x="2351" y="359" width="672" height="678" key="search.everywhere.popup" timestamp="1618587240275">
+      <screen x="1366" y="40" width="1920" height="1040" />
+    </state>
+    <state x="2351" y="359" width="672" height="678" key="search.everywhere.popup/0.40.1366.728/1366.40.1920.1040@1366.40.1920.1040" timestamp="1618587240275" />
   </component>
 </project>
