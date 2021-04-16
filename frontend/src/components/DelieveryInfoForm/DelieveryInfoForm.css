@@ -1,10 +1,11 @@
 .deliveryInfoForm{
-    position: relative;
+    position: absolute;
     background-color: white;
     width: 568.76px;
     height: 523.54px;
-    left: 50.21px;
-top: 127.6px;
+    left: 10%;
+    top: 27%;
+    z-index: 10;
 }
 .position-icon{
     content: url('../../assets/images/Vector.svg');
@@ -16,6 +17,7 @@ top: 127.6px;
     
     
 }
+
 
 .min-icon{
     position: relative;
@@ -54,8 +56,8 @@ color: #040404;
     position: relative;
     width: 508.31px;
     height: 36.46px;
-    left: 26.69px;
-    top: 25.94px;
+    left: 13.00px;
+    top: 11.94px;
 
 }
 
@@ -104,8 +106,8 @@ color: #040404;
     position: relative;
     width: 508.31px;
     height: 36.46px;
-    left: 26.69px;
-top: -65.94px;
+    left: 12.69px;
+top: -32.94px;
 
 }
 
@@ -212,3 +214,15 @@ color: #040404;
     justify-content: center;
 }
 
+.autocomplete-dropdown-container {
+    
+
+}
+.main-autocomplete-list{
+ background-color: red;
+ 
+    
+}
+.ps-pinBack {
+    background-color: aqua;
+}

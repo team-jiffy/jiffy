@@ -3,7 +3,8 @@ import "./DelieveryInfoForm.css";
 import { Form, Input, Row, Col, Select, Checkbox, Button } from 'antd';
 import SwitchIcon from '../../assets/images/switch.svg';
 import MinIcon from '../../assets/images/minIcon.svg'
-
+import FromAutoComplete from "./FromAutoComplete";
+import ToAutoComplete from "./ToAutoComplete";
 
 const { Option } = Select;
 function onChange(value) {
@@ -23,7 +24,10 @@ function onChange(value) {
   }
   
 class DeliveryInfoForm extends React.Component {
-    
+    constructor (props){
+        super(props);
+    }
+
     render() {
         const { getFieldDecorator } = this.props.form;
         
@@ -46,11 +50,17 @@ class DeliveryInfoForm extends React.Component {
                                 {getFieldDecorator(' ', {
                                                 rules: [{ required: false }],
                                                 })(
-                                                <Input
-                                                    className="deliveryInfo-senderAutoComplete"
-                                                    prefix={<i className="position-icon"/>}
-                                                    placeholder="Enter pick up address"
-                                                />,
+                                                // <Input
+                                                //     className="deliveryInfo-senderAutoComplete"
+                                                //     prefix={<i className="position-icon"/>}
+                                                //     placeholder="Enter pick up address"
+                                                // />,
+                                               
+                                                <FromAutoComplete 
+                                                settingPickupCoordinate={this.props.settingPickupCoordinate}
+                                                    />
+                                                  
+                                                    ,
                                                  )}
                             </Form.Item>
                         </Col>
@@ -102,11 +112,14 @@ class DeliveryInfoForm extends React.Component {
                                 {getFieldDecorator(' ', {
                                                 rules: [{ required: false }],
                                                 })(
-                                                <Input
-                                                    className="deliveryInfo-recipientAutoComplete"
-                                                    prefix={<i className="position-icon"/>}
-                                                    placeholder="Enter pick up address"
-                                                />,
+                                                // <Input
+                                                //     className="deliveryInfo-recipientAutoComplete"
+                                                //     prefix={<i className="position-icon"/>}
+                                                //     placeholder="Enter pick up address"
+                                                // />,
+                                                <ToAutoComplete 
+                                                settingDeliveryCoordinate={this.props.settingDeliveryCoordinate}
+                                                    />,
                                                  )}
                             </Form.Item>
                         </Col>
