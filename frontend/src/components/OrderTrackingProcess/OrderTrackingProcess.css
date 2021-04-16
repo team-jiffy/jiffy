@@ -1,0 +1,62 @@
+@import '~antd/dist/antd.css';
+
+.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.line3 {
+    display: flex;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.ant-row {
+    margin-bottom: 20px;
+}
+
+.ant-timeline-item-tail {
+    margin-left: -30px;
+}
+
+.ant-timeline-item-head {
+    margin-left: -30px;
+}
+
+.quan-active {
+    background-color: #65EECD;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.quan {
+    background-color:#E5E5E5;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.button {
+    margin-top: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #65EECD;
+    font-weight: bold;
+    font-size: 18px;
+    color: #040404;
+    height: 41px;
+    width: 200px;
+    border: #fff;
+}

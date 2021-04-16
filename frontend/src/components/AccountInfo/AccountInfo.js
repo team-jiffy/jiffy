@@ -1,7 +1,7 @@
 import React from 'react';
 import './AccountInfo.css';
 import {Avatar,Button} from 'antd';
-import landmark from '../../assets/images/landmark.svg'
+import landmark from './Assets/landmark.svg';
 import axios from 'axios';
 class AccountInfo extends React.Component{
 
