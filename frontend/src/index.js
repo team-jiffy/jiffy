@@ -8,12 +8,11 @@ import { BrowserRouter } from 'react-router-dom';
 // import LandingPage from './containers/LandingPage/LandingPage';
 // import AddressBox from './containers/LandingPage/AddressBox';
 // import DeliveryAddressHeader from './components/Topnav/DeliveryAddressHeader.jsx';
-// import ChangeMyDeliveryAddress from './components/ChangeMyDeliveryAddress/ChangeMyDeliveryAddress.jsx';
+import ChangeMyDeliveryAddress from './components/ChangeMyDeliveryAddress/ChangeMyDeliveryAddress.jsx';
 
 ReactDOM.render(
   <BrowserRouter>
-    <ReactRouter /> 
-   {/* <ChangeMyDeliveryAddress /> */}
+   <ChangeMyDeliveryAddress />
   </BrowserRouter>,
   document.getElementById('root')
 );
