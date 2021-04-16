@@ -23,9 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51e0d65-52e2-44a1-a49f-d093a70aa534" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/containers/Tracking/Tracking.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/OrderTrackingProcess/OrderTrackingProcess.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/OrderTrackingProcess/OrderTrackingProcess.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/containers/Tracking/Tracking.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/containers/Tracking/Tracking.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +90,7 @@
       <updated>1618536786385</updated>
       <workItem from="1618536794113" duration="260000" />
       <workItem from="1618542366487" duration="3562000" />
-      <workItem from="1618581382229" duration="12765000" />
+      <workItem from="1618581382229" duration="16181000" />
     </task>
     <servers />
   </component>

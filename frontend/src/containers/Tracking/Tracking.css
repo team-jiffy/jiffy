@@ -1,0 +1,18 @@
+@import "~antd";
+
+main.ant-layout-content {
+    display: table;
+}
+
+.right {
+    position: relative;
+    display: table;
+}
+
+.map {
+    background-color: #C4C4C4;
+    color: #E2EFFF;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 600px;
+}
