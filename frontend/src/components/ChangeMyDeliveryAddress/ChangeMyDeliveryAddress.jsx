@@ -1,5 +1,6 @@
 import React from "react";
 import "./ChangeMyDeliveryAddress.css";
+import Button from "react-bootstrap/Button";
 
 class ChangeMyDeliveryAddress extends React.Component {
   constructor(props) {
@@ -19,9 +20,9 @@ class ChangeMyDeliveryAddress extends React.Component {
             <div class="col">
               <div class="card">
                 <div class="card-body">
-                  <div className="plus-btn">
+                  <Button className="plus-btn">
                     <i class="fa fa-plus" aria-hidden="true"></i>
-                  </div>
+                  </Button>
                 </div>
               </div>
             </div>
