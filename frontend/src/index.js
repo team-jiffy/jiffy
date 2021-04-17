@@ -16,7 +16,8 @@ import DeliveryInfo from './containers/DeliveryInfo/DeliveryInfo';
 
 ReactDOM.render(
   <BrowserRouter>
-    <ReactRouter />
+    {/* <ReactRouter /> */}
+    <DeliveryInfo />
    {/* <ChangeMyDeliveryAddress /> */}
    {/* <ChangeMyDeliveryAddress />
    <ChangeMyPickupAddress />  */}

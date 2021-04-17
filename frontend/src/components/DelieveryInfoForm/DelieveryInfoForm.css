@@ -199,17 +199,6 @@
 }
 
 .autocomplete-dropdown-container {
-    z-index: 20;
+  z-index: 99999;
+  position: relative;
 }
-
-/* .main-autocomplete-list {
-  background-color: red;
-  z-index: 100000 !important;
-}
-.ps-pinBack {
-  background-color: aqua;
-}
-
-.deliveryInfoForm .ant-form ant-form-horizontal .ant-row .ant-col .ant-row ant-form-item{
-    z-index: 50 !important;
-} */

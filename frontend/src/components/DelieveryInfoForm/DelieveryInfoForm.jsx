@@ -5,6 +5,7 @@ import SwitchIcon from '../../assets/images/switch.svg';
 import MinIcon from '../../assets/images/minIcon.svg'
 import FromAutoComplete from "./FromAutoComplete";
 import ToAutoComplete from "./ToAutoComplete";
+import './DelieveryInfoForm.css';
 
 const { Option } = Select;
 function onChange(value) {
@@ -46,7 +47,7 @@ class DeliveryInfoForm extends React.Component {
                     </Row>
                     <Row> 
                         <Col>
-                            <Form.Item >
+                            <Form.Item id="my-delivery-info">
                                 {getFieldDecorator(' ', {
                                                 rules: [{ required: true,
                                                     message: "*"
