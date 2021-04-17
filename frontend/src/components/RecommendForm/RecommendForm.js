@@ -3,29 +3,46 @@ import {List, Spin, Select, Form, Button} from 'antd';
 import drone_profile from '../../assets/images/drone_profile.svg';
 import robot_profile from '../../assets/images/robot_profile.svg';
 import "./RecommendForm.css";
+import axios from "axios"
 
 class RecommendForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoading: false,
-            ETAOpts: []
+            recoList: null,
+            ETAList: null,
+            isLoading: false
         };
     }
 
     componentDidMount() {
-        // get recommendData details from backend
-        // recommendData is a list of objects, each data includes:
+        // get recommendData details from backend API
+        // recommendData is a list of Reco objects, each data includes:
         // 1. string ADVType(privateDrone, privateRobot, sharedRobot)
         // 2. int price
         // 3. string ETA
 
-        const {data} = this.props;        // list
-        this.setState({
-            // isLoading: true
-            // ETAOpts: this.getETAList(data.map(item => item.ETA))
-        })
+        // get pickup address, delivery address and package weight from ???
 
+        const url = `/Recommend`;
+
+        this.setState({
+            isLoading: true
+        });
+
+        axios
+            .get(url)
+            .then(response => {
+                console.log('reco ->', response);
+                this.setState({
+                    recoList: response.data,
+                    ETAList: this.getETAList(response.data.map(item => item.ETA)),
+                    isLoading: false
+                });
+            })
+            .catch(err => {
+                console.log('err in fetch recommendation list', err);
+            });
     }
 
     getETAList = ETA => {
@@ -54,26 +71,33 @@ class RecommendForm extends Component {
         return ETAList;
     }
 
-    render() {
-        // const {recommendData} = this.props.recommendInfo ? this.props.recommendInfo.above : [];
-        const {isLoading} = this.state;
+    onSave = e => {
+        e.preventDefault();
+        // pass the chosen list to where?
+    }
 
-        // hard code test
-        const recommendData = [
-            {
-                ADVType: 'private drone',
-                price: '$ 15.03',
-                ETA: '14:00'
-            }, {
-                ADVType: 'private robot',
-                price: '$ 12.15',
-                ETA: '14:30'
-            }, {
-                ADVType: 'shared robot',
-                price: '$ 10.15',
-                ETA: '14:50'
-            }
-        ];
+    render() {
+        const {isLoading} = this.state.isLoading;
+
+        const {recoList} = this.state.recoList;
+        const {ETAList} = this.state.ETAList;
+
+        // // hard code test
+        // const recommendData = [
+        //     {
+        //         ADVType: 'private drone',
+        //         price: '$ 15.03',
+        //         ETA: '14:00'
+        //     }, {
+        //         ADVType: 'private robot',
+        //         price: '$ 12.15',
+        //         ETA: '14:30'
+        //     }, {
+        //         ADVType: 'shared robot',
+        //         price: '$ 10.15',
+        //         ETA: '14:50'
+        //     }
+        // ];
 
         const formItemLayout = {
             labelCol: {span: 12},
@@ -104,10 +128,9 @@ class RecommendForm extends Component {
                         </div>
                         <div className="recommend-item">
                             <List
-                                // grid={{column: this.props.data.length}}
-                                grid={{column: recommendData.length}}
+                                grid={{column: recoList.length}}
                                 size="default"
-                                dataSource={recommendData}
+                                dataSource={}
                                 renderItem={item => (
                                     <List.Item>
 
@@ -136,24 +159,23 @@ class RecommendForm extends Component {
                                                         onChange={handleChange}
                                                         showArrow={true}>
                                                     <Option
-                                                        value="default">{this.state.ETAOpts[0]}</Option>
-                                                    {this.state.ETAOpts.length > 1 ?
+                                                        value="default">{this.state.ETAList[0]}</Option>
+                                                    {this.state.ETAList.length > 1 ?
                                                         <Option
-                                                            value="opt1">this.state.ETAOpts[1]</Option> : console.log('no options anymore')}
-                                                    {this.state.ETAOpts.length > 2 ?
+                                                            value="opt1">this.state.ETAList[1]</Option> : console.log('no options anymore')}
+                                                    {this.state.ETAList.length > 2 ?
                                                         <Option
-                                                            value="opt2">this.state.ETAOpts[2]</Option> : console.log('no options anymore')}
+                                                            value="opt2">this.state.ETAList[2]</Option> : console.log('no options anymore')}
                                                 </Select>
                                             </Form.Item>
 
                                             <Form.Item  {...listItemLayout}>
                                                 <Button className="request-delivery-btn"
-                                                        htmlType="submit">
+                                                        htmlType="submit"
+                                                        onClick={this.onSave}>
                                                     Request Delivery
                                                 </Button>
                                             </Form.Item>
-
-
                                         </Form>
 
                                     </List.Item>)}

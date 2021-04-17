@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Row, Col } from 'antd';
 import "./Recommend.css";
 import DefaultHeader from "../../components/Topnav/DefaultHeader"
 import RecommendForm from "../../components/RecommendForm/RecommendForm"
