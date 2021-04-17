@@ -9,6 +9,8 @@ import { BrowserRouter } from 'react-router-dom';
 // import AddressBox from './containers/LandingPage/AddressBox';
 // import DeliveryAddressHeader from './components/Topnav/DeliveryAddressHeader.jsx';
 import ChangeMyDeliveryAddress from './components/ChangeMyDeliveryAddress/ChangeMyDeliveryAddress.jsx';
+import ChangeMyPickupAddress from './components/ChangeMyPickupAddress/ChangeMyPickupAddress.jsx';
+import ChangeMyPayment from './components/ChangeMyPayment/ChangeMyPayment.jsx';
 
 import DeliveryInfo from './containers/DeliveryInfo/DeliveryInfo';
 

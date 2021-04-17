@@ -1,7 +1,8 @@
 @import '~antd/dist/antd.css';
 
 .container {
-    padding-top: 80px;
+    /* please use a more specified div because editing .container directly will change everyone's container */
+    /* padding-top: 80px; */
     padding-bottom: 30px;
 }
 

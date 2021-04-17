@@ -12,7 +12,7 @@ class ChangeMyDeliveryAddress extends React.Component {
     return (
       <div className="change-address-or-payment">
         <div className="change-title">
-          Change My Pickup Address
+          Change My Delivery Address
         </div>
         <hr id="line3"></hr>
         <div class="container">

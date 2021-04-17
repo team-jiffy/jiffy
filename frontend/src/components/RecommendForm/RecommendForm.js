@@ -130,7 +130,7 @@ class RecommendForm extends Component {
                             <List
                                 grid={{column: recoList.length}}
                                 size="default"
-                                dataSource={}
+                                // dataSource={}
                                 renderItem={item => (
                                     <List.Item>
 
