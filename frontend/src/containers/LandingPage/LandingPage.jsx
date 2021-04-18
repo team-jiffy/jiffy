@@ -26,25 +26,36 @@ class LandingPage extends React.Component {
                   <div className="logo" alt="JIFFY" />
                 </a>
                 <form>
+                  <div class="row">
                   <input
                     className="address-search-box"
                     type="search"
                     placeholder="Enter your tracking number"
                     aria-label="Search"
+                    href="/Tracking"
                   />
-                  <i
-                    className="fa fa-search fa-2x"
-                    aria-hidden="true"
-                    style={{ marginLeft: "-40px" }}
-                  ></i>
+   
+                    <a href="/Tracking">
+                      <i
+                        className="fa fa-search fa-2x"
+                        aria-hidden="true"
+                        style={{ marginTop: "10px", color:"black"}}
+                      ></i>
+                    </a>
+        
+                  </div>
                 </form>
                 <div className="header-buttons">
-                  <Button>
-                    <b>Log in</b>
-                  </Button>
-                  <Button>
-                    <b>Sign up</b>
-                  </Button>
+                  <a href="/SignIn">
+                    <Button>
+                      <b>Log in</b>
+                    </Button>
+                  </a>
+                  <a href="/SignUp">
+                    <Button>
+                      <b>Sign up</b>
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -80,9 +91,11 @@ class LandingPage extends React.Component {
                     <div></div>
                   </div>
                   <div className="header-address-btn">
+                    <a href="/DeliveryInfo">
                     <Button>
                       <b>Request Delivery</b>
                     </Button>
+                    </a>
                   </div>
                 </div>
               </div>

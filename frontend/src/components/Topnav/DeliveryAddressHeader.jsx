@@ -6,7 +6,7 @@ class DeliveryAddressHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      opacity: 1,
+      opacity: 0,
     };
   }
 
@@ -47,18 +47,24 @@ class DeliveryAddressHeader extends React.Component {
                   placeholder="Enter your address"
                   aria-label="Search"
                 />
+                <a href="/Tracking">
                 <i
                   className="fa fa-map-marker fa-2x"
                   style={{ marginLeft: "-40px" }}
                 ></i>
+                </a>
               </form>
               <div className="header-buttons">
+                <a href="/SignIn">
                 <Button>
                   <b>Log in</b>
                 </Button>
+                </a>
+                <a href="/SignUp">
                 <Button>
                   <b>Sign up</b>
                 </Button>
+                </a>
               </div>
             </div>
           </div>

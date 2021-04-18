@@ -7,7 +7,46 @@ import close_icon1 from '../../assets/images/close_icon1.svg';
 import close_icon2 from '../../assets/images/close_icon2.svg';
 import './SignIn.css';
 
+import Axios from 'axios';
+import { Formik } from "formik";
+
+/* CODE FOR CONNECTING FRONT-BACKEND, PLEASE DON'T REMOVE 
+const REST_API_URL = 'http://locohost:8081/api/users';
+
 // import { Link } from 'react-router-dom';
+
+function ValidatedLogin(props) {
+    Axios.init();
+
+    const ValidatedLoginForm = () => (
+        <Formik
+        initialValues={{ email: "", password: "", LoginStatus: "" }}
+        onSubmit={(values, { setSubmitting, setFieldValue, setErrors }) => {
+          Axios.post(REST_API_URL, {
+            Email: values.email,
+            Password: values.password,
+          }).then((response) => {
+            if (response.data.message) {
+              //console.log(response.data.message);
+              setFieldValue('LoginStatus', response.data.message);
+              props.LoginStatusCallBack(false);
+            }else {
+              //console.log("username is ",response.data.username )
+              //history.push("/welcome", { username: response.data.username });
+              props.LoginStatusCallBack(true);
+              //console.log("here is received data:", response.data);
+              props.UserInfoCallBack(response.data[0]);
+              //setFieldValue('LoginStatus', response.data);
+            }
+            //console.log(response);
+          }
+    );
+
+    setTimeout(() => {
+        setSubmitting(false);
+    }, 500);
+}
+*/ 
 
 class SignInForm extends React.Component {
     render() {

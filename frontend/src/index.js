@@ -13,11 +13,14 @@ import ChangeMyPickupAddress from './components/ChangeMyPickupAddress/ChangeMyPi
 import ChangeMyPayment from './components/ChangeMyPayment/ChangeMyPayment.jsx';
 
 import DeliveryInfo from './containers/DeliveryInfo/DeliveryInfo';
+import SignIn from './components/SignIn/SignIn';
+
+import LandingPage from './containers/LandingPage/LandingPage';
 
 ReactDOM.render(
   <BrowserRouter>
-    {/* <ReactRouter /> */}
-    <DeliveryInfo />
+    <ReactRouter />
+    {/* <DeliveryInfo /> */}
    {/* <ChangeMyDeliveryAddress /> */}
    {/* <ChangeMyDeliveryAddress />
    <ChangeMyPickupAddress />  */}
@@ -25,6 +28,7 @@ ReactDOM.render(
    {/* <DeliveryInfo /> */}
     {/* <SignUp /> */}
     {/* <SignIn /> */}
+    {/* <LandingPage /> */}
   </BrowserRouter>,
   document.getElementById('root')
 );

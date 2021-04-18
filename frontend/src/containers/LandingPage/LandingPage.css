@@ -25,6 +25,7 @@
 }
 
 .address-search-box {
+    z-index: 9999 !important;
     height: 45.94285583496094px;
     width: 500px;
     margin-left: 243px;
@@ -118,4 +119,9 @@
     position: absolute;
     width: 199px;
     height: 46px;
+}
+
+#trackingIcon {
+    color: black;
+    margin-left: 400px;
 }
