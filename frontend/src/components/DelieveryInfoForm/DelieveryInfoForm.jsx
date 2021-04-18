@@ -8,33 +8,43 @@ import ToAutoComplete from "./ToAutoComplete";
 import './DelieveryInfoForm.css';
 
 const { Option } = Select;
-function onChange(value) {
-    console.log(`selected ${value}`);
-  }
+// function onChange(value) {
+//     console.log(`selected ${value}`);
+//   }
   
-  function onBlur() {
-    console.log('blur');
-  }
+//   function onBlur() {
+//     console.log('blur');
+//   }
   
-  function onFocus() {
-    console.log('focus');
-  }
+//   function onFocus() {
+//     console.log('focus');
+//   }
   
-  function onSearch(val) {
-    console.log('search:', val);
-  }
+//   function onSearch(val) {
+//     console.log('search:', val);
+//   }
   
 class DeliveryInfoForm extends React.Component {
     constructor (props){
         super(props);
     }
 
+    handleSubmit = e => {
+         e.preventDefault();
+        this.props.form.validateFieldsAndScroll((err, values) => {
+          if (!err) {
+            console.log('Received values of form: ', values);
+          }
+        });
+      };
+
+
     render() {
         const { getFieldDecorator } = this.props.form;
         
         return(
             <div className="deliveryInfoForm">
-                <Form> 
+                <Form  onSubmit={this.handleSubmit}> 
                     <Row>
                         <Col>
                             <Form.Item >
@@ -47,8 +57,10 @@ class DeliveryInfoForm extends React.Component {
                     </Row>
                     <Row> 
                         <Col>
+
                             <Form.Item id="my-delivery-info">
-                                {getFieldDecorator(' ', {
+                                {getFieldDecorator('pickupAddress', {
+
                                                 rules: [{ required: true,
                                                     message: "*"
                                                 
@@ -72,8 +84,13 @@ class DeliveryInfoForm extends React.Component {
                         <Row>
                             <Col>
                                 <Form.Item >
-                                {getFieldDecorator(' ', {
-                                                rules: [{ required: true,
+                                {getFieldDecorator('senderEmail', {
+                                                rules: [
+                                                    {
+                                                        type: 'email',
+                                                        message: 'The input is not valid E-mail!',
+                                                      },
+                                                    { required: true,
                                                     message: "*" }],
                                                 })(
                                                 <Input
@@ -85,7 +102,7 @@ class DeliveryInfoForm extends React.Component {
                             </Col>
                             <Col>
                                 <Form.Item >
-                                {getFieldDecorator(' ', {
+                                {getFieldDecorator('senderPhone', {
                                                 rules: [{ required: true,
                                                     message: "*" }],
                                                 })(
@@ -115,7 +132,7 @@ class DeliveryInfoForm extends React.Component {
                     <Row> 
                         <Col>
                             <Form.Item >
-                                {getFieldDecorator(' ', {
+                                {getFieldDecorator('deliveryAddress', {
                                                 rules: [{ required: true,
                                                     message: "*" }],
                                                 })(
@@ -134,8 +151,13 @@ class DeliveryInfoForm extends React.Component {
                         <Row>
                             <Col>
                                 <Form.Item >
-                                {getFieldDecorator(' ', {
-                                                rules: [{ required: true,
+                                {getFieldDecorator('recipientEmail', {
+                                                rules: [
+                                                    {
+                                                        type: 'email',
+                                                        message: 'The input is not valid E-mail!',
+                                                      },
+                                                    { required: true,
                                                     message: "*" }],
                                                 })(
                                                 <Input
@@ -147,7 +169,7 @@ class DeliveryInfoForm extends React.Component {
                             </Col>
                             <Col>
                                 <Form.Item >
-                                {getFieldDecorator(' ', {
+                                {getFieldDecorator('recipientPhone', {
                                                 rules: [{ required: true,
                                                     message: "*" }],
                                                 })(
@@ -169,7 +191,7 @@ class DeliveryInfoForm extends React.Component {
                             <Row>
                                 <Col>
                                 <Form.Item >
-                                {getFieldDecorator('gender', {
+                                {getFieldDecorator('packageSize', {
                                     rules: [{ required: true, message: '*' }],
                                  })(
                                     <Select
@@ -185,9 +207,9 @@ class DeliveryInfoForm extends React.Component {
                                       //                  option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                        //             }
                                         >
-                                    <Option value="1" style={{background:'#F5F5F5'}}>Small (12 x 12 x 14 inches)</Option>
-                                    <Option value="2" style={{background:'#F5F5F5'}}>Medium (15 x 15 x 18 inches)</Option>
-                                    <Option value="3" style={{background:'#F5F5F5'}}>Large (18 x 18 x 20 inches)</Option>
+                                    <Option value="Small" style={{background:'#F5F5F5'}}>Small (12 x 12 x 14 inches)</Option>
+                                    <Option value="Medium" style={{background:'#F5F5F5'}}>Medium (15 x 15 x 18 inches)</Option>
+                                    <Option value="Large" style={{background:'#F5F5F5'}}>Large (18 x 18 x 20 inches)</Option>
                                     </Select>
 
                                  )}
@@ -196,7 +218,7 @@ class DeliveryInfoForm extends React.Component {
                                 
                                 <Col>
                                 <Form.Item>
-                                {getFieldDecorator('gender', {
+                                {getFieldDecorator('packgeWeight', {
                                     rules: [{ required: true, message: '*' }],
                                  })(
                                 <Select
@@ -212,9 +234,9 @@ class DeliveryInfoForm extends React.Component {
                                         //                 option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                         //             }
                                         >
-                                    <Option value="1" style={{background:'#F5F5F5'}}> &lt; 5 lb </Option>
-                                    <Option value="2" style={{background:'#F5F5F5'}}> &lt; 10 lb </Option>
-                                    <Option value="3" style={{background:'#F5F5F5'}}> &lt; 25 lb </Option>
+                                    <Option value="5" style={{background:'#F5F5F5'}}> &lt; 5 lb </Option>
+                                    <Option value="10" style={{background:'#F5F5F5'}}> &lt; 10 lb </Option>
+                                    <Option value="25" style={{background:'#F5F5F5'}}> &lt; 25 lb </Option>
                                     </Select>
                                  )}
                                     </Form.Item>
@@ -238,7 +260,6 @@ class DeliveryInfoForm extends React.Component {
                                 <Col>
                                     <Form.Item >
                                         <Button
-                                        
                                             className="deliveryInfo-button" 
                                             type="primary" 
                                             htmlType="submit">

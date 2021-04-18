@@ -55,10 +55,12 @@ class FromAutoComplete extends Component {
         onChange={this.handleChange}
         onSelect={this.handleSelect}
         className="ps-pinBack"
+        
       >
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
             <input
+            required="required"
               {...getInputProps({
                 placeholder: 'Enter pick up address',
                 className:'deliveryInfo-senderAutoComplete'
