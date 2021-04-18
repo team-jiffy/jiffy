@@ -130,7 +130,7 @@ class RecommendForm extends Component {
                             <List
                                 grid={{column: recoList.length}}
                                 size="default"
-                                // dataSource={}
+                                dataSource={recoList}
                                 renderItem={item => (
                                     <List.Item>
 
@@ -159,13 +159,15 @@ class RecommendForm extends Component {
                                                         onChange={handleChange}
                                                         showArrow={true}>
                                                     <Option
-                                                        value="default">{this.state.ETAList[0]}</Option>
-                                                    {this.state.ETAList.length > 1 ?
+                                                        value="default">{ETAList[0]}</Option>
+                                                    {ETAList.length > 1 ?
                                                         <Option
-                                                            value="opt1">this.state.ETAList[1]</Option> : console.log('no options anymore')}
-                                                    {this.state.ETAList.length > 2 ?
+                                                            value="opt1">{ETAList[1]}</Option> : console.log('no' +
+                                                            ' options anymore')}
+                                                    {ETAList.length > 2 ?
                                                         <Option
-                                                            value="opt2">this.state.ETAList[2]</Option> : console.log('no options anymore')}
+                                                            value="opt2">{ETAList[2]}</Option> : console.log('no' +
+                                                            ' options anymore')}
                                                 </Select>
                                             </Form.Item>
 
