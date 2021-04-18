@@ -1,0 +1,51 @@
+@import "~antd/dist/antd.css";
+
+#MyOrderInfo {
+  /* position: absolute;
+  top: 111px;
+  left: 360px; */
+  width: 732px;
+  height: 600px;
+
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+#title {
+  position: absolute;
+  top: 23px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  width: 123px;
+  height: 15px;
+
+  color: #040404;
+  font-weight: bold;
+  font-size: 18px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  line-height: 22px;
+  letter-spacing: -0.015em;
+}
+
+#line3 {
+  position: absolute;
+  top: 61.5px;
+  left: 31px;
+  width: 124px;
+  height: 0px;
+  border: 1px solid #000000;
+}
+
+#order-list-ul {
+  position : absolute;
+  left : -10px;
+  width: 720px;
+  height: 540px;
+  margin-top: 90px;
+  overflow: scroll;
+  list-style-type: none;
+}
