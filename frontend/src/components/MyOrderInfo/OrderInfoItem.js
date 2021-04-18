@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './OrderInfoItem.css';
 import {Avatar} from 'antd';
-import miniDrone from './miniDrone.svg';
-import miniRobot from './miniRobot.svg';
+import miniDrone from './../../assets/images/miniDrone.svg';
+import miniRobot from './../../assets/images/miniRobot.svg';
 class OrderInfoItem extends Component {
   constructor() {
     super();
