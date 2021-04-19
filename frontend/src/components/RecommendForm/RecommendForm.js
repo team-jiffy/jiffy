@@ -9,7 +9,7 @@ class RecommendForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            recoList: null,
+            Results: null,
             ETAList: null,
             isLoading: false
         };
@@ -24,19 +24,29 @@ class RecommendForm extends Component {
 
         // get pickup address, delivery address and package weight from ???
 
-        const url = `/Recommend`;
-
         this.setState({
             isLoading: true
         });
 
-        axios
-            .get(url)
+        const pickupAddress = window.localStorage.getItem('pickupAddress');
+        const deliveryAddress = window.localStorage.getItem('deliveryAddress');
+        const packWeight = window.localStorage.getItem('packWeight');
+
+        axios({
+            method:'post',
+            url : "localhost:8080/order/getReco",
+            data : {
+                DeliverAddress: pickupAddress,
+                PickupAddress:  deliveryAddress,
+                Weight: packWeight
+            }
+        })
             .then(response => {
                 console.log('reco ->', response);
+                const responseResults = response.data.Results;
                 this.setState({
-                    recoList: response.data,
-                    ETAList: this.getETAList(response.data.map(item => item.ETA)),
+                    Results: responseResults,
+                    ETAList: this.getETAList(responseResults.map(item => item.ETA)),
                     isLoading: false
                 });
             })
@@ -71,15 +81,18 @@ class RecommendForm extends Component {
         return ETAList;
     }
 
-    onSave = e => {
-        e.preventDefault();
-        // pass the chosen list to where?
+    onSave = item => {
+        console.log(item);
+        window.localStorage.setItem("ADVType", "item.ADVType");
+        window.localStorage.setItem("price", "item.Price");
+        window.localStorage.setItem("ETA", "item.ETA");
+        this.props.history.push('/SignIn');
     }
 
     render() {
         const {isLoading} = this.state.isLoading;
 
-        const {recoList} = this.state.recoList;
+        const {recoList} = this.state.Results;
         const {ETAList} = this.state.ETAList;
 
         // // hard code test
@@ -174,7 +187,7 @@ class RecommendForm extends Component {
                                             <Form.Item  {...listItemLayout}>
                                                 <Button className="request-delivery-btn"
                                                         htmlType="submit"
-                                                        onClick={this.onSave}>
+                                                        onClick={this.onSave(item)}>
                                                     Request Delivery
                                                 </Button>
                                             </Form.Item>
