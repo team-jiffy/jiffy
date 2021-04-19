@@ -63,15 +63,17 @@ class DeliveryAddressHeader extends React.Component {
                   aria-label="Search"
                 />
                 <a href="/Tracking">
-                <i
-                  className="fa fa-map-marker fa-2x"
-                  style={{ marginLeft: "-40px" }}
-                ></i>
+                  <i
+                    className="fa fa-map-marker fa-2x"
+                    style={{ marginLeft: "-40px" }}
+                  ></i>
                 </a>
               </form>
               <div className="header-buttons">
-                <a href="/SignIn">
-                <Button className="button1" onClick={() => this.setModal1Visible(true)}>
+                <Button
+                  className="button1"
+                  onClick={() => this.setModal1Visible(true)}
+                >
                   <b>Log in</b>
                 </Button>
                 <Modal
@@ -80,9 +82,10 @@ class DeliveryAddressHeader extends React.Component {
                 >
                   <SignIn />
                 </Modal>
-                </a>
-                <a href="/SignUp">
-                <Button className="button1" onClick={() => this.setModal2Visible(true)}>
+                <Button
+                  className="button1"
+                  onClick={() => this.setModal2Visible(true)}
+                >
                   <b>Sign up</b>
                 </Button>
                 <Modal
@@ -92,7 +95,6 @@ class DeliveryAddressHeader extends React.Component {
                 >
                   <SignUp />
                 </Modal>
-                </a>
               </div>
             </div>
           </div>
