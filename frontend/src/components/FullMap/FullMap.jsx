@@ -86,9 +86,9 @@ const FullMapComponent =   compose(
     
    componentDidUpdate(prevProps, prevState, snapshot) {
 
-     console.log("didMount on lifecycle")
-     console.log(this.props.currentState.pickupCoordinate)
-     console.log(this.props.currentState.deliveryCoordinate)
+    //  console.log("didMount on lifecycle")
+    //  console.log(this.props.currentState.pickupCoordinate)
+    //  console.log(this.props.currentState.deliveryCoordinate)
      if (this.props.currentState.pickupCoordinate.lat && this.props.currentState.deliveryCoordinate.lat) 
      if (prevProps.currentState.pickupCoordinate !== this.props.currentState.pickupCoordinate 
       || prevProps.currentState.deliveryCoordinate !== this.props.currentState.deliveryCoordinate)
@@ -130,7 +130,7 @@ const FullMapComponent =   compose(
     defaultZoom={11}
     defaultCenter={{ lat: 37.7, lng: -122.7 }}
     center={
-       console.log("center1 ", props.centerCoordinate),
+      // console.log("center1 ", props.centerCoordinate),
       // (!props.centerCoordinate.lat && !props.centerCoordinate.lng) ? 
       { lat: 37.7, lng: -122.8 } 
       //{ lat: props.centerCoordinate.lat, lng: props.centerCoordinate.lng }}

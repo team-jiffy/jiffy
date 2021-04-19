@@ -6,10 +6,36 @@ import twitter_icon from '../../assets/images/twitter_icon.svg';
 import close_icon1 from '../../assets/images/close_icon1.svg';
 import close_icon2 from '../../assets/images/close_icon2.svg';
 import './SignUp.css';
+import axios from 'axios';
 
 // import { Link } from 'react-router-dom';
 
 class SignUpForm extends React.Component {
+
+//     componentDidMount(){
+//         const user = {
+//             "Email": "123@gmail.com",
+//             "LastName": "aaaa",
+//             "FirstName": "bbbb",
+//             "Password": "123"
+//           }
+//         axios.put('http://localhost:8081/signup', user)
+//         .then(res => {
+//             if (this._isMounted) {
+//                 this.setState(res.data, () => {
+//                     if (this.state.isSuccess) {
+//                         alert("request has been submitted");
+//                         this.props.history.push("/thanksForOrdering");
+//                     }
+//                 })
+//             }
+//         })
+//         .catch(error => {
+//             console.error(error);
+//         });
+// }
+//     }
+
 
     render() {
         const { getFieldDecorator } = this.props.form;

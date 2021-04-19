@@ -41,8 +41,9 @@ class FromAutoComplete extends Component {
     const results = await geocodeByAddress(value);
     console.log("autoComplete results: ", results);
     const coordinate = await getLatLng(results[0]);
+   this.props.settingPickupAddress(results[0].address_components);
     console.log("autoComplete coordinate: ", coordinate);
-    this.props.settingPickupCoordinate(coordinate)
+    this.props.settingPickupCoordinate(coordinate);
 
   }
   

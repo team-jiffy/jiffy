@@ -36,6 +36,7 @@ class ToAutoComplete extends Component {
   handleSelect = async value => {
     const results = await geocodeByAddress(value);
     console.log("autoComplete results: ", results);
+    this.props.settingDeliveryAddress(results[0].address_components)
     const coordinate = await getLatLng(results[0]);
     console.log("autoComplete coordinate: ", coordinate);
     this.props.settingDeliveryCoordinate(coordinate);

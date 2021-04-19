@@ -27,7 +27,56 @@ const { Option } = Select;
 class DeliveryInfoForm extends React.Component {
     constructor (props){
         super(props);
+        this.state = {
+            Pickup: {
+                Address: {
+                    Street1: null,
+                    City: null,
+                    State: null,
+                    Zip: null
+                },
+                Delivery:{
+                Address: {
+                    Stree1: null,
+                    City: null,
+                    State: null,
+                    Zip: null
+                  } 
+            }
+            }
+        }
     }
+    settingPickupAddress = (address) => {
+                    // when the address.length < 5, it will appear an err
+        this.setState({
+            Pickup: {
+                Address: {
+                    Street1: address[0].long_name + " " + address[1].long_name,
+                    City: address[address.length - 5].long_name,
+                    State: address[address.length - 3].long_name,
+                    Zip: address[address.length - 1].long_name
+                }
+            }
+        });
+      
+        console.log("Pick up Address: ", this.state.Pickup)
+    }
+    settingDeliveryAddress = (address) => {
+
+        this.setState({
+            Delivery: {
+                Address: {
+                    Street1: address[0].long_name + " " + address[1].long_name,
+                    City: address[address.length - 5].long_name,
+                    State: address[address.length - 3].long_name,
+                    Zip: address[address.length - 1].long_name
+                }
+            }
+        });
+      
+        console.log("Delivery Address: ", this.state.Delivery)
+    }
+
 
     handleSubmit = e => {
          e.preventDefault();
@@ -35,6 +84,30 @@ class DeliveryInfoForm extends React.Component {
           if (!err) {
             console.log('Received values of form: ', values);
           }
+          const DeliveryAddressStreet1 = this.state.Delivery.Street1;
+          const PickupAddressStreet1 = this.state.Pickup.Street1;
+          localStorage.setItem("DeliveryAddressStreet1", this.state.Delivery.Address.Street1);
+          localStorage.setItem("DeliveryAddressCity", this.state.Delivery.Address.City);
+          localStorage.setItem("DeliveryAddressState", this.state.Delivery.Address.State);
+          localStorage.setItem("DeliveryAddressZip", this.state.Delivery.Address.Zip);
+          localStorage.setItem("DeliveryEmail", values.recipientEmail)
+          localStorage.setItem("DeliveryPhone", values.recipientPhone)
+
+          localStorage.setItem("PickupAddressStreet1", this.state.Pickup.Address.Street1);
+          localStorage.setItem("PickupAddressCity", this.state.Pickup.Address.City);
+          localStorage.setItem("PickupAddressState", this.state.Pickup.Address.State);
+          localStorage.setItem("PickupAddressZip", this.state.Pickup.Address.Zip);
+          localStorage.setItem("PickupEmail", values.senderEmail)
+          localStorage.setItem("PickupPhone", values.senderPhone)
+
+          localStorage.setItem("Weight", values.packageWeight)
+
+          console.log("Storage")
+          console.log(localStorage.getItem("DeliveryAddressStreet1"))
+          console.log(localStorage.getItem("PickupAddressStreet1"))
+          console.log(localStorage.getItem("PickupEmail"))
+          console.log(localStorage.getItem("Weight"))
+
         });
       };
 
@@ -74,6 +147,7 @@ class DeliveryInfoForm extends React.Component {
                                                
                                                 <FromAutoComplete 
                                                 settingPickupCoordinate={this.props.settingPickupCoordinate}
+                                                settingPickupAddress={this.settingPickupAddress}
                                                     />
                                                   
                                                     ,
@@ -141,7 +215,8 @@ class DeliveryInfoForm extends React.Component {
                                                 //     prefix={<i className="position-icon"/>}
                                                 //     placeholder="Enter pick up address"
                                                 // />,
-                                                <ToAutoComplete 
+                                                <ToAutoComplete
+                                                settingDeliveryAddress={this.settingDeliveryAddress} 
                                                 settingDeliveryCoordinate={this.props.settingDeliveryCoordinate}
                                                     />,
                                                  )}
@@ -218,7 +293,7 @@ class DeliveryInfoForm extends React.Component {
                                 
                                 <Col>
                                 <Form.Item>
-                                {getFieldDecorator('packgeWeight', {
+                                {getFieldDecorator('packageWeight', {
                                     rules: [{ required: true, message: '*' }],
                                  })(
                                 <Select

@@ -8,45 +8,45 @@ class DeliveryInfo extends React.Component {
   constructor() {
     super();
     this.state = {
-        userInfo: null,
-        Order: {
-          ADVType: null,
-          OrderDate: null,
-          CardID: null,
-          SameDay: true,
-          Pickup: {
-            Name: null,
-            Email: null,
-            Phone: null,
-            Coordinate:{
-              Longitude: '',
-              Latitude: ''
-            },
-            Address: {
-              Stree1: null,
-              Stree2: null,
-              City: null,
-              State: null,
-              Zip: null
-            }
-            },
-          Deliver: { 
-            Name: null,
-            Email: null,
-            Phone: null,
-            Coordinate:{
-              Longitude: '',
-              Latitude: ''
-            },
-            Address: {
-              Stree1: null,
-              Stree2: null,
-              City: null,
-              State: null,
-              Zip: null
-            }  
-          }
-          },
+        // userInfo: null,
+        // Order: {
+        //   ADVType: null,
+        //   OrderDate: null,
+        //   CardID: null,
+        //   SameDay: true,
+        //   Pickup: {
+        //     Name: null,
+        //     Email: null,
+        //     Phone: null,
+        //     Coordinate:{
+        //       Longitude: '',
+        //       Latitude: ''
+        //     },
+        //     Address: {
+        //       Stree1: null,
+        //       Stree2: null,
+        //       City: null,
+        //       State: null,
+        //       Zip: null
+        //     }
+        //     },
+        //   Deliver: { 
+        //     Name: null,
+        //     Email: null,
+        //     Phone: null,
+        //     Coordinate:{
+        //       Longitude: '',
+        //       Latitude: ''
+        //     },
+        //     Address: {
+        //       Stree1: null,
+        //       Stree2: null,
+        //       City: null,
+        //       State: null,
+        //       Zip: null
+        //     }  
+        //   }
+        //   },
           pickupCoordinate: {
             Coordinate: {
               lng: null,
@@ -82,7 +82,7 @@ settingPickupCoordinate = (value) => {
   });
   console.log("state pickup = ", this.state.pickupCoordinate);
 }
-settingDeliveryCoordinate = (value) => {
+settingDeliveryCoordinate = (value, address) => {
   this.setState({ 
     // Order: { 
     //   Deliver: {
