@@ -6,6 +6,9 @@ import MinIcon from '../../assets/images/minIcon.svg'
 import FromAutoComplete from "./FromAutoComplete";
 import ToAutoComplete from "./ToAutoComplete";
 import './DelieveryInfoForm.css';
+import {withRouter, Link, Redirect} from "react-router-dom";
+
+
 
 const { Option } = Select;
 // function onChange(value) {
@@ -46,6 +49,7 @@ class DeliveryInfoForm extends React.Component {
             }
         }
     }
+    
     settingPickupAddress = (address) => {
                     // when the address.length < 5, it will appear an err
         this.setState({
@@ -84,8 +88,7 @@ class DeliveryInfoForm extends React.Component {
           if (!err) {
             console.log('Received values of form: ', values);
           }
-          const DeliveryAddressStreet1 = this.state.Delivery.Street1;
-          const PickupAddressStreet1 = this.state.Pickup.Street1;
+          
           localStorage.setItem("DeliveryAddressStreet1", this.state.Delivery.Address.Street1);
           localStorage.setItem("DeliveryAddressCity", this.state.Delivery.Address.City);
           localStorage.setItem("DeliveryAddressState", this.state.Delivery.Address.State);
@@ -107,7 +110,9 @@ class DeliveryInfoForm extends React.Component {
           console.log(localStorage.getItem("PickupAddressStreet1"))
           console.log(localStorage.getItem("PickupEmail"))
           console.log(localStorage.getItem("Weight"))
-
+        
+          this.props.history.push('/Recommend');
+              
         });
       };
 
@@ -334,12 +339,14 @@ class DeliveryInfoForm extends React.Component {
                             <Row>
                                 <Col>
                                     <Form.Item >
+                                        
                                         <Button
                                             className="deliveryInfo-button" 
                                             type="primary" 
                                             htmlType="submit">
                                             Request Delivery
                                         </Button>
+                                     
                                     </Form.Item>
                                 </Col>
                             </Row>   
@@ -351,5 +358,5 @@ class DeliveryInfoForm extends React.Component {
 
 }
 const DeliveryInfoForm1 = Form.create({ name: 'deliveryInfo-form' })(DeliveryInfoForm);
-export default DeliveryInfoForm1;
+export default withRouter(DeliveryInfoForm1);
 
