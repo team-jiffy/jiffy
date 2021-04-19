@@ -21,8 +21,6 @@ class ReactRouter extends Component {
                     <Switch>
                         {/* homepage */}
                         <Route path="/" component={LandingPage} exact />  
-                        <Route path="/SignIn" component={SignPage} exact />
-                        <Route path="/SignUp" component={SignPage} exact />
 
                         <Route path="/Account" component={Account} exact />
                         <Route path="/AccountEditAddrss" component={AccountEditAddrss} exact />
@@ -31,9 +29,8 @@ class ReactRouter extends Component {
                         <Route path="/OrderConfirm" component={OrderConfirm} exact />
                         <Route path="/PlaceOrder" component={PlaceOrder} exact />
                         <Route path="/Recommend" component={Recommend} exact />
-                        <Route path="/SignPage" component={SignPage} exact />
                         <Route path="/Tracking" component={Tracking} exact />
-                        {/* <Route path="/LandingPage" component={LandingPage} exact /> */}
+                        <Route path="/LandingPage" component={LandingPage} exact />
                         {/* <Route path="/AddressBox" component={AddressBox} exact /> */}
                     </Switch>
              

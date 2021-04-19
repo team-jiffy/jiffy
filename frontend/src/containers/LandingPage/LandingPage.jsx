@@ -1,11 +1,12 @@
-import React from "react";
-import "./LandingPage.css";
-import Button from "react-bootstrap/Button";
-import LandingPageAbout from "../../components/LangdingPageAbout/LandingPageAbout";
-import DefaultFooter from "../../components/DefaultFooter/DefaultFooter";
+import React from 'react';
+import './LandingPage.css';
+import Button from 'react-bootstrap/Button';
+import LandingPageAbout from '../../components/LangdingPageAbout/LandingPageAbout';
+import DefaultFooter from '../../components/DefaultFooter/DefaultFooter';
 
-import DeliveryAddressHeader from "../../components/Topnav/DeliveryAddressHeader";
-import AddressBox from "./AddressBox";
+import DeliveryAddressHeader from '../../components/Topnav/DeliveryAddressHeader';
+import TrackingNumberHeader from '../../components/Topnav/TrackingNumberHeader';
+import AddressBox from './AddressBox';
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -19,47 +20,7 @@ class LandingPage extends React.Component {
     return (
       <div>
         <div className="header">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <div class="row">
-                <a class="navbar-brand" href="#">
-                  <div className="logo" alt="JIFFY" />
-                </a>
-                <form>
-                  <div class="row">
-                  <input
-                    className="address-search-box"
-                    type="search"
-                    placeholder="Enter your tracking number"
-                    aria-label="Search"
-                    href="/Tracking"
-                  />
-   
-                    <a href="/Tracking">
-                      <i
-                        className="fa fa-search fa-2x"
-                        aria-hidden="true"
-                        style={{ marginTop: "10px", color:"black"}}
-                      ></i>
-                    </a>
-        
-                  </div>
-                </form>
-                <div className="header-buttons">
-                  <a href="/SignIn">
-                    <Button>
-                      <b>Log in</b>
-                    </Button>
-                  </a>
-                  <a href="/SignUp">
-                    <Button>
-                      <b>Sign up</b>
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </nav>
+          <TrackingNumberHeader />
           <div className="catch-line">Fly your pack in a moment</div>
           <div>
             <div class="container">
