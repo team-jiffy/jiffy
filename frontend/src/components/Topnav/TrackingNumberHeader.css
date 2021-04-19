@@ -88,5 +88,14 @@
     margin-left: 200px;
 }
 
+/* Lin's Modal css */
+.ant-modal-footer {
+    display: none;
+  }
+  
+  .ant-modal-body {
+    margin-top: 50px;
+    padding: 15px;
+  }
 
  

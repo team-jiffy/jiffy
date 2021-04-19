@@ -2,13 +2,30 @@ import React from "react";
 import "./TrackingNumberHeader.css";
 import Button from "react-bootstrap/Button";
 
+import { Modal } from "antd";
+import SignIn from "../../components/SignIn/SignIn";
+import SignUp from "../../components/SignUp/SignUp";
+
 class TrackingNumberHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       //   loading: true,
+
+      // Modal initialize
+      modal1Visible: false,
+      modal2Visible: false,
     };
   }
+
+  setModal1Visible(modal1Visible) {
+    this.setState({ modal1Visible });
+  }
+
+  setModal2Visible(modal2Visible) {
+    this.setState({ modal2Visible });
+  }
+
 
   render() {
     return (
@@ -32,12 +49,25 @@ class TrackingNumberHeader extends React.Component {
                 ></i>
               </form>
               <div className="header-buttons">
-                <Button>
+                <Button className="button1" onClick={() => this.setModal1Visible(true)}>
                   <b>Log in</b>
                 </Button>
-                <Button>
+                <Modal
+                  visible={this.state.modal1Visible}
+                  onCancel={() => this.setModal1Visible(false)}
+                >
+                  <SignIn />
+                </Modal>
+                <Button className="button1" onClick={() => this.setModal2Visible(true)}>
                   <b>Sign up</b>
                 </Button>
+                <Modal
+                  centered
+                  visible={this.state.modal2Visible}
+                  onCancel={() => this.setModal2Visible(false)}
+                >
+                  <SignUp />
+                </Modal>
               </div>
             </div>
           </div>

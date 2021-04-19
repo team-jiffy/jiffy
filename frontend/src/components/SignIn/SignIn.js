@@ -55,8 +55,6 @@ class SignInForm extends React.Component {
         return (  
                 <Form className="signIn">                    
                     <Form.Item>
-                        <img src={ close_icon1 } className="close-logo1" alt="c1" />
-                        <img src={ close_icon2 } className="close-logo2" alt="c2" />
                         <span className="signIn-title">Please sign in to your account</span>
                     </Form.Item>
                     <Form.Item> 

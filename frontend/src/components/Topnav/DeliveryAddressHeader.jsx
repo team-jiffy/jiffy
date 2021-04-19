@@ -2,12 +2,27 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import "./TrackingNumberHeader.css";
 
+import { Modal } from "antd";
+import SignIn from "../../components/SignIn/SignIn";
+import SignUp from "../../components/SignUp/SignUp";
+
 class DeliveryAddressHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       opacity: 0,
+
+      modal1Visible: false,
+      modal2Visible: false,
     };
+  }
+
+  setModal1Visible(modal1Visible) {
+    this.setState({ modal1Visible });
+  }
+
+  setModal2Visible(modal2Visible) {
+    this.setState({ modal2Visible });
   }
 
   componentDidMount() {
@@ -56,14 +71,27 @@ class DeliveryAddressHeader extends React.Component {
               </form>
               <div className="header-buttons">
                 <a href="/SignIn">
-                <Button>
+                <Button className="button1" onClick={() => this.setModal1Visible(true)}>
                   <b>Log in</b>
                 </Button>
+                <Modal
+                  visible={this.state.modal1Visible}
+                  onCancel={() => this.setModal1Visible(false)}
+                >
+                  <SignIn />
+                </Modal>
                 </a>
                 <a href="/SignUp">
-                <Button>
+                <Button className="button1" onClick={() => this.setModal2Visible(true)}>
                   <b>Sign up</b>
                 </Button>
+                <Modal
+                  centered
+                  visible={this.state.modal2Visible}
+                  onCancel={() => this.setModal2Visible(false)}
+                >
+                  <SignUp />
+                </Modal>
                 </a>
               </div>
             </div>

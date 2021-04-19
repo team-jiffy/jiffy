@@ -1,4 +1,4 @@
-.signIn {
+/* .signIn {
     position: absolute;
     height: 453px;
     width: 546px;
@@ -6,7 +6,7 @@
     top: 100px;
     border: 1px solid #d9d9d9;
     padding-top: 80px;
-}
+} */
 
 .ant-input {
     width: 330px;
@@ -97,3 +97,4 @@
     line-height: 30px;
     text-align: center;
 }
+

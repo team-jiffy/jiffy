@@ -1,4 +1,4 @@
-.signUp {
+/* .signUp {
     position: absolute;
     height: 603px;
     width: 546px;
@@ -6,7 +6,7 @@
     top: 80px;
     border: 1px solid #d9d9d9;
     padding-top: 25px;
-}
+} */
 
 .ant-input {
     width: 330px;
@@ -55,6 +55,7 @@
 
 .ant-form-item-control {
     text-align: center;
+    line-height: 0px;
 }
 
 .signUp .signUp-title {
@@ -86,7 +87,6 @@
 
 .check-box {
     height: 18px;
-    width: 308px;
     left: 436px;
     top: 380px;
 
@@ -97,5 +97,13 @@
     line-height: 12px;
     letter-spacing: -0.015em;
     text-align: left;
+}
+
+.ant-form-item label {
+    position: unset;
+}
+
+.ant-checkbox + span {
+    font-size: 12px;
 }
 
