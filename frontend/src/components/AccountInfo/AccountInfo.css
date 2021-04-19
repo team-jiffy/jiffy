@@ -10,12 +10,8 @@
 }
 
 #AccountInfo{
-  /* position: absolute; */
   width: 280px;
   height: 606px;
-  /* left: 48px;
-  top: 111px; */
-
   background: #FFFFFF;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -44,7 +40,7 @@
 }
 
 
-a {
+.account a {
   vertical-align:bottom;
   float:right;
   padding-right:20px;
@@ -53,7 +49,8 @@ a {
   font-weight: bold;
   font-family: Montserrat;
 }
-span{
+
+.account span{
   vertical-align: middle;
   display: inline-block;
   font-family: Montserrat;
@@ -95,13 +92,13 @@ span{
   top:20px;
 }
 
-form{
+.account form{
   position: relative;
   left:12px;
   top:15px
 }
 
-label{
+.account label{
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
@@ -111,7 +108,7 @@ label{
   top:17px;
 }
 
-input{
+.account input{
   position:relative;
   top:20px;
   width: 223px;
@@ -124,7 +121,7 @@ input{
   width: 200px;
 }
 
-button{
+.account button{
   height: 25px;
   width: 70px;
   border: none;

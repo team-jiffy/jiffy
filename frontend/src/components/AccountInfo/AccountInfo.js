@@ -1,7 +1,7 @@
 import React from 'react';
 import './AccountInfo.css';
 import {Avatar,Button} from 'antd';
-import landmark from './../assets/images/landmark.svg';
+import landmark from '../../assets/images/Vector.svg';
 import axios from 'axios';
 class AccountInfo extends React.Component{
 
@@ -63,7 +63,7 @@ class AccountInfo extends React.Component{
 
   render() {
     return (
-      <div id="AccountInfo" style={{height:this.state.height1}}>
+      <div className="account" id="AccountInfo" style={{height:this.state.height1}}>
         <Avatar size={98} icon="user" className="avatar" src={this.hammerAddress}/>
         <hr className="line"/>
         <br/>

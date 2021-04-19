@@ -78,11 +78,11 @@ class LandingPage extends React.Component {
               </div> */}
                 <div className="header-address">
                   <div class="input-group">
-                    <div class="input-group-prepend">
+                    {/* <div class="input-group-prepend"> */}
                       <div class="input-group-text">
                         <i class="fa fa-search"></i>
                       </div>
-                    </div>
+                    {/* </div> */}
                     <input
                       class="form-control py-2 border-right-0 border"
                       type="search"
