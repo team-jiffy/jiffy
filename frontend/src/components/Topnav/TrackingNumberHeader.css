@@ -61,15 +61,27 @@
     margin-top: 8px;
 }
 
-.header-buttons Button{
+.header-buttons Button {
     background-color: white;
     color: black;
     border: none;
     border-radius: 30px;
-    width: 110px;
+    width: auto;
     height: 40px;
     margin-left: 20px;
     margin-top: 10px;
+    right: 0;
+}
+
+.btns-row {
+    right: 0;
+    margin-left: 1000px;
+}
+
+#myDropdown.Toggle{
+    color: black;
+    font-size: 30px;
+    font-weight: bolder;
 }
 
 .header-buttons {
