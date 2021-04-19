@@ -11,6 +11,7 @@ import Recommend from '../../containers/Recommend/Recommend';
 import SignPage from '../../containers/SignPage/SignPage';
 import Tracking from '../../containers/Tracking/Tracking';
 
+import AccountEditAddrss from '../../containers/Account/AccountEditAddress';
 
 class ReactRouter extends Component {
     render() {
@@ -24,6 +25,7 @@ class ReactRouter extends Component {
                         <Route path="/SignUp" component={SignPage} exact />
 
                         <Route path="/Account" component={Account} exact />
+                        <Route path="/AccountEditAddrss" component={AccountEditAddrss} exact />
 
                         <Route path="/DeliveryInfo" component={DeliveryInfo} exact />
                         <Route path="/OrderConfirm" component={OrderConfirm} exact />

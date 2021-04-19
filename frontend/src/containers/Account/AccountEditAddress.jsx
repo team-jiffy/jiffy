@@ -1,7 +1,7 @@
 import React from "react";
 import AccountInfo from "../../components/AccountInfo/AccountInfo";
 import MyOrderInfo from "../../components/MyOrderInfo/MyOrderInfo";
-import DeliveryInfo from "../DeliveryInfo/DeliveryInfo";
+import ChangeMyDeliveryAddress from "../../components/ChangeMyDeliveryAddress/ChangeMyDeliveryAddress";
 
 class AccountEditAddress extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class AccountEditAddress extends React.Component {
                   <AccountInfo />
               </div>
               <div class="col">
-                <MyOrderInfo />
+                <ChangeMyDeliveryAddress />
               </div>
               </div>
            </div>);

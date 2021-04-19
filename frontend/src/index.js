@@ -18,6 +18,7 @@ import SignIn from './components/SignIn/SignIn';
 import LandingPage from './containers/LandingPage/LandingPage';
 
 import Account from './containers/Account/Account';
+import AccountEditAddress from './containers/Account/AccountEditAddress';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -32,6 +33,7 @@ ReactDOM.render(
     {/* <SignIn /> */}
     {/* <LandingPage /> */}
     {/* <Account /> */}
+    {/* <AccountEditAddress /> */}
   </BrowserRouter>,
   document.getElementById('root')
 );

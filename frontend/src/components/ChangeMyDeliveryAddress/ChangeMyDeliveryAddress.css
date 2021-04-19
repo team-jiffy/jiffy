@@ -1,14 +1,14 @@
 .change-address-or-payment {
     height: 644px;
     width: 732px;
-    left: 360px;
-    top: 111px;
+    /* left: 360px; */
+    /* top: 111px; */
     border-radius: 10px;
     position: absolute;
-    width: 732px;
+    /* width: 732px;
     height: 644px;
     left: 360px;
-    top: 111px;
+    top: 111px; */
     background: #FFFFFF;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
