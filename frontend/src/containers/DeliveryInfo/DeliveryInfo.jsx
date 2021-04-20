@@ -3,7 +3,7 @@ import "./DeliveryInfo.css";
 import DefaultHeader from "../../components/Topnav/DefaultHeader";
 import DeliveryInfoForm from "../../components/DelieveryInfoForm/DelieveryInfoForm";
 import FullMap from "../../components/FullMap/FullMap";
-
+import Button from "react-bootstrap/Button";
 class DeliveryInfo extends React.Component {
   constructor() {
     super();
@@ -58,8 +58,18 @@ class DeliveryInfo extends React.Component {
               lng: null,
               lat: null
             }
-          }
+          },
+          isShowForm: false
     };
+    
+}
+
+isShowFormHandler = () => {
+  const isShow = this.state.isShowForm;
+  this.setState({
+    isShowForm: !isShow
+  });
+  console.log("click showForm")
 }
 
 settingPickupCoordinate = (value) => {
@@ -112,8 +122,9 @@ settingDeliveryCoordinate = (value, address) => {
     const {pickupCoordinate, deliveryCoordinate} = this.state;
     const pCoordinate = pickupCoordinate.Coordinate;
     const dCoordinate = deliveryCoordinate.Coordinate;
-    console.log("to transfer pickup into FullMap: ",pCoordinate )
-    console.log("to transfer delivery into FullMap: ",dCoordinate )
+    // console.log("to transfer pickup into FullMap: ",pCoordinate )
+    // console.log("to transfer delivery into FullMap: ",dCoordinate )
+    console.log("isSHhow?: ",this.state.isShowForm)
     return (
             <div className="deliveryInfo-container"> 
             <DefaultHeader />
@@ -121,13 +132,17 @@ settingDeliveryCoordinate = (value, address) => {
              pickupCoordinate = {pCoordinate}
              deliveryCoordinate = {dCoordinate}
              />
+             { this.state.isShowForm ? 
             <DeliveryInfoForm 
               id="my-form"
               settingPickupCoordinate={this.settingPickupCoordinate}
               settingDeliveryCoordinate={this.settingDeliveryCoordinate}
-              />
-           
-            
+              isShowFormHandler={this.isShowFormHandler}
+              /> :
+               <Button className="map-plus-btn" onClick={()=>{this.isShowFormHandler()}}>
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </Button>
+  }
            </div>);
   }
 }

@@ -19,7 +19,8 @@
 .min-icon {
   position: relative;
   top: -10px;
-  left: 530px;
+  left: 520px;
+  height: 8px;
 }
 
 .deliveryInfoForm .ant-input {

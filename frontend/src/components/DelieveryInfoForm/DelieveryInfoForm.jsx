@@ -126,11 +126,13 @@ class DeliveryInfoForm extends React.Component {
                     <Row>
                         <Col>
                             <Form.Item >
-                                <span className="deliveryInfoForm-from-text">From</span>
+                                <span className="min-button" className="deliveryInfoForm-from-text">From</span>
                             </Form.Item>
                         </Col>
-                        <Col>
-                        < img className="min-icon" src={MinIcon} />
+                        <Col >
+                        
+                        < img className="min-icon" src={MinIcon} onClick={()=> {this.props.isShowFormHandler()}}/>
+                        
                         </Col>
                     </Row>
                     <Row> 
