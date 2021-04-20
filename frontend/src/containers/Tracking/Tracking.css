@@ -1,4 +1,4 @@
-@import "~antd";
+/* @import "~antd"; */
 
 main.ant-layout-content {
     display: table;
@@ -15,4 +15,20 @@ main.ant-layout-content {
     display: table-cell;
     vertical-align: middle;
     font-size: 600px;
+}
+.Tracking-body{
+    position: relative;
+    top: 120px;
+    left: 20px;
+}
+
+.Tracking-status{
+    position: absolute;
+    top:120px;
+    left:210px;
+}
+.Tracking-map{
+    position: absolute;
+    top:120px;
+    left:210px;
 }

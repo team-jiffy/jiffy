@@ -17,7 +17,7 @@ const SmallMapComponent =   compose(
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAb2fv1tmCYdP1vvN9s-g58QOCKog8R0LY&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `93vh` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
+    mapElement: <div style={{ height: `500px` }} />,
   }),
   withScriptjs,
   withGoogleMap,
@@ -129,11 +129,11 @@ const SmallMapComponent =   compose(
   <GoogleMap
     style={{height: "100px"}}
     defaultZoom={10}
-    defaultCenter={{ lat: 37.7, lng: -122 }}
+    defaultCenter={{ lat: 37.7, lng: -122.2 }}
     center={
        console.log("center1 ", props.centerCoordinate),
       // (!props.centerCoordinate.lat && !props.centerCoordinate.lng) ? 
-      { lat: 37.7, lng: -122.2 } 
+      { lat: 37.6, lng: -122.1 } 
       //{ lat: props.centerCoordinate.lat, lng: props.centerCoordinate.lng }}
     }> 
   {/* {console.log("des =", dest)} */}

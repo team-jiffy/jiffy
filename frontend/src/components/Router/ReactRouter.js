@@ -11,7 +11,7 @@ import Recommend from '../../containers/Recommend/Recommend';
 //import SignPage from '../../containers/SignPage/SignPage';
 import Tracking from '../../containers/Tracking/Tracking';
 
-//import AccountEditAddrss from '../../containers/Account/AccountEditAddress';
+import AccountAddress from '../../containers/Account/AccountAddress';
 
 class ReactRouter extends Component {
     render() {
@@ -23,7 +23,7 @@ class ReactRouter extends Component {
                         <Route path="/" component={LandingPage} exact />  
 
                         <Route path="/AccountOrders" component={AccountOrders} exact />
-                        {/* <Route path="/AccountEditAddrss" component={AccountEditAddrss} exact /> */}
+                        <Route path="/AccountAddress" component={AccountAddress} exact />
 
                         <Route path="/DeliveryInfo" component={DeliveryInfo} exact />
                         <Route path="/OrderConfirm" component={OrderConfirm} exact />

@@ -1,9 +1,11 @@
-@import '~antd/dist/antd.css';
+/* @import '~antd/dist/antd.css'; */
 
-.container {
+.status-container {
     /* please use a more specified div because editing .container directly will change everyone's container */
     /* padding-top: 80px; */
     padding-bottom: 30px;
+    position: relative;
+    top:130px;
 }
 
 .line3 {

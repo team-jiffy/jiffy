@@ -7,7 +7,7 @@ import { Timeline, Row, Col, Button } from 'antd';
 class OrderTrackingProcess extends Component {
     render() {
         return (
-            <div className='container'>
+            <div className="status-container">
                 <Row className='orderStatus'>
                     <Col span={8} offset={4}>
                         <a style={{fontWeight: 'bold'}}>Order Status</a>
