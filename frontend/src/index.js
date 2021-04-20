@@ -17,8 +17,7 @@ import SignIn from './components/SignIn/SignIn';
 
 import LandingPage from './containers/LandingPage/LandingPage';
 
-import Account from './containers/Account/Account';
-import AccountEditAddress from './containers/Account/AccountEditAddress';
+
 
 /* test Header Popup feature @auther Lin */
 import DefaultHeader from './components/Topnav/DefaultHeader';

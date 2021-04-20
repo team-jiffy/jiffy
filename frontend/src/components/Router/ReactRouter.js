@@ -3,15 +3,15 @@ import { Route, Switch } from 'react-router-dom';
 import LandingPage from '../../containers/LandingPage/LandingPage';
 
 // import AddressBox from '../../containers/LandingPage/AddressBox';
-import Account from '../../containers/Account/Account';
+import AccountOrders from '../../containers/Account/AccountOrders';
 import DeliveryInfo from '../../containers/DeliveryInfo/DeliveryInfo';
 import OrderConfirm from '../../containers/OrderConfirm/OrderConfirm';
 import PlaceOrder from '../../containers/PlaceOrder/PlaceOrder';
 import Recommend from '../../containers/Recommend/Recommend';
-import SignPage from '../../containers/SignPage/SignPage';
+//import SignPage from '../../containers/SignPage/SignPage';
 import Tracking from '../../containers/Tracking/Tracking';
 
-import AccountEditAddrss from '../../containers/Account/AccountEditAddress';
+//import AccountEditAddrss from '../../containers/Account/AccountEditAddress';
 
 class ReactRouter extends Component {
     render() {
@@ -22,8 +22,8 @@ class ReactRouter extends Component {
                         {/* homepage */}
                         <Route path="/" component={LandingPage} exact />  
 
-                        <Route path="/Account" component={Account} exact />
-                        <Route path="/AccountEditAddrss" component={AccountEditAddrss} exact />
+                        <Route path="/AccountOrders" component={AccountOrders} exact />
+                        {/* <Route path="/AccountEditAddrss" component={AccountEditAddrss} exact /> */}
 
                         <Route path="/DeliveryInfo" component={DeliveryInfo} exact />
                         <Route path="/OrderConfirm" component={OrderConfirm} exact />

@@ -18,22 +18,22 @@ class OrderInfoItem extends Component {
           <div className="OrderPlaced">
             Order Placed
             <br/>
-            {OrderInfo.OrderDate}
+            {OrderInfo.orderDate}
           </div>
           <div className="TrackNumber">
             TrackNumber
             <br/>
-            {OrderInfo.TrackNumber}
+            {OrderInfo.trackNumber}
           </div>
           <div className="From">
             From
             <br/>
-            {OrderInfo.SenderName}
+            {OrderInfo.senderName}
           </div>
           <div className="To">
             To
             <br/>
-            {OrderInfo.RecipientName}
+            {OrderInfo.recipientName}
           </div>
         </div>
         <hr className="line4"/>
@@ -46,8 +46,8 @@ class OrderInfoItem extends Component {
               <h2 className="processing">Order Processing</h2> 
               : 
               <div className="notProcessing">
-                <h2>{OrderInfo.Status}</h2>
-                <h2>{OrderInfo.ETA}</h2>
+                <h2 className="notProcessing-text">{OrderInfo.status}</h2>
+                <h2 className="notProcessing-text">{OrderInfo.eta}</h2>
               </div>
 
           }</div>

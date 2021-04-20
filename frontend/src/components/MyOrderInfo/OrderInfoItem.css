@@ -1,5 +1,5 @@
 .OrderInfoItem {
-  width: 662px;
+  width: 1062px;
   height: 140px;
   margin-bottom: 32px;
   margin-left: 0px;
@@ -9,12 +9,14 @@
 
 .info {
   display: flex;
+  width: 800px;
   height: 53px;
   padding-top: 16px;
 }
 
 .line4 {
   position: static;
+  width: 800px;
   top: 53px;
 }
 .status {
@@ -22,24 +24,32 @@
 }
 
 .OrderPlaced {
+  position:absolute;
+  left: 60px;
   width: 123px;
   height: 24px;
   margin-left: 22px;
 }
 
 .TrackNumber {
+  position:relative;
+  left:200px;
   width: 123px;
   height: 24px;
   margin-left: 11px;
 }
 
 .From {
+  position:relative;
+  left:220px;
   width: 123px;
   height: 24px;
   margin-left: 54px;
 }
 
 .To {
+  position:relative;
+  left:260px;
   width: 123px;
   height: 24px;
   margin-left: 59px;
@@ -75,46 +85,62 @@ img.drone {
   width: 70px;
   position :relative;
 
-  left:auto;
+  left:20px;
+  top: -20px;
   right:auto;
 }
 img.robot {
   position :relative;
   width: 40px;
-  left:auto;
+  left:20px;
+  top: -20px;
   right:auto;
 }
 
 .statusDisplay{
+  position: relative;
   display:flex;
+  left:70px;
   width:200px;
   align-items:center;
 }
 
-h2{font-weight: bold;}
+h2{font-weight: bold;
+}
 
 .processing {
   position:relative;
+  top:-10px;
+  font-size: x-large;
   left :10px;
 }
 
 .notProcessing{
   position:relative;
-  left : 10px;
+  top:-10px;
+  font-size: x-large;
+  left : 20px;
+  line-height: 0.4;
+}
+.notProcessing-text{
+  position:relative;
+  top:0;
+  font-size: x-large;
+  left : -10px;
   line-height: 0.4;
 }
 
 #trackOrder{
   position:relative;
-  top:19px;
-  left:10px;
+  top:10px;
+  left:80px;
   font-weight: bold;
 }
 
 #orderDetail{
   position:relative;
-  top:19px;
-  left:90px;
+  top:10px;
+  left:190px;
   font-weight: bold;
 }
 
