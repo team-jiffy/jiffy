@@ -3,8 +3,6 @@ import { Form, Input, Button } from 'antd';
 import fb_icon from '../../assets/images/fb_icon.svg';
 import google_icon from '../../assets/images/google_icon.svg';
 import twitter_icon from '../../assets/images/twitter_icon.svg';
-import close_icon1 from '../../assets/images/close_icon1.svg';
-import close_icon2 from '../../assets/images/close_icon2.svg';
 import './SignIn.css';
 
 import Axios from 'axios';

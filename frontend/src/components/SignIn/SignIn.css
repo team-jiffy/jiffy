@@ -1,12 +1,4 @@
-/* .signIn {
-    position: absolute;
-    height: 453px;
-    width: 546px;
-    left: 503px;
-    top: 100px;
-    border: 1px solid #d9d9d9;
-    padding-top: 80px;
-} */
+@import '~antd/dist/antd.css';
 
 .ant-input {
     width: 330px;
@@ -33,6 +25,7 @@
     text-align: center;
     font-weight: bold;
     border: 1px solid #d9d9d9;
+    
 }
 
 .sigIn-icon .signIn-icon-text, .signIn-icon-ask {
@@ -54,13 +47,6 @@
 .fb-logo, .tw-logo {
     padding-left: 5px;
     padding-right: 5px;
-}
-
-.close-logo1, .close-logo2 {
-    top: 5px;
-    right: 5px;
-    position: absolute;
-    border-radius: 10px;
 }
 
 .ant-form-item-control {
