@@ -9,108 +9,119 @@ class RecommendForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            Request: {
+                deliver: {
+                    Street1: localStorage.getItem('DeliveryAddressStreet1'),
+                    Street2: null,
+                    City: localStorage.getItem('DeliveryAddressCity'),
+                    State: localStorage.getItem('DeliveryAddressState'),
+                    Zip: localStorage.getItem('DeliveryAddressZip'),
+                    AptNo: null
+                },
+                pickup: {
+                    Street1: localStorage.getItem('PickupAddressStreet1'),
+                    Street2: null,
+                    City: localStorage.getItem('PickupAddressCity'),
+                    State: localStorage.getItem('PickupAddressState'),
+                    Zip: localStorage.getItem('PickupAddressZip'),
+                    AptNo: null
+                },
+                weight: null
+            },
             Results: null,
             ETAList: null,
-            isLoading: false
+            isLoading: true,
+            ChosenReco: {
+                ADVType: null,
+                Price: null,
+                ETA: null
+            }
         };
+        console.log(this.state);
     }
 
     componentDidMount() {
-        // get recommendData details from backend API
-        // recommendData is a list of Reco objects, each data includes:
-        // 1. string ADVType(privateDrone, privateRobot, sharedRobot)
-        // 2. int price
-        // 3. string ETA
-
-        // get pickup address, delivery address and package weight from ???
-
-        this.setState({
-            isLoading: true
-        });
-
-        const pickupAddress = window.localStorage.getItem('pickupAddress');
-        const deliveryAddress = window.localStorage.getItem('deliveryAddress');
-        const packWeight = window.localStorage.getItem('packWeight');
-
         axios({
-            method:'post',
-            url : "localhost:8080/order/getReco",
-            data : {
-                DeliverAddress: pickupAddress,
-                PickupAddress:  deliveryAddress,
-                Weight: packWeight
+            method: 'post',
+            url: "http://localhost:8081/order/getReco",
+            data: {
+                Deliver: this.state.Request.deliver,
+                Pickup: this.state.Request.pickup,
+                Weight: this.state.Request.weight
             }
         })
             .then(response => {
                 console.log('reco ->', response);
-                const responseResults = response.data.Results;
+                console.log('reco data ->', response.data);
+                const responseResults = response.data.recos;
+                console.log(responseResults);
                 this.setState({
                     Results: responseResults,
-                    ETAList: this.getETAList(responseResults.map(item => item.ETA)),
+                    ETAList: this.getETAList(responseResults),
                     isLoading: false
                 });
+                console.log(this.state);
             })
             .catch(err => {
                 console.log('err in fetch recommendation list', err);
             });
     }
 
-    getETAList = ETA => {
-        // case3: shared robot
-        if (ETA === null) return ["same day", "next day"];
+    getETAList = sourceList => {
+        let ETAList = [];
 
-        // case1 & 2: private drone && private robot
-        // assume stop working hours: 08:00 ~ 20:00
-        let ETAList = [ETA];
+        for (let i = 0; i < sourceList.length; i++) {
+            console.log("sourceList", sourceList[i].eta)
+            let ETA = sourceList[i].eta;
+            console.log("ETA", ETA);
+            if (ETA === null) {
+                return ["same day", "next day"];
+            }
+            // assume stop working hours: 08:00 ~ 20:00
+            if (ETA === "20:00") {
+                return ["20:00"];
+            }
+            let hours = parseInt(ETA.substring(0, 2));
+            let mins = parseInt(ETA.substring(3, 5));
+            let currMins = hours * 60 + mins;
 
-        if (ETA === "20:00") return ETAList;
-
-        let hours = parseInt(ETA.substring(0, 2));
-        let mins = parseInt(ETA.substring(3, 5));
-        let currMins = hours * 60 + mins;
-
-        for (let i = 0; i < 2; i++) {
-            let nextMins = currMins + 30;
-            if (nextMins < 480 || nextMins > 1200) return ETAList;
-            hours = nextMins / 60;
-            mins = nextMins % 60;
-            const nextETA = hours + ":" + mins;
-            ETAList = [...ETAList, nextETA];
+            for (let i = 0; i < 2; i++) {
+                let nextMins = currMins + 30;
+                if (nextMins < 480 || nextMins > 1200) return ETAList;
+                hours = nextMins / 60;
+                mins = nextMins % 60;
+                const nextETA = hours + ":" + mins;
+                ETAList = [...ETAList, nextETA];
+            }
         }
-
         return ETAList;
     }
 
-    onSave = item => {
-        console.log(item);
-        window.localStorage.setItem("ADVType", "item.ADVType");
-        window.localStorage.setItem("price", "item.Price");
-        window.localStorage.setItem("ETA", "item.ETA");
-        this.props.history.push('/SignIn');
+    handleSubmit = e => {
+        e.preventDefault();
+        this.setChosenReco();
+        this.props.form.validateFields((err, values) => {
+            if (!err) {
+                console.log('Received values of form: ', values);
+            }
+            localStorage.setItem("ADVType", this.state.ChosenReco.ADVType);
+            localStorage.setItem("Price", this.state.ChosenReco.Price);
+            localStorage.setItem("ETA", this.state.ChosenReco.ETA);
+            this.props.history.push('/SignIn');
+        })
+    }
+
+    setChosenReco = (item) => {
+        this.setState({
+            ChosenReco: {
+                ADVType: item.ADVType,
+                Price: item.Price,
+                ETA: item.ETA
+            }
+        });
     }
 
     render() {
-        const {isLoading} = this.state.isLoading;
-
-        const {recoList} = this.state.Results;
-        const {ETAList} = this.state.ETAList;
-
-        // // hard code test
-        // const recommendData = [
-        //     {
-        //         ADVType: 'private drone',
-        //         price: '$ 15.03',
-        //         ETA: '14:00'
-        //     }, {
-        //         ADVType: 'private robot',
-        //         price: '$ 12.15',
-        //         ETA: '14:30'
-        //     }, {
-        //         ADVType: 'shared robot',
-        //         price: '$ 10.15',
-        //         ETA: '14:50'
-        //     }
-        // ];
 
         const formItemLayout = {
             labelCol: {span: 12},
@@ -129,8 +140,7 @@ class RecommendForm extends Component {
 
         return (
             <div className="recommendContainer">
-            
-                {isLoading ?
+                {this.state.isLoading ?
                     <div className="spin-box">
                         <Spin tip="Loading..." size="large"/>
                     </div>
@@ -141,13 +151,14 @@ class RecommendForm extends Component {
                         </div>
                         <div className="recommend-item">
                             <List
-                                grid={{column: recoList.length}}
+                                grid={{column: this.state.Results.length}}
                                 size="default"
-                                dataSource={recoList}
+                                dataSource={this.state.Results}
                                 renderItem={item => (
                                     <List.Item>
 
-                                        <Form className="recommend-form">
+                                        <Form className="recommend-form"
+                                              onSubmit={this.handleSubmit}>
 
                                             <Form.Item {...listItemLayout}>
                                                 <img className="profile" alt="example"
@@ -172,22 +183,21 @@ class RecommendForm extends Component {
                                                         onChange={handleChange}
                                                         showArrow={true}>
                                                     <Option
-                                                        value="default">{ETAList[0]}</Option>
-                                                    {ETAList.length > 1 ?
+                                                        value="default">{this.state.ETAList[0]}</Option>
+                                                    {this.state.ETAList.length > 1 ?
                                                         <Option
-                                                            value="opt1">{ETAList[1]}</Option> : console.log('no' +
+                                                            value="opt1">{this.state.ETAList[1]}</Option> : console.log('no' +
                                                             ' options anymore')}
-                                                    {ETAList.length > 2 ?
+                                                    {this.state.ETAList.length > 2 ?
                                                         <Option
-                                                            value="opt2">{ETAList[2]}</Option> : console.log('no' +
+                                                            value="opt2">{this.state.ETAList[2]}</Option> : console.log('no' +
                                                             ' options anymore')}
                                                 </Select>
                                             </Form.Item>
 
                                             <Form.Item  {...listItemLayout}>
                                                 <Button className="request-delivery-btn"
-                                                        htmlType="submit"
-                                                        onClick={this.onSave(item)}>
+                                                        htmlType="submit">
                                                     Request Delivery
                                                 </Button>
                                             </Form.Item>
@@ -198,19 +208,12 @@ class RecommendForm extends Component {
                         </div>
                     </div>
                 }
+
             </div>
-            
+
         )
     }
 
-    onSubmit = e => {
-        e.preventDefault();
-        this.props.form.validateFields((err, values) => {
-            if (!err) {
-                console.log('Received values of form: ', values);
-            }
-        })
-    }
 }
 
 const RecommendForm1 = Form.create({name: 'recommend-form'})(RecommendForm);
