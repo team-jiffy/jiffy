@@ -206,11 +206,7 @@ class RecommendForm extends Component {
                                             <Form.Item {...listItemLayout}>
                                                 <span className="ADVType">{item.advtype}</span>
                                             </Form.Item>
-
-                                            <Form.Item {...formItemLayout} label="Total delivery fee:">
-                                                {item.price}
-                                            </Form.Item>
-
+                                            <Form.Item {...formItemLayout} label="Total delivery fee:"><div id="delivery-fee" style={{justifySelf:"baseline", marginTop: "17px"}}>{item.price}</div></Form.Item>
                                             <Form.Item {...formItemLayout} label="Estimated delivery time:"
                                                        rules={[{
                                                            required: true,
