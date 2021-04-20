@@ -135,7 +135,7 @@ class RecommendForm extends Component {
             localStorage.setItem("ADVType", this.state.ChosenReco.ADVType);
             localStorage.setItem("Price", this.state.ChosenReco.Price);
             localStorage.setItem("ETA", this.state.ChosenReco.ETA);
-            // this.props.history.push('/SignIn');
+            this.props.history.push('/PlaceOrder');
         })
     }
 
