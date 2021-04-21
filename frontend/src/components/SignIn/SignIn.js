@@ -74,13 +74,15 @@ handleSubmit = event => {
                         console.log('Login reponse => ', response);
                         console.log('Login.data => ', response.data);
 
-                        if (response.data.status === "200" || response.data.message === "success") {
+                        if (response.data.status === "OK" || response.data.message === "Success!") {
                             // TODO: Switch to UserHeader Component
-                            history.replaceState(response.data, "", "/Recommend").go(0);
+                            history.replaceState(response.data, "", "/Recommend")
+                            history.go(0);
 
                         } else {
                             alert("Email and Password not match!");
-                            history.replaceState(response.data, "", "/").go(0);
+                            history.replaceState(response.data, "", "/")
+                            history.go(0);
 
                         }
                     }
