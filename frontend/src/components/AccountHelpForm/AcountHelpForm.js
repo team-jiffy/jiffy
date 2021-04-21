@@ -49,7 +49,7 @@ class AcountHelpForm extends Component {
                         </Form.Item>
 
                     </Row>
-                <Col span={20} >
+                <Row span={20} >
                     <Form.Item>
                         <label style={{float: "left" }}>Tell me how can we help?</label>
                         {getFieldDecorator('Message', {
@@ -60,7 +60,7 @@ class AcountHelpForm extends Component {
                             ],
                         })(<TextArea name="message" onChange={this.onChange}  autoSize={{ minRows: 16, maxRows: 100 }} />)}
                     </Form.Item>
-                </Col>
+                </Row>
 
 
 
