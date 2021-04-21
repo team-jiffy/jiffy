@@ -128,7 +128,7 @@ handleSubmit = event => {
                         )}
                     </Form.Item>
                     <Form.Item> 
-                        <Button htmlType="submit" className="singIn-button" >Sign in</Button>
+                        <Button htmlType="submit" className="singIn-button" style={{alignItems: "center"}}>Sign in</Button>
                     </Form.Item>     
                     <Form.Item className="sigIn-icon"> 
                         <span className="signUp-icon-text">Or you can sign in with</span>

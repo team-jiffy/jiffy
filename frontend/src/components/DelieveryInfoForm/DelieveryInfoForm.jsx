@@ -146,7 +146,7 @@ class DeliveryInfoForm extends React.Component {
             <Col>
               <Form.Item>
                 <span
-                  className="min-button"
+                  // className="min-button"
                   className="deliveryInfoForm-from-text"
                 >
                   From
@@ -199,7 +199,7 @@ class DeliveryInfoForm extends React.Component {
                   <Input
                     className="deliveryInfo-senderEmail"
                     placeholder="Enter sender's email"
-                    style={{marginLeft: "-300px", marginTop: "-6px"}}
+                    style={{marginTop: "-6px"}}
                   />
                 )}
               </Form.Item>
@@ -212,7 +212,7 @@ class DeliveryInfoForm extends React.Component {
                   <Input
                     className="deliveryInfo-senderPhone"
                     placeholder="Enter sender's phone"
-                    style={{marginLeft: "-300px", marginTop: "6px"}}
+                    style={{marginTop: "6px"}}
                   />
                 )}
               </Form.Item>
@@ -266,7 +266,6 @@ class DeliveryInfoForm extends React.Component {
                   <Input
                     className="deliveryInfo-recipientEmail"
                     placeholder="Enter recipient's email"
-                    style={{marginLeft: "-300px"}}
                   />
                 )}
               </Form.Item>
@@ -279,7 +278,7 @@ class DeliveryInfoForm extends React.Component {
                   <Input
                     className="deliveryInfo-recipientPhone"
                     placeholder="Enter recipient's phone"
-                    style={{marginLeft: "-300px",marginTop: "6px"}}
+                    style={{marginTop: "6px"}}
                   />
                 )}
               </Form.Item>
@@ -304,7 +303,6 @@ class DeliveryInfoForm extends React.Component {
                     className="deliveryInfoForm-select-size"
                     // showSearch
                     placeholder="Choose package size"
-                    style={{marginLeft: "-300px"}}
                     //   optionFilterProp="children"
                     //   onChange={onChange}
                     //   onFocus={onFocus}
@@ -338,7 +336,7 @@ class DeliveryInfoForm extends React.Component {
                     //  showSearch
                     placeholder="Choose package weight"
                     optionFilterProp="children"
-                    style={{marginLeft: "-300px", marginTop: "6px"}}
+                    style={{marginTop: "6px"}}
                     // onChange={onChange}
                     // onFocus={onFocus}
                     // onBlur={onBlur}
