@@ -133,7 +133,7 @@ const SmallMapComponent =   compose(
     center={
        console.log("center1 ", props.centerCoordinate),
       // (!props.centerCoordinate.lat && !props.centerCoordinate.lng) ? 
-      { lat: 37.6, lng: -122.1 } 
+      { lat: 37.8, lng: -122.4 } 
       //{ lat: props.centerCoordinate.lat, lng: props.centerCoordinate.lng }}
     }> 
   {/* {console.log("des =", dest)} */}

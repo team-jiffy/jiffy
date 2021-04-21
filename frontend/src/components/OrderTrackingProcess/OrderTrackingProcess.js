@@ -5,7 +5,47 @@ import { Timeline, Row, Col, Button } from 'antd';
 
 
 class OrderTrackingProcess extends Component {
+    
+    // addressHandler = () => {
+    //     const addr = 
+    //     return 
+    // }
+    orderStatusHandler = (status) => {
+        if (status == "on delivery") {
+            return (
+                <Timeline>
+                            
+                <Timeline.Item dot={<div className='quan'/>}>Order placed</Timeline.Item>
+                <Timeline.Item dot={<div className='quan'/>}>Package picked up</Timeline.Item>
+                <Timeline.Item dot={<div className='quan-active'/>}><a style={{fontWeight: 'bold'}}>On delivery</a></Timeline.Item>
+                <Timeline.Item dot={<div className='quan'/>}>
+                    <p>Estimated to deliver at</p>
+                    <p>2:00 p.m, Wen, Apr 22, 2021</p>
+                </Timeline.Item>
+            </Timeline>
+            );
+        } else if (status == "order placed") {
+            return (
+                <Timeline>
+                            
+                <Timeline.Item dot={<div className='quan-active'/>}><a style={{fontWeight: 'bold'}}>Order placed</a></Timeline.Item>
+                <Timeline.Item dot={<div className='quan'/>}>Package picked up</Timeline.Item>
+                <Timeline.Item dot={<div className='quan'/>}>On delivery</Timeline.Item>
+                <Timeline.Item dot={<div className='quan'/>}>
+                    <p>Estimated to deliver at</p>
+                    <p>N/A</p>
+                </Timeline.Item>
+            </Timeline>
+            );
+        }
+    }
+
     render() {
+        // const today = new Date();
+        // console.log(Date().toLocaleString())
+        // console.log("month: ", today.getSeconds())
+        console.log(this.props.Order)
+        const address = this.props.Order.RecipientContactID.Address.Street1 + ", " + this.props.Order.RecipientContactID.Address.City + ", " +  this.props.Order.RecipientContactID.Address.State + ", " + this.props.Order.RecipientContactID.Address.Zip;
         return (
             <div className="status-container">
                 <Row className='orderStatus'>
@@ -14,15 +54,8 @@ class OrderTrackingProcess extends Component {
                     </Col>
 
                     <Col span={12}>
-                        <Timeline>
-                            <Timeline.Item dot={<div className='quan'/>}>Order placed</Timeline.Item>
-                            <Timeline.Item dot={<div className='quan'/>}>Package picked up</Timeline.Item>
-                            <Timeline.Item dot={<div className='quan-active'/>}><a style={{fontWeight: 'bold'}}>On delivery</a></Timeline.Item>
-                            <Timeline.Item dot={<div className='quan'/>}>
-                                <p>Estimated to deliver at</p>
-                                <p>2:00 p.m, Friday, March 26, 2021</p>
-                            </Timeline.Item>
-                        </Timeline>
+                     {/* {this.orderStatusHandler(this.props.Order.OrderStatus)} */}
+                     {this.orderStatusHandler("order placed")}
                     </Col>
                 </Row>
 
@@ -31,7 +64,7 @@ class OrderTrackingProcess extends Component {
                         <a style={{fontWeight: 'bold'}}>Tracking Number</a>
                     </Col>
                     <Col>
-                        Wasdflasd35dfas
+                        {this.props.Order.TrackingNumber}
                     </Col>
                 </Row>
 
@@ -40,10 +73,10 @@ class OrderTrackingProcess extends Component {
                         <a style={{fontWeight: 'bold'}}>To </a>
                     </Col>
 
-                    <Col>
-                        <p>machs@zippy.com</p>
-                        <p>987-654-3210</p>
-                        <p>896 Drokro market, Los Angeles, CA, 96053</p>
+                    <Col className="address-display">
+                        <p>{this.props.Order.RecipientContactID.Email}</p>
+                        <p>{this.props.Order.RecipientContactID.Phone}</p>
+                        <p>{address}</p>
                     </Col>
                 </Row>
 
@@ -52,7 +85,7 @@ class OrderTrackingProcess extends Component {
                         <a style={{fontWeight: 'bold'}}>Your deliver pal</a>
                     </Col>
                     <Col>
-                        Drodro(drone)
+                       {this.props.Order.ADVType}
                     </Col>
                 </Row>
 

@@ -53,6 +53,7 @@ class DeliveryInfoForm extends React.Component {
     settingPickupAddress = (address) => {
                     // when the address.length < 5, it will appear an err
         this.setState({
+            
             Pickup: {
                 Address: {
                     Street1: address[0].long_name + " " + address[1].long_name,
@@ -104,13 +105,19 @@ class DeliveryInfoForm extends React.Component {
           localStorage.setItem("PickupPhone", values.senderPhone)
 
           localStorage.setItem("Weight", values.packageWeight)
+          localStorage.setItem("Size", values.packageSize)
+
+          localStorage.setItem()
+
 
           console.log("Storage")
           console.log(localStorage.getItem("DeliveryAddressStreet1"))
           console.log(localStorage.getItem("PickupAddressStreet1"))
           console.log(localStorage.getItem("PickupEmail"))
           console.log(localStorage.getItem("Weight"))
-        
+          
+
+
           this.props.history.push('/Recommend');
               
         });

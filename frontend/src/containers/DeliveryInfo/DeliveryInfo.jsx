@@ -59,7 +59,7 @@ class DeliveryInfo extends React.Component {
               lat: null
             }
           },
-          isShowForm: false
+          isShowForm: true
     };
     
 }
@@ -90,6 +90,8 @@ settingPickupCoordinate = (value) => {
     }
   }
   });
+  localStorage.setItem("PickupCoordinate", this.state.pickupCoordinate)
+ 
   console.log("state pickup = ", this.state.pickupCoordinate);
 }
 settingDeliveryCoordinate = (value, address) => {
@@ -110,6 +112,8 @@ settingDeliveryCoordinate = (value, address) => {
     }
 
   });
+  localStorage.setItem("DeliveryCoordinate", this.state.deliveryCoordinate)
+  
   console.log("state delivery = ", this.state.deliveryCoordinate);
 }
   componentDidUpdate(prevProps, prevState, snapshot) {

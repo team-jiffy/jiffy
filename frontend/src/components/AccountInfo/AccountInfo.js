@@ -32,7 +32,7 @@ class AccountInfo extends React.Component{
   }
   componentDidMount() {
     const UID = {UID: "1"};
-    axios.get('http://localhost:8081//user/profile', {params:{
+    axios.get('http://localhost:8081/user/profile', {params:{
       UID: UID.UID
     }}).then(response => {
       console.log("User get success: ", response);
@@ -47,7 +47,9 @@ class AccountInfo extends React.Component{
   }
 
   onChangePassword = e=>{
-    this.setState(this.newPara)
+    this.setState({
+      Para:this.newPara
+    })
   }
 
   onSave = e=>{
@@ -63,7 +65,7 @@ class AccountInfo extends React.Component{
       }
     })
     .then( e=>{
-      this.setState(this.oldPara)
+      this.setState({Para: this.oldPara})
       } 
     )
     .catch(e=>{
@@ -83,7 +85,7 @@ class AccountInfo extends React.Component{
     const nullTage = "null";
     console.log("render User: ",this.state.User)
     return (
-      <div className="account" id="AccountInfo" style={{height:this.state.height1}}>
+      <div className="account" id="AccountInfo" style={{height:this.state.Para.height1}}>
         <Avatar size={98} icon="user" className="avatar" src={this.state.User?this.state.User.profilePictureURL:this.hammerAddress}/>
         <hr className="line"/>
         <br/>

@@ -6,6 +6,7 @@ import miniRobot from './../../assets/images/miniRobot.svg';
 class OrderInfoItem extends Component {
   constructor() {
     super();
+    
   }
 
   render() {
