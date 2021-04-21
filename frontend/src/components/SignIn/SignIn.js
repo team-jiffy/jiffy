@@ -44,31 +44,31 @@ function ValidatedLogin(props) {
         setSubmitting(false);
     }, 500);
 }
-*/ 
+*/
 
 
 
 class SignIn extends React.Component {
 
-    
-constructor(props) {
-    super(props);
-    this.state = {
-        Email: "",
-        Password: "",
-        status: ""
-    }
-}
 
-handleSubmit = event => {
-    
-    event.preventDefault();
-    this.props.form.validateFields( (err, values) => {   
-            if (!err) {   
-              console.log("values => ", values);
-              axios({
-                    method: 'post',   
-                    url: 'http://localhost:8081/signin', 
+    constructor(props) {
+        super(props);
+        this.state = {
+            Email: "",
+            Password: "",
+            status: ""
+        }
+    }
+
+    handleSubmit = event => {
+
+        event.preventDefault();
+        this.props.form.validateFields((err, values) => {
+            if (!err) {
+                console.log("values => ", values);
+                axios({
+                    method: 'post',
+                    url: 'http://localhost:8081/signin',
                     data: values,
                 }).then(
                     response => {
@@ -77,13 +77,13 @@ handleSubmit = event => {
 
                         if (response.data.status === "OK" || response.data.message === "Success!") {
                             // TODO: Switch to UserHeader Component
-                         // localStorage.setItem("UID", response.data.user.uid);
-                         console.log("props: ",this.props)
-                          this.props.setModalVisible()
-                         
+                            // localStorage.setItem("UID", response.data.user.uid);
+                            console.log("props: ", this.props)
+                            this.props.setModalVisible()
+
                         } else {
                             alert("Email and Password not match!");
-                            
+
 
                         }
                     }
@@ -93,8 +93,8 @@ handleSubmit = event => {
                     }
                 )
             }
-    })      
-}
+        })
+    }
 
 
 
@@ -102,48 +102,47 @@ handleSubmit = event => {
     render() {
         const { getFieldDecorator } = this.props.form;
 
-        return (  
-                <Form className="signIn" onSubmit={this.handleSubmit}>                    
-                    <Form.Item>
-                        <span className="signIn-title">Please sign in to your account</span>
-                    </Form.Item>
-                    <Form.Item> 
-                        {getFieldDecorator('Email', {
-                            rules: [{ required: true, message: 'Please input your email!' }],
-                        })(
-                            <Input
-                                style={{background:'#F5F5F5'}}
-                                placeholder="Enter email"
-                            />,
-                        )}
-                    </Form.Item>                           
-                    <Form.Item> 
-                        {getFieldDecorator('Password', {
-                            rules: [{ required: true, message: 'Please input your password!' }],
-                        })(
-                            <Input
-                                style={{background:'#F5F5F5'}}
-                                placeholder="Enter password"
-                            />,
-                        )}
-                    </Form.Item>
-                    <Form.Item> 
-                        <Button htmlType="submit" className="singIn-button" style={{alignItems: "center"}}>Sign in</Button>
-                    </Form.Item>     
-                    <Form.Item className="sigIn-icon"> 
-                        <span className="signUp-icon-text">Or you can sign in with</span>
-                        <div>
-                            <img src={ google_icon } className="gg-logo" alt="gg" />
-                            <img src={ fb_icon } className="fb-logo" alt="fb" /> 
-                            <img src={ twitter_icon } className="tw-logo" alt="tw" />
-                        </div>
-                        <span className="signUp-icon-ask">Can’t log in? <a href="">Sign up </a>for an account</span>
-                    </Form.Item>
-                </Form>
+        return (
+            <Form className="signIn" onSubmit={this.handleSubmit}>
+                <Form.Item>
+                    <span className="signIn-title">Please sign in to your account</span>
+                </Form.Item>
+                <Form.Item>
+                    {getFieldDecorator('Email', {
+                        rules: [{ required: true, message: 'Please input your email!' }],
+                    })(
+                        <Input
+                            style={{ background: '#F5F5F5' }}
+                            placeholder="Enter email"
+                        />,
+                    )}
+                </Form.Item>
+                <Form.Item>
+                    {getFieldDecorator('Password', {
+                        rules: [{ required: true, message: 'Please input your password!' }],
+                    })(
+                        <Input
+                            style={{ background: '#F5F5F5' }}
+                            placeholder="Enter password"
+                        />,
+                    )}
+                </Form.Item>
+        
+                <div style={{textAlign: "center"}}>
+                    <Button htmlType="submit" className="singIn-button" style={{marginTop: "-10px"}}>Sign in</Button>
+                    <div><b>Or you can sign in with</b></div>
+                    <div>
+                        <img src={google_icon} className="gg-logo" alt="gg" />
+                        <img src={fb_icon} className="fb-logo" alt="fb" />
+                        <img src={twitter_icon} className="tw-logo" alt="tw" />
+                    </div>
+                    <span className="signUp-icon-ask">Can’t log in? <a href="">Sign up </a>for an account</span>
+                </div>
+            </Form>
         )
     }
 }
 
-const SignIn1 = Form.create({name:'sign-from'})(SignIn);
+const SignIn1 = Form.create({ name: 'sign-from' })(SignIn);
 
 export default SignIn1;

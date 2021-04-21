@@ -37,18 +37,33 @@
     letter-spacing: -0.015em;
     text-align: left;
     color: black;
+    width: 250px;
+    /* margin-right: 250px; */
+    /* // margin-right: 200px; */
+}
 
-    margin-right: 250px;
+
+#right-col {
+    margin-left: 250px;
 }
 
 .btns-right {
     text-align: right;
     margin-left: 100px;
-    
+    margin-right: 200px;
 
 }
 
 .successInfo-whole .container{
     margin-top: 127px;
     margin-left: 70px;
+}
+
+.successinfo .row {
+    margin-top: 30px;
+
+}
+
+.confirminfo .row{
+    margin-top: 30px;
 }

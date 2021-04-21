@@ -14,8 +14,6 @@ import Tracking from '../../containers/Tracking/Tracking';
 import AccountAddress from '../../containers/Account/AccountAddress';
 import AccountPayment from '../../containers/Account/AccountPayment';
 
-// import ConfirmInfo from '../../components/ConfirmInfo/ConfirmInfo';
-
 class ReactRouter extends Component {
     render() {
         return (
@@ -39,7 +37,6 @@ class ReactRouter extends Component {
                         <Route path="/Tracking" component={Tracking} exact />
                         <Route path="/LandingPage" component={LandingPage} exact />
 
-                        {/* <Route path="/ConfirmInfo" component={ConfirmInfo} exact /> */}
                     </Switch>
              
             </div>

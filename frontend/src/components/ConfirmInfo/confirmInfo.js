@@ -137,55 +137,51 @@ class ConfirmInfo extends Component {
                 </Button>
                 <h2 style={{marginTop: "70px", marginLeft: "50px"}}>Please confirm your delivery information</h2>
 
-                <div className="successInfo-whole">
-                    <div class="container">
+                <div className="confirminfo">
+                    <div class="container" style={{marginLeft: "74px"}}>
                         <div class="row">
                             <div className="left-category">From</div>
                             <div>
-                                <p>{localStorage.getItem("PickupEmail")}</p>
-                                <p>{localStorage.getItem("PickupPhone")}</p>
-                                <p>{pickupAddress}</p>
+                                <p id="right-col">{localStorage.getItem("PickupEmail")}</p>
+                                <p id="right-col">{localStorage.getItem("PickupPhone")}</p>
+                                <p id="right-col">{pickupAddress}</p>
                             </div>
                             <Button className="btns-right">Change</Button>
                         </div>
-                    </div>
-                    <div class="container">
                         <div class="row">
                             <div className="left-category">To </div>
-                            <div style={{paddingLeft: "20px"}}>
-                                <p>{localStorage.getItem("DeliveryEmail")}</p>
-                                <p>{localStorage.getItem("DeliveryPhone")}</p>
-                                <p>{deliveryAddress}</p>
+                            <div>
+                                <p id="right-col">{localStorage.getItem("DeliveryEmail")}</p>
+                                <p id="right-col">{localStorage.getItem("DeliveryPhone")}</p>
+                                <p id="right-col">{deliveryAddress}</p>
                             </div>
                             <Button className="btns-right">Change</Button>
                         </div>
-                    </div>
-                    <div class="container">
                         <div class="row">
                             <div className="left-category">Estimated Delivery Time</div>
                             <div>
-                                <p>{localStorage.getItem("ETA")}</p>
+                                <p id="right-col">{localStorage.getItem("ETA")}</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="container">
                         <div class="row">
                             <div className="left-category">Your Deliver Pal</div>
                             <div>
-                                <p>{localStorage.getItem("ETA")}</p>
-                                <p>{localStorage.getItem("ADVType")}</p>
+                                <p id="right-col">{localStorage.getItem("ETA")}</p>
+                                <p id="right-col">{localStorage.getItem("ADVType")}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div className="left-category">Delivery Fee</div>
                             <div>
-                                <p>{localStorage.getItem("Price")}</p>
+                                <p id="right-col">{localStorage.getItem("Price")}</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="container" style={{marginLeft: "74px"}}>
                         <div class="row">
                             <div className="left-category">Payment</div>
                             <div>
-                                <p>
+                                <p id="right-col">
                                     <Select
                                         style={{ width: 240, marginLeft: "-45px"}}
                                         placeholder="visa - 1234"

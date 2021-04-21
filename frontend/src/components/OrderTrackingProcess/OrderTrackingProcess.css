@@ -12,11 +12,11 @@
     display: flex;
 }
 
-p {
+.status-container p {
     margin-bottom: 0;
 }
 
-.ant-row {
+.status-container .ant-row {
     margin-bottom: 20px;
 }
 

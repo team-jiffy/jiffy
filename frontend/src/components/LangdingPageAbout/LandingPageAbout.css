@@ -28,7 +28,7 @@
     border-radius: 25px;
 }
 
-h1 {
+.about h1 {
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
@@ -45,7 +45,7 @@ h1 {
     margin-bottom: 36px;
 }
 
-h3 {
+.about h3 {
     text-align: center;
     align-items: center;
     font-family: Montserrat;
