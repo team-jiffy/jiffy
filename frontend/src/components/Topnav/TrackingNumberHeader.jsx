@@ -18,12 +18,21 @@ class TrackingNumberHeader extends React.Component {
     };
   }
 
-  setModal1Visible(modal1Visible) {
-    this.setState({ modal1Visible });
+  setModal1Visible=() =>{
+    
+    const isShow = this.state.modal1Visible;
+  this.setState({
+    modal1Visible: !isShow
+  });
+
   }
 
-  setModal2Visible(modal2Visible) {
-    this.setState({ modal2Visible });
+  setModal2Visible=()=> {
+    const isShow = this.state.modal2Visible;
+    this.setState({
+      modal2Visible: !isShow
+    });
+  
   }
 
 
@@ -49,22 +58,24 @@ class TrackingNumberHeader extends React.Component {
                 ></i>
               </form>
               <div className="header-buttons">
-                <Button className="button1" onClick={() => this.setModal1Visible(true)}>
+                <Button className="button1" onClick={() => this.setModal1Visible()}>
                   <b>Log in</b>
                 </Button>
                 <Modal
                   visible={this.state.modal1Visible}
-                  onCancel={() => this.setModal1Visible(false)}
+                  onCancel={() => this.setModal1Visible()}
                 >
-                  <SignIn />
+                  <SignIn 
+                  setModal1Visible = {this.setModal1Visible}
+                  />
                 </Modal>
-                <Button className="button1" onClick={() => this.setModal2Visible(true)}>
+                <Button className="button1" onClick={() => this.setModal2Visible()}>
                   <b>Sign up</b>
                 </Button>
                 <Modal
                   centered
                   visible={this.state.modal2Visible}
-                  onCancel={() => this.setModal2Visible(false)}
+                  onCancel={() => this.setModal2Visible()}
                 >
                   <SignUp />
                 </Modal>

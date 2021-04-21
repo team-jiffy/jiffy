@@ -7,8 +7,10 @@ import SuccessInfo from "../../components/SuccessInfo/SuccessInfo";
 class OrderConfirm extends React.Component {
   
   render() {
-    const pCoordinate = localStorage.getItem("PickupCoordinate");
-    const dCoordinate = localStorage.getItem("DeliveryCoordinate");
+    const pCoordinate = JSON.parse(localStorage.getItem("PickupCoordinate"));
+    const dCoordinate = JSON.parse(localStorage.getItem("DeliveryCoordinate"));
+    console.log("Pickip Co: ", pCoordinate.Coordinate)
+    console.log("Delivery Co: ", dCoordinate.Coordinate)
     return (
             <div> 
               <DefaultHeader />
@@ -19,8 +21,8 @@ class OrderConfirm extends React.Component {
                      className="order-confirm-map"
                 >
                   <SmallMap 
-                  pickupCoordinate = {pCoordinate}
-                  deliveryCoordinate = {dCoordinate}
+                  pickupCoordinate = {pCoordinate.Coordinate}
+                  deliveryCoordinate = {dCoordinate.Coordinate}
                   />
                 </Col>
                </Row>

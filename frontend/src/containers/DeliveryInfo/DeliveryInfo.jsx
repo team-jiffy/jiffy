@@ -90,7 +90,8 @@ settingPickupCoordinate = (value) => {
     }
   }
   });
-  localStorage.setItem("PickupCoordinate", this.state.pickupCoordinate)
+  const pCoordinate = this.state.pickupCoordinate;
+  localStorage.setItem("PickupCoordinate", JSON.stringify(pCoordinate))
  
   console.log("state pickup = ", this.state.pickupCoordinate);
 }
@@ -112,7 +113,8 @@ settingDeliveryCoordinate = (value, address) => {
     }
 
   });
-  localStorage.setItem("DeliveryCoordinate", this.state.deliveryCoordinate)
+  const dCoordinate = this.state.deliveryCoordinate; // change to lng and lat
+  localStorage.setItem("DeliveryCoordinate", JSON.stringify(dCoordinate))
   
   console.log("state delivery = ", this.state.deliveryCoordinate);
 }

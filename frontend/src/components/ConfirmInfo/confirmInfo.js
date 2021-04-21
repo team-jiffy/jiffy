@@ -41,6 +41,72 @@ componentDidMount() {
     //         items: [...items, `New item ${index++}`],
     //     });
     // };
+    placeOrderSubmitHandler = () => {
+        const today = new Date();
+        const pCoordinate = localStorage.getItem("PickupCoordinate");
+    const dCoordinate = localStorage.getItem("DeliveryCoordinate");
+
+        axios({
+            method: 'put',
+            url: "http://localhost:8081/order/createOrder",
+            data: {
+                ADVType: localStorage.getItem("ADVType"),
+  OrderDate: (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear,
+  CardID: "string",
+  SameDay: true,
+  Pickup: {
+    Name: "Jim",
+    Email: localStorage.getItem("PickupEmail"),
+    Phone: localStorage.getItem("PickupPhone"),
+   Address: {
+      Street1: localStorage.getItem("PickupAddressStreet1"),
+      
+      City: localStorage.getItem("PickupAddressCity"),
+      State: localStorage.getItem("PickupAddressState"),
+      Zip: localStorage.getItem("PickupAddressZip")
+    }
+  },
+  Deliver: {
+    Name: "Lucy",
+    Email: localStorage.getItem("DeliveryEmail"),
+    Phone: localStorage.getItem("DeliveryPhone"),
+    Address: {
+      Street1: localStorage.getItem("DeliveryAddressStreet1") ,
+     
+      City: localStorage.getItem("DeliveryAddressCity"),
+      State: localStorage.getItem("DeliveryAddressState"),
+      Zip: localStorage.getItem("DeliveryAddressZip")
+    }
+  },
+  DeliverCoordinates: {
+    Longitude: dCoordinate.Coordinate.lng,
+    Latitude: dCoordinate.Coordinate.lat,
+   
+  },
+  PickupCoordinates: {
+    Longitude: pCoordinate.Coordinate.lng,
+    Latitude: pCoordinate.Coordinate.lat,
+    
+  },
+  Price: localStorage.getItem("Price")
+            }
+        })
+            .then(response => {
+                console.log("submit success")
+                console.log('reco ->', response);
+                this.props.history.push("/confrimOrder")
+                
+            })
+            .catch(err => {
+                console.log('err in Place Order', err);
+            });
+
+
+
+       
+
+
+    }
 
     render() {
         const { items } = this.state;
@@ -55,7 +121,7 @@ componentDidMount() {
         ", " +  localStorage.getItem("DeliveryAddressZip")  
         return (
             <div>
-                <Link to="/OrderConfirm"className="place-order-button">Place Order </Link>
+                <span  className="place-order-button" onClick={()=>{this.placeOrderSubmitHandler()}}>Place Order</span>
                 <div className="successInfo-whole">
                     <div className="successInfo-title">
                         <h2>Please confirm your delivery information</h2>

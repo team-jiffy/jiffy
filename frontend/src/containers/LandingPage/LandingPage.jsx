@@ -7,20 +7,26 @@ import DefaultFooter from '../../components/DefaultFooter/DefaultFooter';
 import DeliveryAddressHeader from '../../components/Topnav/DeliveryAddressHeader';
 import TrackingNumberHeader from '../../components/Topnav/TrackingNumberHeader';
 import AddressBox from './AddressBox';
+import UserHeader from "../../components/Topnav/UserHeader"
 
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       //   loading: true,
+      
     };
   }
+
 
   render() {
     return (
       <div>
         <div className="header">
+          {localStorage.getItem("UID")?<UserHeader />:
           <TrackingNumberHeader />
+
+  }
           <div className="catch-line">Fly your pack in a moment</div>
           <div>
             <div class="container">

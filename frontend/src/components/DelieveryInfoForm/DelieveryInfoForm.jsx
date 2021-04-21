@@ -53,7 +53,7 @@ class DeliveryInfoForm extends React.Component {
     settingPickupAddress = (address) => {
                     // when the address.length < 5, it will appear an err
         this.setState({
-            
+
             Pickup: {
                 Address: {
                     Street1: address[0].long_name + " " + address[1].long_name,
@@ -107,7 +107,7 @@ class DeliveryInfoForm extends React.Component {
           localStorage.setItem("Weight", values.packageWeight)
           localStorage.setItem("Size", values.packageSize)
 
-          localStorage.setItem()
+          
 
 
           console.log("Storage")
@@ -148,7 +148,7 @@ class DeliveryInfoForm extends React.Component {
                             <Form.Item id="my-delivery-info">
                                 {getFieldDecorator('pickupAddress', {
 
-                                                rules: [{ required: true,
+                                                rules: [{ required: false,
                                                     message: "*"
                                                 
                                                 }],
@@ -178,7 +178,7 @@ class DeliveryInfoForm extends React.Component {
                                                         type: 'email',
                                                         message: 'The input is not valid E-mail!',
                                                       },
-                                                    { required: true,
+                                                    { required: false,
                                                     message: "*" }],
                                                 })(
                                                 <Input
@@ -191,7 +191,7 @@ class DeliveryInfoForm extends React.Component {
                             <Col>
                                 <Form.Item >
                                 {getFieldDecorator('senderPhone', {
-                                                rules: [{ required: true,
+                                                rules: [{ required: false,
                                                     message: "*" }],
                                                 })(
                                                 <Input
@@ -221,7 +221,7 @@ class DeliveryInfoForm extends React.Component {
                         <Col>
                             <Form.Item >
                                 {getFieldDecorator('deliveryAddress', {
-                                                rules: [{ required: true,
+                                                rules: [{ required: false,
                                                     message: "*" }],
                                                 })(
                                                 // <Input
@@ -246,7 +246,7 @@ class DeliveryInfoForm extends React.Component {
                                                         type: 'email',
                                                         message: 'The input is not valid E-mail!',
                                                       },
-                                                    { required: true,
+                                                    { required: false,
                                                     message: "*" }],
                                                 })(
                                                 <Input
@@ -259,7 +259,7 @@ class DeliveryInfoForm extends React.Component {
                             <Col>
                                 <Form.Item >
                                 {getFieldDecorator('recipientPhone', {
-                                                rules: [{ required: true,
+                                                rules: [{ required: false,
                                                     message: "*" }],
                                                 })(
                                                 <Input
@@ -281,7 +281,7 @@ class DeliveryInfoForm extends React.Component {
                                 <Col>
                                 <Form.Item >
                                 {getFieldDecorator('packageSize', {
-                                    rules: [{ required: true, message: '*' }],
+                                    rules: [{ required: false, message: '*' }],
                                  })(
                                     <Select
                                         className="deliveryInfoForm-select-size"
@@ -308,7 +308,7 @@ class DeliveryInfoForm extends React.Component {
                                 <Col>
                                 <Form.Item>
                                 {getFieldDecorator('packageWeight', {
-                                    rules: [{ required: true, message: '*' }],
+                                    rules: [{ required: false, message: '*' }],
                                  })(
                                 <Select
                                         className="deliveryInfoForm-select-weight"

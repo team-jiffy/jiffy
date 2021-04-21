@@ -61,6 +61,7 @@ constructor(props) {
 }
 
 handleSubmit = event => {
+    
     event.preventDefault();
     this.props.form.validateFields( (err, values) => {   
             if (!err) {   
@@ -76,13 +77,12 @@ handleSubmit = event => {
 
                         if (response.data.status === "OK" || response.data.message === "Success!") {
                             // TODO: Switch to UserHeader Component
-                            history.replaceState(response.data, "", "/Recommend")
-                            history.go(0);
-
+                          localStorage.setItem("UID", response.data.user.uid);
+                          
+                            
                         } else {
                             alert("Email and Password not match!");
-                            history.replaceState(response.data, "", "/")
-                            history.go(0);
+                            
 
                         }
                     }
@@ -127,7 +127,7 @@ handleSubmit = event => {
                         )}
                     </Form.Item>
                     <Form.Item> 
-                        <Button htmlType="submit" className="singIn-button">Sign in</Button>
+                        <Button htmlType="submit" className="singIn-button" onClick={()=>{this.props.setModal1Visible()}}>Sign in</Button>
                     </Form.Item>     
                     <Form.Item className="sigIn-icon"> 
                         <span className="signUp-icon-text">Or you can sign in with</span>
