@@ -40,13 +40,6 @@ class ChangeMyDeliveryAddress extends React.Component {
                   >
                     <i class="fa fa-plus" aria-hidden="true"></i>
                   </Button>
-                  {/* <Modal
-                    visible={this.state.modal1Visible}
-                    onCancel={() => this.setModal1Visible(false)}
-                  >
-                    <AddNewAddress />
-                  </Modal> */}
-
                   <Modal
                     title="Add New Address"
                     visible={this.state.modal1Visible}
@@ -80,6 +73,7 @@ class ChangeMyDeliveryAddress extends React.Component {
                   </a>
                   <Modal
                     title="Edit Addresss"
+                    centered
                     visible={this.state.modal2Visible}
                     onOk={() => this.setModal2Visible(false)}
                     onCancel={() => this.setModal2Visible(false)}

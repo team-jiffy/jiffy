@@ -1,33 +1,150 @@
 import React, { Component } from 'react'
 import './AddNewAddress.css';
 import { Form, Input, Button, Row, Col } from 'antd';
+import axios from 'axios';
+
 
 class AddNewAddressForm extends Component {
 
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {
 
+            UID: "",
+            LastName: "",
+            Phone: "",
+            Email: "",
+
+            Street1: "",
+            City: "",
+            State: "",
+            Zip: "",
+
+            status: ""
+        
+        }
+    }
+
+    // const UID: localStorage.getItem("UID"),
+
+    handleSubmit = event => {
+        event.preventDefault();
+
+        this.props.form.validateFields( (err, values) => {   
+                if (!err) {   
+                  console.log("values => ", values);
+                const { LastName, Phone, Email, Street1, City, State, Zip } = values;
+
+                const Contact= {
+                    LastName: LastName,
+                    Phone: Phone,
+                    Email: Email,
+            
+                    Address: {
+                        Street1: Street1,
+                        City: City,
+                        State: State,
+                        Zip: Zip, 
+                    },
+                }
+                console.log("Contact => ", Contact);
+                  axios({
+                        method: 'put',   
+                        url: 'http://localhost:8081/contact/updateContact', 
+                        data: {
+                            UID: localStorage.getItem("UID"),
+                            Contact
+                        }
+
+
+                    }).then(
+                        response => {
+                            console.log('New Address reponse => ', response);
+                            console.log('response.data => ', response.data);
+    
+                            if (response.data.status === "OK" || response.data.message === "Success!") {
+                             // localStorage.setItem("UID", response.data.user.uid);
+                             console.log("props: ",this.props)
+                            //   this.props.setModalVisible()
+                             notice("Submit successful!")
+                            } else {
+                                alert("Submit failed!");
+                                
+                            }
+                        }
+                    ).catch(
+                        error => {
+                            console.log('Add New Address error ->  ', error);
+                        }
+                    )
+                }
+        })      
+    }
+
+
+    render() {
+        const { getFieldDecorator } = this.props.form;
         return (
             <div>
-                <Form>    
+                <Form onSubmit={this.handleSubmit}>    
                     <Form.Item>
-                        <p className="address"> Address</p>
-                        <Input />
+                        <p className="street"> Address</p>
+
+                        {getFieldDecorator('Street1', {
+                            rules: [{ required: true, message: 'Please input your Street!' }],
+                        })(
+                            <Input
+                                style={{background:'#F5F5F5'}}
+                                placeholder="Enter street"
+                            />,
+                        )}
                     </Form.Item>
 
 
                     <Form.Item>
                         <Row>
                             <Col span = {8} >
-                                <p className="city" >City</p>
-                                <Input placeholder="San Francisco" className="city-input"/>
+                                <Form.Item>
+                                    <p className="city"> City</p>
+
+                                    {getFieldDecorator('City', {
+                                        rules: [{ required: true, message: 'Please input City!' }],
+                                    })(
+                                        <Input
+                                            style={{background:'#F5F5F5'}}
+                                            placeholder="San Francisco" 
+                                            className="city-input"
+                                        />,
+                                    )}
+                                </Form.Item>
                             </Col>
                             <Col span = {8} >
-                                <p className="state">State</p>
-                                <Input placeholder="California" className="state-input" />
+                                <Form.Item>
+                                    <p className="state">State</p>
+                                    {getFieldDecorator('State', {
+                                            rules: [{ required: true, message: 'Please input State!' }],
+                                        })(
+                                            <Input
+                                                style={{background:'#F5F5F5'}}
+                                                placeholder="California" 
+                                                className="state-input"
+                                            />,
+                                    )}
+                                </Form.Item>
                             </Col>
                             <Col span = {8} >
-                                <p className="zip">Zip Code</p>
-                                <Input placeholder="Zip Code" className="zip-input"/>
+                                <Form.Item>
+                                    <p className="zip">Zip Code</p>
+                                    {getFieldDecorator('Zip', {
+                                            rules: [{ required: true, message: 'Please input Zip Code!' }],
+                                        })(
+                                            <Input
+                                                style={{background:'#F5F5F5'}}
+                                                placeholder="Zip Code" 
+                                                className="zip-input"
+                                            />,
+                                    )}
+                                </Form.Item>
                             </Col>
                         </Row>
                     </Form.Item>
@@ -35,19 +152,40 @@ class AddNewAddressForm extends Component {
                     
                     <Form.Item>
                         <p className="name">Full name</p>
-                        <Input className="Fullname-input" />
+                            {getFieldDecorator('LastName', {
+                                rules: [{ required: true, message: 'Please input fullname' }],
+                                })(
+                                <Input
+                                    style={{background:'#F5F5F5'}}
+                                    className="Fullname-input"
+                                />,
+                            )}
                     </Form.Item>
 
                     
                     <Form.Item>
                         <p className="phone">Phone</p>
-                        <Input className="Phone-input" />
+                        {getFieldDecorator('Phone', {
+                            rules: [{ required: true, message: 'Please input phone number' }],
+                            })(
+                            <Input
+                                style={{background:'#F5F5F5'}}
+                                className="Phone-input"
+                            />,
+                        )}
                     </Form.Item>
 
                     
                     <Form.Item>
                         <p className="email">Email</p>
-                        <Input className="Email-input" />
+                        {getFieldDecorator('Email', {
+                            rules: [{ required: true, message: 'Please input fullname' }],
+                            })(
+                            <Input
+                                style={{background:'#F5F5F5'}}
+                                className="Email-input"
+                            />,
+                        )}
                     </Form.Item>
 
                     <Form.Item>
@@ -62,6 +200,6 @@ class AddNewAddressForm extends Component {
     }
 }
 
-const AddNewAddress = Form.create()(AddNewAddressForm);
+const AddNewAddress = Form.create({name:'add-new-address'})(AddNewAddressForm);
 
 export default AddNewAddress;

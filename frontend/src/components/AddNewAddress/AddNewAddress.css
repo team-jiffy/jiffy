@@ -1,6 +1,6 @@
 @import '~antd/dist/antd.css';
 
-.address, .city, .state, .zip, .name, .phone, .email {
+.street, .city, .state, .zip, .name, .phone, .email {
     font-family: Montserrat;
     font-size: 12px;
     font-style: normal;
