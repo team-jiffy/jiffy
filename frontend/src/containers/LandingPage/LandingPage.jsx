@@ -14,17 +14,31 @@ class LandingPage extends React.Component {
     super(props);
     this.state = {
       //   loading: true,
-      
+      isShowUserHeader: false
     };
   }
 
-
+  componentDidMount() {
+    if (localStorage.getItem("UID")) {
+        this.setState({
+            isShowUserHeader: true
+        })
+    }
+}
+showUserHeaderHandler = () => {
+    const isShow = this.state.isShowUserHeader;
+    this.setState({
+        isShowUserHeader: !isShow
+    });  
+}
   render() {
     return (
       <div>
         <div className="header">
-          {localStorage.getItem("UID")?<UserHeader />:
-          <TrackingNumberHeader />
+          {localStorage.getItem("UID")? <UserHeader
+          showUserHeaderHandler={this.showUserHeaderHandler} />:
+          <TrackingNumberHeader 
+          showUserHeaderHandler={this.showUserHeaderHandler}/>
 
   }
           <div className="catch-line">Fly your pack in a moment</div>
@@ -69,7 +83,11 @@ class LandingPage extends React.Component {
             </div>
           </div>
         </div>
-        <DeliveryAddressHeader style={{position: "fixed"}}/>
+        {localStorage.getItem("UID")?<UserHeader
+        showUserHeaderHandler={this.showUserHeaderHandler} />:
+        <DeliveryAddressHeader style={{position: "fixed"}}
+        showUserHeaderHandler={this.showUserHeaderHandler}
+        />}
         <LandingPageAbout />
         <DefaultFooter />
       </div>

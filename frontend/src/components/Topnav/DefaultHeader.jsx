@@ -17,12 +17,21 @@ class DefaultHeader extends React.Component {
     };
   }
 
-  setModal1Visible(modal1Visible) {
-    this.setState({ modal1Visible });
+  setModal1Visible=() =>{
+    
+    const isShow = this.state.modal1Visible;
+  this.setState({
+    modal1Visible: !isShow
+  });
+
   }
 
-  setModal2Visible(modal2Visible) {
-    this.setState({ modal2Visible });
+  setModal2Visible=()=> {
+    const isShow = this.state.modal2Visible;
+    this.setState({
+      modal2Visible: !isShow
+    });
+  
   }
 
   render() {
@@ -60,7 +69,10 @@ class DefaultHeader extends React.Component {
                   visible={this.state.modal1Visible}
                   onCancel={() => this.setModal1Visible(false)}
                 >
-                  <SignIn />
+                  <SignIn 
+                  showUserHeaderHandler={this.props.showUserHeaderHandler}
+                   setModal1Visible = {this.setModal1Visible}
+                  />
                 </Modal>
 
                 <Button className="button2" onClick={() => this.setModal2Visible(true)}>
@@ -71,7 +83,9 @@ class DefaultHeader extends React.Component {
                   visible={this.state.modal2Visible}
                   onCancel={() => this.setModal2Visible(false)}
                 >
-                  <SignUp />
+                  <SignUp 
+                  setModal2Visible={this.setModal2Visible}
+                  />
                 </Modal>
               </div>
             </div>

@@ -4,6 +4,9 @@ import DefaultHeader from "../../components/Topnav/DefaultHeader";
 import DeliveryInfoForm from "../../components/DelieveryInfoForm/DelieveryInfoForm";
 import FullMap from "../../components/FullMap/FullMap";
 import Button from "react-bootstrap/Button";
+import UserHeader from "../../components/Topnav/UserHeader";
+
+
 class DeliveryInfo extends React.Component {
   constructor() {
     super();
@@ -59,9 +62,26 @@ class DeliveryInfo extends React.Component {
               lat: null
             }
           },
-          isShowForm: true
+          isShowForm: true,
+          isShowUserHeader: false
+
+
     };
     
+}
+
+componentDidMount() {
+  if (localStorage.getItem("UID")) {
+      this.setState({
+          isShowUserHeader: true
+      })
+  }
+}
+showUserHeaderHandler = () => {
+  const isShow = this.state.isShowUserHeader;
+  this.setState({
+      isShowUserHeader: !isShow
+  });  
 }
 
 isShowFormHandler = () => {
@@ -133,7 +153,12 @@ settingDeliveryCoordinate = (value, address) => {
     console.log("isSHhow?: ",this.state.isShowForm)
     return (
             <div className="deliveryInfo-container"> 
-            <DefaultHeader />
+              {localStorage.getItem("UID")?<UserHeader 
+              showUserHeaderHandler={this.showUserHeaderHandler}
+              />:
+            <DefaultHeader 
+            showUserHeaderHandler={this.showUserHeaderHandler}
+            />}
             <FullMap 
              pickupCoordinate = {pCoordinate}
              deliveryCoordinate = {dCoordinate}

@@ -5,6 +5,10 @@ import OrderTrackingProcess from '../../components/OrderTrackingProcess/OrderTra
 import { Layout } from 'antd'
 import SmallMap from "../../components/SmallMap/SmallMap";
 import axios from "axios";
+import UserHeader from "../../components/Topnav/UserHeader";
+
+
+
 const {Content} = Layout;
 class Tracking extends React.Component {
 constructor(props) {
@@ -67,11 +71,27 @@ constructor(props) {
                 lng: null,
                 lat: null
               }
-          }
+          },
+        isShowUserHeader: false
+
+          
     }
 }
 
+showUserHeaderHandler = () => {
+    const isShow = this.state.isShowUserHeader;
+    this.setState({
+        isShowUserHeader: !isShow
+    });  
+}
+
 componentDidMount() {
+    if (localStorage.getItem("UID")) {
+        this.setState({
+            isShowUserHeader: true
+        })
+    }
+
     const TrackNum = {trackNumber: "1"};
     axios.get('http://localhost:8081/order/getOrderHistory', {params:{
       trackNumber: TrackNum
@@ -111,8 +131,12 @@ componentDidMount() {
     const pCoordinate = pickupCoordinate.Coordinate;
     const dCoordinate = deliveryCoordinate.Coordinate;
     return (
-            <div>
-                <DefaultHeader/>
+            <div>  {localStorage.getItem("UID")?<UserHeader 
+            showUserHeaderHandler={this.showUserHeaderHandler}
+            />:
+                <DefaultHeader
+                showUserHeaderHandler={this.showUserHeaderHandler}
+                />}
                 <div className="Tracking-body">
                 <Row >
                     <Col  span={14} className="Tracking-status">

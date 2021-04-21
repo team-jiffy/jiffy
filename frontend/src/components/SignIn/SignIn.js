@@ -48,7 +48,7 @@ function ValidatedLogin(props) {
 
 
 
-class SignIn extends React.Component {
+class SignInFrom extends React.Component {
 
 
     constructor(props) {
@@ -77,10 +77,13 @@ class SignIn extends React.Component {
 
                         if (response.data.status === "OK" || response.data.message === "Success!") {
                             // TODO: Switch to UserHeader Component
-                            // localStorage.setItem("UID", response.data.user.uid);
-                            console.log("props: ", this.props)
-                            this.props.setModalVisible()
+                         localStorage.setItem("UID", response.data.user.uid);
+                         console.log("props: ",this.props)
 
+                       
+                          this.props.setModal1Visible();
+                          this.props.showUserHeaderHandler();
+                         
                         } else {
                             alert("Email and Password not match!");
 
@@ -143,6 +146,6 @@ class SignIn extends React.Component {
     }
 }
 
-const SignIn1 = Form.create({ name: 'sign-from' })(SignIn);
+const SignIn = Form.create()(SignInFrom);
 
-export default SignIn1;
+export default SignIn;

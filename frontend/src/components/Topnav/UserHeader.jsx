@@ -10,6 +10,11 @@ class TrackingNumberHeader extends React.Component {
       //   loading: true,
     };
   }
+  logoutHandler= () => {
+    localStorage.clear();
+    this.props.showUserHeaderHandler();
+  }
+
 
   render() {
     return (
@@ -22,7 +27,7 @@ class TrackingNumberHeader extends React.Component {
               </a>
               <div className="header-buttons">
                 <div className="btns-row">
-                <div class="row">
+                <div class="myaccount-row">
                   <Dropdown>
                     <Dropdown.Toggle variant="success" id="myDropdown.Toggle">
                       <b>Hello, UserName!</b>
@@ -31,10 +36,10 @@ class TrackingNumberHeader extends React.Component {
                       <Dropdown.Item href="#/Account">My account</Dropdown.Item>
                       <Dropdown.Item href="#/Order">My Orders</Dropdown.Item>
                       <Dropdown.Item href="#/Help">Help</Dropdown.Item>
-                      <Dropdown.Item href="#">Sign out</Dropdown.Item>
+                      <Dropdown.Item href="#" onClick={()=>{this.logoutHandler()}}>Sign out</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
-                  <Button>
+                  <Button className="userhead-order-button">
                     <b>Orders</b>
                   </Button>
                 </div>
