@@ -199,7 +199,7 @@ class DeliveryInfoForm extends React.Component {
                   <Input
                     className="deliveryInfo-senderEmail"
                     placeholder="Enter sender's email"
-                    style={{marginTop: "-6px"}}
+                    // style={{marginTop: "-6px"}}
                   />
                 )}
               </Form.Item>
@@ -212,7 +212,7 @@ class DeliveryInfoForm extends React.Component {
                   <Input
                     className="deliveryInfo-senderPhone"
                     placeholder="Enter sender's phone"
-                    style={{marginTop: "6px"}}
+                    // style={{marginTop: "6px"}}
                   />
                 )}
               </Form.Item>
@@ -278,7 +278,6 @@ class DeliveryInfoForm extends React.Component {
                   <Input
                     className="deliveryInfo-recipientPhone"
                     placeholder="Enter recipient's phone"
-                    style={{marginTop: "6px"}}
                   />
                 )}
               </Form.Item>
@@ -286,11 +285,12 @@ class DeliveryInfoForm extends React.Component {
           </Row>
           <Row>
             <Col>
-              <Form.Item>
+              {/* <Form.Item> */}
+      
                 <span className="deliveryInfoForm-from-text" style={{marginTop: "-180px"}}>
                   Package Information
                 </span>
-              </Form.Item>
+              {/* </Form.Item> */}
             </Col>
           </Row>
           <Row>
@@ -300,6 +300,7 @@ class DeliveryInfoForm extends React.Component {
                   rules: [{ required: true, message: "*" }],
                 })(
                   <Select
+                    style={{marginTop: "50px"}}
                     className="deliveryInfoForm-select-size"
                     // showSearch
                     placeholder="Choose package size"
@@ -336,7 +337,7 @@ class DeliveryInfoForm extends React.Component {
                     //  showSearch
                     placeholder="Choose package weight"
                     optionFilterProp="children"
-                    style={{marginTop: "6px"}}
+                    // style={{marginTop: "6px"}}
                     // onChange={onChange}
                     // onFocus={onFocus}
                     // onBlur={onBlur}
