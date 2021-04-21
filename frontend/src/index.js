@@ -18,7 +18,6 @@ import SignIn from './components/SignIn/SignIn';
 import LandingPage from './containers/LandingPage/LandingPage';
 
 
-
 /* test Header Popup feature @auther Lin */
 import DefaultHeader from './components/Topnav/DefaultHeader';
 import DeliveryAddressHeader from './components/Topnav/DeliveryAddressHeader';
@@ -29,6 +28,7 @@ import TrackingNumberHeader from './components/Topnav/TrackingNumberHeader';
 ReactDOM.render(
   <BrowserRouter>
     <ReactRouter />
+    {/* <ChangeMyPayment /> */}
     {/* <DeliveryInfo /> */}
    {/* <ChangeMyDeliveryAddress /> */}
    {/* <ChangeMyDeliveryAddress />
