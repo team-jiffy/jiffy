@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {List, Spin, Select, Form, Button} from 'antd';
 import drone_profile from '../../assets/images/drone_profile.svg';
-import robot_profile from '../../assets/images/robot_profile.svg';
+import robot_profile from '../../assets/images/robot_profile.png';
 import "./RecommendForm.css";
 import axios from "axios"
 
@@ -128,15 +128,18 @@ class RecommendForm extends Component {
     clickHandler = (item, e) => {
         e.preventDefault();
         this.setChosenReco(item);
+        console.log("debug iem!!!!!!", item);
+        console.log("debug state", this.state);
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
             }
-            localStorage.setItem("ADVType", this.state.ChosenReco.ADVType);
-            localStorage.setItem("Price", this.state.ChosenReco.Price);
-            localStorage.setItem("ETA", this.state.ChosenReco.ETA);
-            this.props.history.push('/PlaceOrder');
         })
+
+        localStorage.setItem("ADVType", item.advtype);
+        localStorage.setItem("Price", item.price);
+        localStorage.setItem("ETA", item.eta);
+        this.props.history.push('/PlaceOrder');
     }
 
     setChosenReco = (item) => {
@@ -145,7 +148,7 @@ class RecommendForm extends Component {
             ChosenReco: {
                 ADVType: item.advtype,
                 Price: item.price,
-                ETA: item.eta
+                ETA: null
             }
         });
         console.log("chosen", this.state.ChosenReco);
@@ -166,6 +169,11 @@ class RecommendForm extends Component {
 
         function handleChange(value) {
             console.log(`selected ${value}`);
+            this.setState( {
+                ChosenReco: {
+                    ETA: value
+                }
+            })
         }
 
         function isEqual(object1) {
