@@ -4,9 +4,7 @@ import fb_icon from '../../assets/images/fb_icon.svg';
 import google_icon from '../../assets/images/google_icon.svg';
 import twitter_icon from '../../assets/images/twitter_icon.svg';
 import './SignIn.css';
-
 import axios from 'axios';
-import { Formik } from "formik";
 
 /* CODE FOR CONNECTING FRONT-BACKEND, PLEASE DON'T REMOVE 
 const REST_API_URL = 'http://locohost:8081/api/users';
@@ -49,14 +47,13 @@ function ValidatedLogin(props) {
 
 
 class SignInFrom extends React.Component {
-
-
     constructor(props) {
         super(props);
         this.state = {
             Email: "",
             Password: "",
-            status: ""
+            status: "",
+            userName: ""
         }
     }
 
@@ -74,13 +71,19 @@ class SignInFrom extends React.Component {
                     response => {
                         console.log('Login reponse => ', response);
                         console.log('Login.data => ', response.data);
+                        var username = response.data.user.firstName; 
+                        // console.log("username" + username);
 
                         if (response.data.status === "OK" || response.data.message === "Success!") {
                             // TODO: Switch to UserHeader Component
+                         localStorage.setItem('currUser', username.toUpperCase());
+                         console.log(localStorage.getItem("currUser"));
+
                          localStorage.setItem("UID", response.data.user.uid);
                          console.log("props: ",this.props)
 
-                       
+
+                          this.setState({userName: username})
                           this.props.setModal1Visible();
                           this.props.showUserHeaderHandler();
                          

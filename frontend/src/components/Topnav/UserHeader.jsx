@@ -8,6 +8,7 @@ class TrackingNumberHeader extends React.Component {
     super(props);
     this.state = {
       //   loading: true,
+      currUser: ""
     };
   }
   logoutHandler= () => {
@@ -15,6 +16,12 @@ class TrackingNumberHeader extends React.Component {
     this.props.showUserHeaderHandler();
   }
 
+
+  componentDidMount(){
+    var logedinUser = localStorage.getItem('currUser').toUpperCase();
+    console.log("curruser is: " + logedinUser);
+    this.setState({currUser: logedinUser});
+  }
 
   render() {
     return (
@@ -30,16 +37,16 @@ class TrackingNumberHeader extends React.Component {
                 <div class="myaccount-row">
                   <Dropdown>
                     <Dropdown.Toggle variant="success" id="myDropdown.Toggle">
-                      <b>Hello, UserName!</b>
+                      <b>{this.state.currUser}</b>
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#/Account">My account</Dropdown.Item>
+                      <Dropdown.Item href="/AccountAddress">My account</Dropdown.Item>
                       <Dropdown.Item href="#/Order">My Orders</Dropdown.Item>
                       <Dropdown.Item href="#/Help">Help</Dropdown.Item>
                       <Dropdown.Item href="#" onClick={()=>{this.logoutHandler()}}>Sign out</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
-                  <Button className="userhead-order-button">
+                  <Button className="userhead-order-button" style={{marginLeft: "-50px"}}>
                     <b>Orders</b>
                   </Button>
                 </div>

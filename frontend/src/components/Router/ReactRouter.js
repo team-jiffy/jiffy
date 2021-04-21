@@ -14,6 +14,8 @@ import Tracking from '../../containers/Tracking/Tracking';
 import AccountAddress from '../../containers/Account/AccountAddress';
 import AccountPayment from '../../containers/Account/AccountPayment';
 
+import AccountEditAddress from '../../containers/Account/AccountEditAddress';
+
 class ReactRouter extends Component {
     render() {
         return (
@@ -36,6 +38,8 @@ class ReactRouter extends Component {
 
                         <Route path="/Tracking" component={Tracking} exact />
                         <Route path="/LandingPage" component={LandingPage} exact />
+
+                        <Route path="/AccountEditAddress" component={AccountEditAddress} exact />
 
                     </Switch>
              
