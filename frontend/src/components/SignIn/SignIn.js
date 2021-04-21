@@ -5,7 +5,7 @@ import google_icon from '../../assets/images/google_icon.svg';
 import twitter_icon from '../../assets/images/twitter_icon.svg';
 import './SignIn.css';
 
-import Axios from 'axios';
+import axios from 'axios';
 import { Formik } from "formik";
 
 /* CODE FOR CONNECTING FRONT-BACKEND, PLEASE DON'T REMOVE 
@@ -46,17 +46,66 @@ function ValidatedLogin(props) {
 }
 */ 
 
+
+
 class SignInForm extends React.Component {
+
+    
+constructor(props) {
+    super(props);
+    this.state = {
+        Email: "",
+        Password: "",
+        status: ""
+    }
+}
+
+handleSubmit = event => {
+    event.preventDefault();
+    this.props.form.validateFields( (err, values) => {   
+            if (!err) {   
+              console.log("values => ", values);
+              axios({
+                    method: 'post',   
+                    url: 'http://localhost:8081/signin', 
+                    data: values,
+                }).then(
+                    response => {
+                        console.log('Login reponse => ', response);
+                        console.log('Login.data => ', response.data);
+
+                        if (response.data.status === "200" || response.data.message === "success") {
+                            // TODO: Switch to UserHeader Component
+                            history.replaceState(response.data, "", "/Recommend").go(0);
+
+                        } else {
+                            alert("Email and Password not match!");
+                            history.replaceState(response.data, "", "/").go(0);
+
+                        }
+                    }
+                ).catch(
+                    error => {
+                        console.log('Login error ->  ', error);
+                    }
+                )
+            }
+    })      
+}
+
+
+
+
     render() {
         const { getFieldDecorator } = this.props.form;
 
         return (  
-                <Form className="signIn">                    
+                <Form className="signIn" onSubmit={this.handleSubmit}>                    
                     <Form.Item>
                         <span className="signIn-title">Please sign in to your account</span>
                     </Form.Item>
                     <Form.Item> 
-                        {getFieldDecorator('email', {
+                        {getFieldDecorator('Email', {
                             rules: [{ required: true, message: 'Please input your email!' }],
                         })(
                             <Input
@@ -66,7 +115,7 @@ class SignInForm extends React.Component {
                         )}
                     </Form.Item>                           
                     <Form.Item> 
-                        {getFieldDecorator('password', {
+                        {getFieldDecorator('Password', {
                             rules: [{ required: true, message: 'Please input your password!' }],
                         })(
                             <Input
@@ -76,9 +125,7 @@ class SignInForm extends React.Component {
                         )}
                     </Form.Item>
                     <Form.Item> 
-                        <Button htmlType="submit" className="singIn-button">
-                            Sign in
-                        </Button>
+                        <Button htmlType="submit" className="singIn-button">Sign in</Button>
                     </Form.Item>     
                     <Form.Item className="sigIn-icon"> 
                         <span className="signUp-icon-text">Or you can sign in with</span>

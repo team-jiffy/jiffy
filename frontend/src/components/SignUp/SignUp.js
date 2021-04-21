@@ -6,8 +6,9 @@ import twitter_icon from '../../assets/images/twitter_icon.svg';
 import './SignUp.css';
 import axios from 'axios';
 import ColumnGroup from 'antd/lib/table/ColumnGroup';
-
-// import { Link } from 'react-router-dom';
+// import { Route, Switch } from 'react-router-dom';
+import UserHeader from '../../components/Topnav/UserHeader';
+// import { useHistory } from 'react-router-dom';
 
 class SignUpForm extends React.Component {
 
@@ -35,41 +36,53 @@ class SignUpForm extends React.Component {
 // }
     // }
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         Email: "",
-    //         Firstname: "",
-    //         Lastname: "", 
-    //         Password: ""
-    //     }
 
-    // }
 
-    // handleSubmit = event => {
-    //     event.preventDefault();
-    //     axios({
-    //         method: 'put',     // 2 errors ->  1. Access to XMLHttpRequest at 'http://localhost:8081/signup' from origin 'http://localhost:3000' has been blocked by CORS policy
-    //                            //                  2. PUT http://localhost:8081/signup net::ERR_FAILED
-    //         headers: { 'Content-Type': 'application/json' },
-    //         url: 'http://localhost:8081/signup', 
-    //         data: {
-    //                 Email: this.state.Email,
-    //                 LastName: this.state.Lastname, 
-    //                 FirstName: this.state.Firstname,
-    //                 Password: this.state.Password
-    //             },
-    //         }).then(
-    //             response => {
-    //                 console.log('registration reponse -> ', response);
-    //             }
-    //         ).catch(
-    //             error => {
-    //                 console.log('registration error ->  ', error);
-    //             }
-    //         )
-    // }
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            Email: "",
+            FirstName: "",
+            LastName: "", 
+            Password: "",
+            status: null
+        }
+
+    }
+
+    handleSubmit = event => {
+        event.preventDefault();
+        this.props.form.validateFields( (err, values) => {   
+                if (!err && values.agreement) {   
+                //   console.log(values);
+                  axios({
+                        method: 'put',   
+                        url: 'http://localhost:8081/signup', 
+                        data: values,
+                    }).then(
+                        response => {
+                            console.log('registration reponse -> ', response);
+                            // console.log('response.data', response.data);
+
+                            if (response.data.status === "200" || response.data.message === "success") {
+                                alert("request has been submitted successfully!");
+                                // TODO: Switch to UserHeader Component
+                                history.pushState(response.data, "", "/PlaceOrder");
+                                history.go(0);
+                            } 
+                        }
+                    ).catch(
+                        error => {
+                            console.log('registration error ->  ', error);
+                        }
+                    )
+
+                }
+        })      
+    }
+
+    
     render() {
         const { getFieldDecorator } = this.props.form;
 
@@ -90,7 +103,7 @@ class SignUpForm extends React.Component {
                     )}
                 </Form.Item>
                 <Form.Item> 
-                    {getFieldDecorator('Firstname', {
+                    {getFieldDecorator('FirstName', {
                         rules: [{ required: true, message: 'Please input your firstname!' }],
                     })(
                         <Input
@@ -101,7 +114,7 @@ class SignUpForm extends React.Component {
                     )}
                 </Form.Item>
                 <Form.Item> 
-                    {getFieldDecorator('Lastname', {
+                    {getFieldDecorator('LastName', {
                         rules: [{ required: true, message: 'Please input your lastname!' }],
                     })(
                         <Input
