@@ -48,7 +48,7 @@ function ValidatedLogin(props) {
 
 
 
-class SignInForm extends React.Component {
+class SignIn extends React.Component {
 
     
 constructor(props) {
@@ -77,9 +77,10 @@ handleSubmit = event => {
 
                         if (response.data.status === "OK" || response.data.message === "Success!") {
                             // TODO: Switch to UserHeader Component
-                          localStorage.setItem("UID", response.data.user.uid);
-                          
-                            
+                         // localStorage.setItem("UID", response.data.user.uid);
+                         console.log("props: ",this.props)
+                          this.props.setModalVisible()
+                         
                         } else {
                             alert("Email and Password not match!");
                             
@@ -127,7 +128,7 @@ handleSubmit = event => {
                         )}
                     </Form.Item>
                     <Form.Item> 
-                        <Button htmlType="submit" className="singIn-button" onClick={()=>{this.props.setModal1Visible()}}>Sign in</Button>
+                        <Button htmlType="submit" className="singIn-button" >Sign in</Button>
                     </Form.Item>     
                     <Form.Item className="sigIn-icon"> 
                         <span className="signUp-icon-text">Or you can sign in with</span>
@@ -143,6 +144,6 @@ handleSubmit = event => {
     }
 }
 
-const SignIn = Form.create()(SignInForm);
+const SignIn1 = Form.create({name:'sign-from'})(SignIn);
 
-export default SignIn;
+export default SignIn1;

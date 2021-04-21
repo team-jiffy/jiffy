@@ -85,6 +85,7 @@ class DeliveryInfoForm extends React.Component {
         console.log("Received values of form: ", values);
       }
 
+
       localStorage.setItem(
         "DeliveryAddressStreet1",
         this.state.Delivery.Address.Street1
@@ -103,6 +104,9 @@ class DeliveryInfoForm extends React.Component {
       );
       localStorage.setItem("DeliveryEmail", values.recipientEmail);
       localStorage.setItem("DeliveryPhone", values.recipientPhone);
+
+   
+
 
       localStorage.setItem(
         "PickupAddressStreet1",
