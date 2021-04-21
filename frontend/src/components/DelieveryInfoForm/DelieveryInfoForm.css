@@ -2,10 +2,11 @@
   position: absolute;
   background-color: white;
   width: 568.76px;
-  height: 523.54px;
+  height: 600px;
   left: 10%;
-  top: 27%;
+  top: 23%;
   z-index: 10;
+
 }
 .position-icon {
   content: url("../../assets/images/Vector.svg");
@@ -32,6 +33,8 @@
 }
 
 .deliveryInfoForm-from-text {
+  text-align: left;
+
   position: absolute;
   width: 89.98px;
   height: 49.19px;
@@ -43,8 +46,9 @@
   font-weight: bold;
   font-size: 24px;
   line-height: 29px;
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
+  margin-left: -300px;
   letter-spacing: -0.015em;
 
   color: #040404;
@@ -53,6 +57,7 @@
   position: relative;
   width: 508.31px;
   height: 36.46px;
+  margin-top: -10px;
   left: 13px;
   top: 11.94px;
 }
@@ -101,6 +106,7 @@
   height: 36.46px;
   left: 12.69px;
   top: -32.94px;
+  margin-top: -10px;
 }
 
 .deliveryInfoForm .deliveryInfo-recipientEmail {
@@ -108,7 +114,8 @@
   width: 246.6px;
   height: 36.46px;
   left: 26.69px;
-  top: -76.94px;
+  top: -76.94px; 
+
 
   background: #e5e5e5;
 }

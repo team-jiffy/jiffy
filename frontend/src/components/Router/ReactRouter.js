@@ -14,6 +14,8 @@ import Tracking from '../../containers/Tracking/Tracking';
 import AccountAddress from '../../containers/Account/AccountAddress';
 import AccountPayment from '../../containers/Account/AccountPayment';
 
+
+
 class ReactRouter extends Component {
     render() {
         return (
@@ -28,12 +30,14 @@ class ReactRouter extends Component {
                         <Route path="/AccountPayment" component={AccountPayment} exact />
 
                         <Route path="/DeliveryInfo" component={DeliveryInfo} exact />
+
                         <Route path="/OrderConfirm" component={OrderConfirm} exact />
                         <Route path="/PlaceOrder" component={PlaceOrder} exact />
+
                         <Route path="/Recommend" component={Recommend} exact />
+
                         <Route path="/Tracking" component={Tracking} exact />
                         <Route path="/LandingPage" component={LandingPage} exact />
-                        {/* <Route path="/AddressBox" component={AddressBox} exact /> */}
                     </Switch>
              
             </div>

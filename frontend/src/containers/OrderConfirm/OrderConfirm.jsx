@@ -2,7 +2,7 @@ import React from "react";
 import DefaultHeader from "../../components/Topnav/DefaultHeader"
 import { Row, Col } from 'antd';
 import SmallMap from "../../components/SmallMap/SmallMap"
-import ConfirmInfo from "../../components/ConfirmInfo/ConfirmInfo";
+import ConfirmInfo from '../../containers/OrderConfirm/OrderConfirm';
 import SuccessInfo from "../../components/SuccessInfo/SuccessInfo";
 class OrderConfirm extends React.Component {
   
