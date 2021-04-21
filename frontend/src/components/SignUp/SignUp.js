@@ -68,7 +68,7 @@ class SignUpForm extends React.Component {
                             if (response.data.status === "200" || response.data.message === "success") {
                                 alert("request has been submitted successfully!");
                                 // TODO: Switch to UserHeader Component
-                                history.pushState(response.data, "", "/PlaceOrder");
+                                history.pushState(response.data, "", "/");
                                 history.go(0);
                             } 
                         }

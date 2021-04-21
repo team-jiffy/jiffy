@@ -1,0 +1,60 @@
+@import '~antd/dist/antd.css';
+
+.address, .city, .state, .zip, .name, .phone, .email {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: -0.015em;
+    text-align: left;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.015em;
+
+    color: #040404;
+}
+
+.ant-input {
+    width: 465px;
+    background: #F5F5F5;
+}
+
+.ant-form-item-control {
+    text-align: left;
+    line-height: 15px;
+}
+
+.city-input, .state-input, .zip-input {
+    margin-right: 5px;
+    width: 120px;
+}
+
+.button {
+    height: 29.01473617553711px;
+    width: 127.214599609375px;
+    left: 7.03173828125px;
+    top: 3.78955078125px;
+    border-radius: 0px;
+    background: #65EECD;
+    border: 1px solid #d9d9d9;
+
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: -0.015em;
+    text-align: center;
+    color: #000000;
+
+    position: relative;
+    margin-left: 155px;
+}
+

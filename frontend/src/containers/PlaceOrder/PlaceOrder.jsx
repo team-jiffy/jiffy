@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from 'antd';
 import SmallMap from "../../components/SmallMap/SmallMap"
-import ConfirmInfo from "../../components/ConfirmInfo/ConfirmInfo";
+import ConfirmInfo from "../../components/ConfirmInfo/confirmInfo";
 import DefaultHeader from "../../components/Topnav/DefaultHeader";
 import "./PlaceOrder.css"
 

@@ -1,11 +1,25 @@
 import React from "react";
 import "./ChangeMyDeliveryAddress.css";
 import Button from "react-bootstrap/Button";
+import { Modal } from "antd";
+import AddNewAddress from "../AddNewAddress/AddNewAddress";
+import EditAddress from '../EditAddress/EditAddress';
 
 class ChangeMyDeliveryAddress extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      modal1Visible: false,
+      modal2Visible: false,
+    };    
+  }
+
+  setModal1Visible(modal1Visible) {
+    this.setState({ modal1Visible });
+  }
+
+  setModal2Visible(modal2Visible) {
+    this.setState({ modal2Visible });
   }
 
   render() {
@@ -20,9 +34,27 @@ class ChangeMyDeliveryAddress extends React.Component {
             <div class="col">
               <div class="card">
                 <div class="card-body">
-                  <Button className="plus-btn">
+                  <Button 
+                    className="plus-btn"
+                    onClick={() => this.setModal1Visible(true)}
+                  >
                     <i class="fa fa-plus" aria-hidden="true"></i>
                   </Button>
+                  {/* <Modal
+                    visible={this.state.modal1Visible}
+                    onCancel={() => this.setModal1Visible(false)}
+                  >
+                    <AddNewAddress />
+                  </Modal> */}
+
+                  <Modal
+                    title="Add New Address"
+                    visible={this.state.modal1Visible}
+                    onOk={() => this.setModal1Visible(false)}
+                    onCancel={() => this.setModal1Visible(false)}
+                  >
+                    <AddNewAddress />
+                  </Modal>
                 </div>
               </div>
             </div>
@@ -41,9 +73,19 @@ class ChangeMyDeliveryAddress extends React.Component {
                   <p class="card-text">
                     User Info
                   </p>
-                  <a href="#" class="card-link">
+                  <a href="#" class="card-link"
+                    onClick={() => this.setModal2Visible(true)}
+                  >
                     Edit
                   </a>
+                  <Modal
+                    title="Edit Addresss"
+                    visible={this.state.modal2Visible}
+                    onOk={() => this.setModal2Visible(false)}
+                    onCancel={() => this.setModal2Visible(false)}
+                  >
+                    <EditAddress />
+                  </Modal>
                   <a href="#" class="card-link">
                     Remove
                   </a>

@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 .change-address-or-payment {
     height: 644px;
     width: 732px;
@@ -103,4 +105,27 @@
     justify-self: center;
     justify-content: center;
     border-radius: 10px;
+}
+
+.ant-modal-body {
+    margin-top: 0px;
+
+}
+
+.ant-modal-title {
+    width: 291px;
+    height: 15px;
+    left: 279px;
+    top: 168px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.015em;
+
+    color: #040404;
 }
