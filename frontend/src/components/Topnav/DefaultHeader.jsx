@@ -40,7 +40,7 @@ class DefaultHeader extends React.Component {
                   className="fa fa-chevron-left"
                 ></i>
               </Button>
-              <form>
+              <form style={{visibility: "hidden"}}>
                 <input
                   className="address-search-box"
                   type="search"
