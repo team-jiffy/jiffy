@@ -33,7 +33,7 @@ class Recommend extends Component {
                 <DefaultHeader
                 showUserHeaderHandler={this.showUserHeaderHandler} />}
                 <FullMap />
-                <RecommendForm />
+                <RecommendForm/>
             </div>
         )
     }

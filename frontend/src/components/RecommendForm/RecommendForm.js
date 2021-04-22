@@ -54,8 +54,9 @@ class RecommendForm extends Component {
             .then(response => {
                 console.log('reco ->', response);
                 console.log('reco data ->', response.data);
-                const responseResults = response.data.recos;
-                console.log(responseResults);
+                // const responseResults = response.data.recos;
+                const responseResults = response.data.results;
+                console.log("responseResults" + responseResults);
                 this.setState({
                     Results: this.setSettings(responseResults),
                     isLoading: false
@@ -132,16 +133,18 @@ class RecommendForm extends Component {
         this.setChosenReco(item);
         console.log("debug iem!!!!!!", item);
         console.log("debug state", this.state);
-        this.props.form.validateFields((err, values) => {
-            if (!err) {
-                console.log('Received values of form: ', values);
-            }
-        })
+        // console.log(this.props.form);
+        // this.props.form.validateFields((err, values) => {
+        //     if (!err) {
+        //         console.log('Received values of form: ', values);
+        //     }
+        // })
 
         localStorage.setItem("ADVType", item.advtype);
         localStorage.setItem("Price", item.price);
         localStorage.setItem("ETA", item.eta);
-        this.props.history.push('/PlaceOrder');
+
+        // this.props.history.push('/PlaceOrder');
     }
 
     setChosenReco = (item) => {
@@ -242,7 +245,9 @@ class RecommendForm extends Component {
                                             <Form.Item  {...listItemLayout}>
                                                 <Button className="request-delivery-btn"
                                                         htmlType="submit"
-                                                        onClick={this.clickHandler.bind(this, item)}>
+                                                        href="/PlaceOrder"
+                                                        // onClick={this.clickHandler.bind(this, item)}
+                                                        >
                                                     Request Delivery
                                                 </Button>
                                             </Form.Item>
@@ -261,5 +266,8 @@ class RecommendForm extends Component {
 
 }
 
+// const RecommendForm1 = Form.create({name: 'recommend-form'})(RecommendForm);
+// export default RecommendForm1;
+
 const RecommendForm1 = Form.create({name: 'recommend-form'})(RecommendForm);
-export default  withRouter(RecommendForm1);
+export default RecommendForm;

@@ -140,7 +140,8 @@ class DeliveryInfoForm extends React.Component {
             <Col>
             <Button className="min-icon">
               <img
-                // className="min-icon"
+              // style={{paddingLeft: "-250px"}}
+                className="min-icon"
                 src={MinIcon}
                 onClick={() => {
                   this.props.isShowFormHandler();
@@ -369,6 +370,7 @@ class DeliveryInfoForm extends React.Component {
                   className="deliveryInfo-button"
                   type="primary"
                   htmlType="submit"
+                  href="/Recommend"
                 >
                   Request Delivery
                 </Button>

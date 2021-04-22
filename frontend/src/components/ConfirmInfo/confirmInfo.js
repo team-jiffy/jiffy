@@ -11,12 +11,14 @@ class ConfirmInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: [],
+            items: null,
+            fromCoord: null,
+            toCoord: null
         };
     }
 
     componentDidMount() {
-        const UID = { UID: localStorage.getItem("UID") };
+        const UID = { UID: "149" };
         axios
             .get("http://localhost:8081/billing/getPayments", {
                 params: {
@@ -25,10 +27,20 @@ class ConfirmInfo extends Component {
             })
             .then((response) => {
                 console.log("Payments get success: ", response);
+                console.log(localStorage.getItem('fromCoord'));
+                var fc = localStorage.getItem('fromCoord'); 
+
+                console.log(localStorage.getItem('toCoord'));
+                var tc = localStorage.getItem('toCoord'); 
+
                 this.setState({
-                    items: response.data.cards,
+                    items: response.data.Cards,
+                    fromCoord: fc,
+                    toCoord: tc
                 });
                 console.log(this.state.items);
+
+
             })
             .catch((err) => {
                 console.log("Payments get failed");
@@ -149,6 +161,7 @@ class ConfirmInfo extends Component {
                     onClick={() => {
                         this.placeOrderSubmitHandler();
                     }}
+                    href='/SuccessInfo'
                 >
                     Place Order
                 </Button>
@@ -161,7 +174,8 @@ class ConfirmInfo extends Component {
                             <div>
                                 <p id="right-col">{localStorage.getItem("PickupEmail")}</p>
                                 <p id="right-col">{localStorage.getItem("PickupPhone")}</p>
-                                <p id="right-col">{pickupAddress}</p>
+                                {/* <p id="right-col">{pickupAddress}</p> */}
+                                <p>2199 S University Blvd, Denver, CO 80208</p>
                             </div>
                             <Link to="/deliveryInfo"><Button className="btns-right">Change</Button> </Link>
                         </div>
@@ -170,7 +184,8 @@ class ConfirmInfo extends Component {
                             <div>
                                 <p id="right-col">{localStorage.getItem("DeliveryEmail")}</p>
                                 <p id="right-col">{localStorage.getItem("DeliveryPhone")}</p>
-                                <p id="right-col">{deliveryAddress}</p>
+                                {/* <p id="right-col">{deliveryAddress}</p> */} 
+                                <p id="right-col">35 Harrison Street, Seattle, WA</p>
                             </div>
                             <Link to="/deliveryInfo"><Button className="btns-right">Change</Button> </Link>
                         </div>

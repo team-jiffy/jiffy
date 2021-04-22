@@ -15,6 +15,7 @@ import AccountAddress from '../../containers/Account/AccountAddress';
 import AccountPayment from '../../containers/Account/AccountPayment';
 
 import AccountEditAddress from '../../containers/Account/AccountEditAddress';
+import SuccessInfo from '../../components/SuccessInfo/SuccessInfo';
 
 class ReactRouter extends Component {
     render() {
@@ -30,6 +31,7 @@ class ReactRouter extends Component {
                         <Route path="/AccountPayment" component={AccountPayment} exact />
 
                         <Route path="/DeliveryInfo" component={DeliveryInfo} exact />
+                        <Route path="/SuccessInfo" component={SuccessInfo} exact />
 
                         <Route path="/OrderConfirm" component={OrderConfirm} exact />
                         <Route path="/PlaceOrder" component={PlaceOrder} exact />

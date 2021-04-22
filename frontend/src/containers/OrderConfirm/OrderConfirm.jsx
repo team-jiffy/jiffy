@@ -29,10 +29,21 @@ class OrderConfirm extends React.Component {
   render() {
     const pCoordinate = JSON.parse(localStorage.getItem("PickupCoordinate"));
     const dCoordinate = JSON.parse(localStorage.getItem("DeliveryCoordinate"));
+
+    localStorage.setItem('fromCoord', pCoordinate);
+    localStorage.setItem('toCoord', dCoordinate);
+    
+
+    pCoordinate = 1000; 
+    dCoordinate = 2000;
+
     console.log("Pickip Co: ", pCoordinate.Coordinate)
     console.log("Delivery Co: ", dCoordinate.Coordinate)
+
+
     return (
-            <div>   {localStorage.getItem("UID")?<UserHeader 
+            <div>   
+            {localStorage.getItem("UID")?<UserHeader 
             showUserHeaderHandler={this.showUserHeaderHandler} />:
               <DefaultHeader 
               showUserHeaderHandler={this.showUserHeaderHandler} />}

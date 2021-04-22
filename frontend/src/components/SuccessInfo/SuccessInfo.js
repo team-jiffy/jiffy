@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Descriptions, Button, Row, Col } from "antd";
 import '../../components/ConfirmInfo/ConfirmInfo.css';
+import SmallMap from "../../components/SmallMap/SmallMap";
+import UserHeader from "../../components/Topnav/UserHeader";
 
 class SuccessInfo extends Component {
 
@@ -15,11 +17,12 @@ class SuccessInfo extends Component {
             ", " + localStorage.getItem("DeliveryAddressZip")
         return (
             <div className="successinfo">
+                <UserHeader />
                 <div style={{ marginTop: "70px", marginLeft: "74px" }}>
                     <h2>Congratulations! Your order has been succefully placed.</h2>
                     <h3>We will let you know once we delivered the package.</h3>
                 </div>
-                <div class="container" style={{marginLeft: "74px"}}>
+                <div class="container" style={{ marginLeft: "74px" }}>
                     <div class="row">
                         <div className="left-category">Tracking No.</div>
                         <div>
@@ -63,6 +66,14 @@ class SuccessInfo extends Component {
                         <div className="left-category">Delivery Fee</div>
                         <div>
                             <p id="right-col">{localStorage.getItem("Price")}</p>
+                        </div>
+                        <div style={{marginLeft: "450px"}}>
+           
+                        <SmallMap span={12} className="place-order-map"
+                        //   pickupCoordinate={pCoordinate}
+                        //   deliveryCoordinate={dCoordinate}
+                        />
+       
                         </div>
                     </div>
                     {/* <div className="confirmInfo-title"></div>
@@ -170,7 +181,13 @@ class SuccessInfo extends Component {
                         </div>
 
                     </div> */}
+        
+
+
                 </div>
+
+
+
             </div>
         );
     }

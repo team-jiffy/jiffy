@@ -31,7 +31,7 @@ class TrackingNumberHeader extends React.Component {
         <nav class="navbar">
           <div class="container-fluid">
             <div class="row">
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="/">
                 <div className="logo" alt="JIFFY" />
               </a>
               <div className="header-buttons">
@@ -42,8 +42,8 @@ class TrackingNumberHeader extends React.Component {
                       <b>Hello, {localStorage.getItem("FirstName")}</b>
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#/Account"><Link to="/accountAddress">My account</Link></Dropdown.Item>
-                      <Dropdown.Item href="#/Order"><Link to="/accountOrders">My Orders</Link></Dropdown.Item>
+                      <Dropdown.Item href="/AccountAddress">My account</Dropdown.Item>
+                      <Dropdown.Item href="/AccountOrders">My Orders</Dropdown.Item>
                       <Dropdown.Item href="#/Help">Help</Dropdown.Item>
                       <Dropdown.Item href="#" onClick={()=>{this.logoutHandler()}}>Sign out</Dropdown.Item>
                     </Dropdown.Menu>
