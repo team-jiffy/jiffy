@@ -19,11 +19,11 @@ class TrackingNumberHeader extends React.Component {
   }
 
 
-  componentDidMount(){
-    var logedinUser = localStorage.getItem('currUser').toUpperCase();
-    console.log("curruser is: " + logedinUser);
-    this.setState({currUser: logedinUser});
-  }
+  // componentDidMount(){
+  //   var logedinUser = localStorage.getItem('currUser').toUpperCase();
+  //   console.log("curruser is: " + logedinUser);
+  //   this.setState({currUser: logedinUser});
+  // }
 
   render() {
     return (
