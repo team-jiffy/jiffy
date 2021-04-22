@@ -53,33 +53,36 @@ class ConfirmInfo extends Component {
 
     placeOrderSubmitHandler = () => {
         const today = new Date();
-        const pCoordinate = localStorage.getItem("PickupCoordinate");
-        const dCoordinate = localStorage.getItem("DeliveryCoordinate");
+        const pCoordinate = JSON.parse(localStorage.getItem("PickupCoordinate"));
+        const dCoordinate = JSON.parse(localStorage.getItem("DeliveryCoordinate"));
         console.log("sssss", pCoordinate)
         axios({
             method: "put",
             url: "http://localhost:8081/order/createOrder",
             data: {
                 ADVType: localStorage.getItem("ADVType"),
-                OrderDate:
+                orderDate:
                     today.getMonth() +
                     1 +
                     "/" +
                     today.getDate() +
                     "/" +
                     today.getFullYear,
-                CardID: "string",
-                SameDay: true,
+                cardID: "246",
+                sameDay: true,
+                UID: localStorage.getItem("UID"),
+                Price: parseDouble(localStorage.getItem("Price")) ,
                 Pickup: {
-                    Name: "Jim",
+                    Name: localStorage.getItem("FirstName"),
                     Email: localStorage.getItem("PickupEmail"),
                     Phone: localStorage.getItem("PickupPhone"),
                     Address: {
                         Street1: localStorage.getItem("PickupAddressStreet1"),
-
+                        Street2: "",
                         City: localStorage.getItem("PickupAddressCity"),
                         State: localStorage.getItem("PickupAddressState"),
                         Zip: localStorage.getItem("PickupAddressZip"),
+                        AptNo:""
                     },
                 },
                 Deliver: {
@@ -88,21 +91,24 @@ class ConfirmInfo extends Component {
                     Phone: localStorage.getItem("DeliveryPhone"),
                     Address: {
                         Street1: localStorage.getItem("DeliveryAddressStreet1"),
-
+                        Street2: "",
                         City: localStorage.getItem("DeliveryAddressCity"),
                         State: localStorage.getItem("DeliveryAddressState"),
                         Zip: localStorage.getItem("DeliveryAddressZip"),
+                        AptNo:""
                     },
                 },
                 DeliverCoordinates: {
-                    Longitude: dCoordinate.lng,
-                    Latitude: dCoordinate.lat,
+                    Longitude: dCoordinate.Coordinate.lng,
+                    Latitude: dCoordinate.Coordinate.lat,
+                    Elevation:"32"
                 },
                 PickupCoordinates: {
-                    Longitude: pCoordinate.lng,
-                    Latitude: pCoordinate.lat,
+                    Longitude: pCoordinate.Coordinate.lng,
+                    Latitude: pCoordinate.Coordinate.lat,
+                    Elevation:"32"
                 },
-                Price: localStorage.getItem("Price"),
+                
             },
         })
             .then((response) => {
