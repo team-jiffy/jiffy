@@ -154,13 +154,15 @@ class DeliveryInfoForm extends React.Component {
               </Form.Item>
             </Col>
             <Col>
+            <Button className="min-icon">
               <img
-                className="min-icon"
+                // className="min-icon"
                 src={MinIcon}
                 onClick={() => {
                   this.props.isShowFormHandler();
                 }}
               />
+            </Button>
             </Col>
           </Row>
           <Row>
