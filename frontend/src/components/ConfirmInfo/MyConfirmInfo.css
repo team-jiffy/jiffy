@@ -1,0 +1,85 @@
+.message {
+    margin-left: 89px;
+    padding-top: 30px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.place-order-button {
+    position: absolute;
+    left: 120%;
+    width: 200px;
+    height: 40px;
+
+    top: 10.53%;
+    z-index: 1000;
+
+    background: #65eecd;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #000000;
+}
+
+.profile-page {
+    margin-left: 127px;
+    margin-top: 70px;
+}
+
+.left-category {
+    text-decoration: bold;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+    margin-left: 15px;
+    letter-spacing: -0.015em;
+    text-align: left;
+    color: black;
+    width: 250px;
+    /* margin-right: 250px; */
+    /* // margin-right: 200px; */
+}
+
+
+#right-col {
+    margin-left: 100px;
+}
+
+.btns-right {
+    justify-content: center;
+    height: 30px;
+    width: 150px;
+    margin-left: 100px;
+    font-weight: bold;
+    color: black;
+    /*margin-left: 100px;*/
+    /*margin-right: 200px;*/
+
+}
+
+.successInfo-whole .container {
+    margin-top: 127px;
+    margin-left: 70px;
+}
+
+.successinfo .row {
+    margin-top: 30px;
+
+}
+
+.confirminfo .row {
+    margin-top: 30px;
+}
+
+.add-payment-btn {
+    font-weight: bold;
+}

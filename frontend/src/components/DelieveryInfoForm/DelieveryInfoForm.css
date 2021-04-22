@@ -3,7 +3,7 @@
   background-color: white;
   width: 568.76px;
   height: 600px;
-  left: 10%;
+  left: 9%;
   top: 23%;
   z-index: 10;
 
@@ -11,35 +11,38 @@
 .position-icon {
   content: url("../../assets/images/Vector.svg");
 }
+
 .switch-icon {
   position: relative;
-  top: -85px;
-  left: 470px;
+  top: -97px;
+  left: 480px;
 }
 
 .min-icon {
-  position: relative;
-  top: -10px;
-  left: 520px;
+  background-color: #000000;
   height: 8px;
+  width: 12px;
+  top: -10px;
+  left: 88%;
+  border-radius: 20px;
 }
 
 .deliveryInfoForm .ant-input {
-  background: #e5e5e5;
+  background: #F5F5F5;
 }
 
 .deliveryInfoForm .ant-select-selection {
-  background-color: #e5e5e5;
+  background-color: #F5F5F5;
 }
 
 .deliveryInfoForm-from-text {
   text-align: left;
 
   position: absolute;
-  width: 89.98px;
+  width: 200px;
   height: 49.19px;
   left: 26.69px;
-  top: 17.08px;
+  top: 20px;
 
   font-family: Montserrat;
   font-style: normal;
@@ -185,16 +188,18 @@
 }
 
 .deliveryInfoForm .deliveryInfo-button {
+  background-color: #65EECD;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  height: 41px;
+  width: 200px;
   position: relative;
-  width: 230.74px;
-  height: 40.5px;
   left: 180.56px;
   top: -230px;
 
   font-family: Montserrat;
   font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
   line-height: 22px;
   display: flex;
   align-items: center;
@@ -202,7 +207,6 @@
   letter-spacing: -0.015em;
   color: #000000;
   border: 0;
-  background: #65eecd;
   justify-content: center;
 }
 

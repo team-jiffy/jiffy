@@ -13,6 +13,7 @@ class DefaultFooter extends React.Component {
     return (
         <div className="default-footer">
             <div className="footer-message">
+                <br />
                 ©2021 FlagCamp. All Rights Reserved. Made with 💙 by the Jiffy team.
             </div>
         </div>
