@@ -87,18 +87,17 @@ const SmallMapComponent =   compose(
    componentDidUpdate(prevProps, prevState, snapshot) {
 
      console.log("didMount on lifecycle")
-     console.log(this.props.currentState.pickupCoordinate)
-     console.log(this.props.currentState.deliveryCoordinate)
-     if (this.props.currentState.pickupCoordinate.lat && this.props.currentState.deliveryCoordinate.lat) 
-     if (prevProps.currentState.pickupCoordinate !== this.props.currentState.pickupCoordinate 
-      || prevProps.currentState.deliveryCoordinate !== this.props.currentState.deliveryCoordinate)
+     console.log(this.props.pickupCoordinate)
+     console.log(this.props.deliveryCoordinate)
+     if (this.props.pickupCoordinate.Coordinate.lat && this.props.deliveryCoordinate.Coordinate.lat) 
+     
     {
       const directionsService = new window.google.maps.DirectionsService();
        // const origin = new window.google.maps.LatLng( 37.7749, -122.4194 );
-       const origin = new window.google.maps.LatLng(  this.props.currentState.pickupCoordinate.lat, this.props.currentState.pickupCoordinate.lng );
+       const origin = new window.google.maps.LatLng(  this.props.pickupCoordinate.Coordinate.lat, this.props.pickupCoordinate.Coordinate.lng );
      // const destination = new window.google.maps.LatLng( 37.6213, -122.3789 );
-       const destination = new window.google.maps.LatLng( this.props.currentState.deliveryCoordinate.lat, this.props.currentState.deliveryCoordinate.lng);
-       const cCoordinate = this.props.centerCalculate(this.props.currentState.pickupCoordinate , this.props.currentState.deliveryCoordinate);
+       const destination = new window.google.maps.LatLng( this.props.deliveryCoordinate.Coordinate.lat, this.props.deliveryCoordinate.Coordinate.lng);
+       const cCoordinate = this.props.centerCalculate(this.props.pickupCoordinate.Coordinate , this.props.deliveryCoordinate.Coordinate);
       directionsService.route(
         {
           origin: origin,
@@ -297,6 +296,8 @@ class SmallMap extends React.PureComponent {
         onMarkerClick={this.handleMarkerClick}
         centerCalculate= {this.centerCalculate}
         centerCoordinate={currentCenter}
+        pickupCoordinate = {this.props.pickupCoordinate}
+        deliveryCoordinate = {this.props.deliveryCoordinate}
       />
       </div>
     )

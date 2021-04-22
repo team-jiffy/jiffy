@@ -31,7 +31,7 @@ class AccountInfo extends React.Component{
     }
   }
   componentDidMount() {
-    const UID = {UID: "1"};
+    const UID = {UID: localStorage.getItem("UID")};
     axios.get('http://localhost:8081/user/profile', {params:{
       UID: UID.UID
     }}).then(response => {

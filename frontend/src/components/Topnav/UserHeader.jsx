@@ -2,6 +2,7 @@ import React from "react";
 import "./TrackingNumberHeader.css";
 import Button from "react-bootstrap/Button";
 import { Dropdown, Item } from "react-bootstrap";
+import { Route, Switch, Link,withRouter } from 'react-router-dom';
 
 class TrackingNumberHeader extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class TrackingNumberHeader extends React.Component {
   logoutHandler= () => {
     localStorage.clear();
     this.props.showUserHeaderHandler();
+    this.props.history.push("/")
   }
 
 
@@ -37,11 +39,11 @@ class TrackingNumberHeader extends React.Component {
                 <div class="myaccount-row">
                   <Dropdown>
                     <Dropdown.Toggle variant="success" id="myDropdown.Toggle">
-                      <b>{this.state.currUser}</b>
+                      <b>Hello, {localStorage.getItem("FirstName")}</b>
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item href="/AccountAddress">My account</Dropdown.Item>
-                      <Dropdown.Item href="#/Order">My Orders</Dropdown.Item>
+                      <Dropdown.Item href="#/Account"><Link to="/accountAddress">My account</Link></Dropdown.Item>
+                      <Dropdown.Item href="#/Order"><Link to="/accountOrders">My Orders</Link></Dropdown.Item>
                       <Dropdown.Item href="#/Help">Help</Dropdown.Item>
                       <Dropdown.Item href="#" onClick={()=>{this.logoutHandler()}}>Sign out</Dropdown.Item>
                     </Dropdown.Menu>
@@ -60,4 +62,4 @@ class TrackingNumberHeader extends React.Component {
   }
 }
 
-export default TrackingNumberHeader;
+export default withRouter(TrackingNumberHeader);

@@ -86,37 +86,21 @@ class DeliveryInfoForm extends React.Component {
       }
 
 
+      localStorage.setItem( "DeliveryAddressStreet1",this.state.Delivery.Address.Street1 );
       localStorage.setItem(
-        "DeliveryAddressStreet1",
-        this.state.Delivery.Address.Street1
-      );
-      localStorage.setItem(
-        "DeliveryAddressCity",
-        this.state.Delivery.Address.City
-      );
-      localStorage.setItem(
-        "DeliveryAddressState",
-        this.state.Delivery.Address.State
-      );
-      localStorage.setItem(
-        "DeliveryAddressZip",
-        this.state.Delivery.Address.Zip
-      );
+        "DeliveryAddressCity", this.state.Delivery.Address.City);
+      localStorage.setItem( "DeliveryAddressState",
+        this.state.Delivery.Address.State );
+      localStorage.setItem("DeliveryAddressZip", this.state.Delivery.Address.Zip );
       localStorage.setItem("DeliveryEmail", values.recipientEmail);
       localStorage.setItem("DeliveryPhone", values.recipientPhone);
 
    
 
 
-      localStorage.setItem(
-        "PickupAddressStreet1",
-        this.state.Pickup.Address.Street1
-      );
+      localStorage.setItem( "PickupAddressStreet1", this.state.Pickup.Address.Street1 );
       localStorage.setItem("PickupAddressCity", this.state.Pickup.Address.City);
-      localStorage.setItem(
-        "PickupAddressState",
-        this.state.Pickup.Address.State
-      );
+      localStorage.setItem( "PickupAddressState",this.state.Pickup.Address.State );
       localStorage.setItem("PickupAddressZip", this.state.Pickup.Address.Zip);
       localStorage.setItem("PickupEmail", values.senderEmail);
       localStorage.setItem("PickupPhone", values.senderPhone);
@@ -124,7 +108,7 @@ class DeliveryInfoForm extends React.Component {
       localStorage.setItem("Weight", values.packageWeight);
       localStorage.setItem("Size", values.packageSize);
 
-      localStorage.setItem();
+     
 
       console.log("Storage");
       console.log(localStorage.getItem("DeliveryAddressStreet1"));
@@ -169,7 +153,7 @@ class DeliveryInfoForm extends React.Component {
             <Col>
               <Form.Item id="my-delivery-info">
                 {getFieldDecorator("pickupAddress", {
-                  rules: [{ required: true, message: "*" }],
+                  rules: [{ required: false, message: "*" }],
                 })(
                   // <Input
                   //     className="deliveryInfo-senderAutoComplete"
@@ -195,7 +179,7 @@ class DeliveryInfoForm extends React.Component {
                       type: "email",
                       message: "The input is not valid E-mail!",
                     },
-                    { required: true, message: "*" },
+                    { required: false, message: "*" },
                   ],
                 })(
                   <Input
@@ -209,7 +193,7 @@ class DeliveryInfoForm extends React.Component {
             <Col>
               <Form.Item>
                 {getFieldDecorator("senderPhone", {
-                  rules: [{ required: true, message: "*" }],
+                  rules: [{ required: false, message: "*" }],
                 })(
                   <Input
                     className="deliveryInfo-senderPhone"
@@ -235,7 +219,7 @@ class DeliveryInfoForm extends React.Component {
             <Col>
               <Form.Item>
                 {getFieldDecorator("deliveryAddress", {
-                  rules: [{ required: true, message: "*" }],
+                  rules: [{ required: false, message: "*" }],
                 })(
                   // <Input
                   //     className="deliveryInfo-recipientAutoComplete"
@@ -262,7 +246,7 @@ class DeliveryInfoForm extends React.Component {
                       type: "email",
                       message: "The input is not valid E-mail!",
                     },
-                    { required: true, message: "*" },
+                    { required: false, message: "*" },
                   ],
                 })(
                   <Input
@@ -275,7 +259,7 @@ class DeliveryInfoForm extends React.Component {
             <Col>
               <Form.Item>
                 {getFieldDecorator("recipientPhone", {
-                  rules: [{ required: true, message: "*" }],
+                  rules: [{ required: false, message: "*" }],
                 })(
                   <Input
                     className="deliveryInfo-recipientPhone"
@@ -299,7 +283,7 @@ class DeliveryInfoForm extends React.Component {
             <Col>
               <Form.Item>
                 {getFieldDecorator("packageSize", {
-                  rules: [{ required: true, message: "*" }],
+                  rules: [{ required: false, message: "*" }],
                 })(
                   <Select
                     style={{marginTop: "50px"}}
@@ -332,7 +316,7 @@ class DeliveryInfoForm extends React.Component {
             <Col>
               <Form.Item>
                 {getFieldDecorator("packageWeight", {
-                  rules: [{ required: true, message: "*" }],
+                  rules: [{ required: false, message: "*" }],
                 })(
                   <Select
                     className="deliveryInfoForm-select-weight"

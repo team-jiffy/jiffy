@@ -4,6 +4,8 @@ import drone_profile from '../../assets/images/drone_profile.svg';
 import robot_profile from '../../assets/images/robot_profile.png';
 import "./RecommendForm.css";
 import axios from "axios"
+import { withRouter, Link, Redirect } from "react-router-dom";
+
 
 class RecommendForm extends Component {
     constructor(props) {
@@ -169,11 +171,11 @@ class RecommendForm extends Component {
 
         function handleChange(value) {
             console.log(`selected ${value}`);
-            this.setState( {
-                ChosenReco: {
-                    ETA: value
-                }
-            })
+            // this.setState( {
+            //     ChosenReco: {
+            //         ETA: value
+            //     }
+            // })
         }
 
         function isEqual(object1) {
@@ -260,4 +262,4 @@ class RecommendForm extends Component {
 }
 
 const RecommendForm1 = Form.create({name: 'recommend-form'})(RecommendForm);
-export default RecommendForm1;
+export default  withRouter(RecommendForm1);

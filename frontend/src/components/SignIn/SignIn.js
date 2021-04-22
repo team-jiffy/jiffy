@@ -70,9 +70,7 @@ class SignInFrom extends React.Component {
                 }).then(
                     response => {
                         console.log('Login reponse => ', response);
-                        console.log('Login.data => ', response.data);
-                        var username = response.data.user.firstName; 
-                        // console.log("username" + username);
+                        console.log('Login.data => ', response.data.user.firstName);
 
                         if (response.data.status === "OK" || response.data.message === "Success!") {
                             // TODO: Switch to UserHeader Component
@@ -80,6 +78,7 @@ class SignInFrom extends React.Component {
                          console.log(localStorage.getItem("currUser"));
 
                          localStorage.setItem("UID", response.data.user.uid);
+                         localStorage.setItem("FirstName", response.data.user.firstName);
                          console.log("props: ",this.props)
 
 

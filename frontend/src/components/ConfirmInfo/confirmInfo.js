@@ -11,12 +11,12 @@ class ConfirmInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: null,
+            items: [],
         };
     }
 
     componentDidMount() {
-        const UID = { UID: "4" };
+        const UID = { UID: localStorage.getItem("UID") };
         axios
             .get("http://localhost:8081/billing/getPayments", {
                 params: {
@@ -42,11 +42,20 @@ class ConfirmInfo extends Component {
     //         items: [...items, `New item ${index++}`],
     //     });
     // };
+    paymentHander = (items) => {
+        let i = 0;
+        for(i; i< items.length; i++) {
+        
+            return <Option key={items[i].cardNumber}>{items[i].cardNumber}</Option>;
+        }
+
+    }
+
     placeOrderSubmitHandler = () => {
         const today = new Date();
         const pCoordinate = localStorage.getItem("PickupCoordinate");
         const dCoordinate = localStorage.getItem("DeliveryCoordinate");
-
+        console.log("sssss", pCoordinate)
         axios({
             method: "put",
             url: "http://localhost:8081/order/createOrder",
@@ -86,12 +95,12 @@ class ConfirmInfo extends Component {
                     },
                 },
                 DeliverCoordinates: {
-                    Longitude: dCoordinate.Coordinate.lng,
-                    Latitude: dCoordinate.Coordinate.lat,
+                    Longitude: dCoordinate.lng,
+                    Latitude: dCoordinate.lat,
                 },
                 PickupCoordinates: {
-                    Longitude: pCoordinate.Coordinate.lng,
-                    Latitude: pCoordinate.Coordinate.lat,
+                    Longitude: pCoordinate.lng,
+                    Latitude: pCoordinate.lat,
                 },
                 Price: localStorage.getItem("Price"),
             },
@@ -102,12 +111,14 @@ class ConfirmInfo extends Component {
                 this.props.history.push("/confrimOrder");
             })
             .catch((err) => {
+                alert("Service response err in Place Order")
                 console.log("err in Place Order", err);
             });
     };
 
     render() {
-        const { items } = this.state;
+        const { items } = this.state; 
+        
         console.log(items);
         const pickupAddress =
             localStorage.getItem("PickupAddressStreet1") +
@@ -146,7 +157,7 @@ class ConfirmInfo extends Component {
                                 <p id="right-col">{localStorage.getItem("PickupPhone")}</p>
                                 <p id="right-col">{pickupAddress}</p>
                             </div>
-                            <Button className="btns-right">Change</Button>
+                            <Link to="/deliveryInfo"><Button className="btns-right">Change</Button> </Link>
                         </div>
                         <div class="row">
                             <div className="left-category">To </div>
@@ -155,7 +166,7 @@ class ConfirmInfo extends Component {
                                 <p id="right-col">{localStorage.getItem("DeliveryPhone")}</p>
                                 <p id="right-col">{deliveryAddress}</p>
                             </div>
-                            <Button className="btns-right">Change</Button>
+                            <Link to="/deliveryInfo"><Button className="btns-right">Change</Button> </Link>
                         </div>
                         <div class="row">
                             <div className="left-category">Estimated Delivery Time</div>
@@ -166,7 +177,7 @@ class ConfirmInfo extends Component {
                         <div class="row">
                             <div className="left-category">Your Deliver Pal</div>
                             <div>
-                                <p id="right-col">{localStorage.getItem("ETA")}</p>
+                            
                                 <p id="right-col">{localStorage.getItem("ADVType")}</p>
                             </div>
                         </div>
@@ -197,11 +208,12 @@ class ConfirmInfo extends Component {
                                             </div>
                                         )}
                                     >
-                                        {items
-                                            ? items.map((item) => (
+                                        {/* {items
+                                            ? this.state.items.map((item) => (
                                                 <Option key={item.cardNumber}>{item.cardNumber}</Option>
                                             ))
-                                            : items}
+                                            : this.state.items} */}
+                                            {/* {this.paymentHander(items)} */}
                                     </Select>
                                     <Button><Icon type="plus"/>Add Payment Method</Button>
                                 </p>

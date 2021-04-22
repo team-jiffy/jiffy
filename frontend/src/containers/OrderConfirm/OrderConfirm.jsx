@@ -43,8 +43,8 @@ class OrderConfirm extends React.Component {
                      className="order-confirm-map"
                 >
                   <SmallMap 
-                  pickupCoordinate = {pCoordinate.Coordinate}
-                  deliveryCoordinate = {dCoordinate.Coordinate}
+                  pickupCoordinate = {pCoordinate}
+                  deliveryCoordinate = {dCoordinate}
                   />
                 </Col>
                </Row>
