@@ -26,7 +26,7 @@ import TrackingNumberHeader from './components/Topnav/TrackingNumberHeader';
 /*   ====   */ 
 
 import UserHeader from './components/Topnav/UserHeader';
-import ConfirmInfo from './components/ConfirmInfo/ConfirmInfo';
+
 
 ReactDOM.render(
   <BrowserRouter>

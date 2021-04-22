@@ -43,7 +43,7 @@ class PlaceOrder extends React.Component {
         <Row className="place-order-boday">
           <Col span={12}>
             {" "}
-            <MyConfirmInfo />
+            <ConfirmInfo />
           </Col>
           <Col span={12} className="place-order-map">
             <SmallMap

@@ -129,7 +129,7 @@ class RecommendForm extends Component {
 
     clickHandler = (item, e) => {
         e.preventDefault();
-        this.setChosenReco(item);
+       // this.setChosenReco(item);
         console.log("debug iem!!!!!!", item);
         console.log("debug state", this.state);
         // console.log(this.props.form);
@@ -141,9 +141,9 @@ class RecommendForm extends Component {
 
         localStorage.setItem("ADVType", item.advtype);
         localStorage.setItem("Price", item.price);
-        localStorage.setItem("ETA", item.eta);
+       // localStorage.setItem("ETA", item.eta);
 
-        // this.props.history.push('/PlaceOrder');
+         this.props.history.push('/PlaceOrder');
     }
 
     setChosenReco = (item) => {
@@ -172,12 +172,14 @@ class RecommendForm extends Component {
         const {Option} = Select;
 
         function handleChange(value) {
-            console.log(`selected ${value}`);
+            console.log(`selected!!!!: ${value}`);
             // this.setState( {
             //     ChosenReco: {
             //         ETA: value
             //     }
             // })
+            localStorage.setItem("ETA", value);
+
         }
 
         function isEqual(object1) {
@@ -208,6 +210,7 @@ class RecommendForm extends Component {
                                 dataSource={this.state.Results}
                                 renderItem={item => (
                                     <List.Item>
+                                        {console.log("item value in List: ", item)}
                                         <Form className="recommend-form">
 
                                             <Form.Item {...listItemLayout}>
@@ -229,14 +232,14 @@ class RecommendForm extends Component {
                                                         onChange={handleChange}
                                                         showArrow={true}>
                                                     <Option
-                                                        value="default">{item.ETAList[0]}</Option>
+                                                        value={item.ETAList[0]}>{item.ETAList[0]}</Option>
                                                     {item.ETAList.length > 1 ?
                                                         <Option
-                                                            value="opt1">{item.ETAList[1]}</Option> : console.log('no' +
+                                                            value={item.ETAList[1]}>{item.ETAList[1]}</Option> : console.log('no' +
                                                             ' options anymore')}
                                                     {item.ETAList.length > 2 ?
                                                         <Option
-                                                            value="opt2">{item.ETAList[2]}</Option> : console.log('no' +
+                                                            value={item.ETAList[2]}>{item.ETAList[2]}</Option> : console.log('no' +
                                                             ' options anymore')}
                                                 </Select>
                                             </Form.Item>
@@ -245,7 +248,7 @@ class RecommendForm extends Component {
                                                 <Button className="request-delivery-btn"
                                                         htmlType="submit"
                                                         href="/PlaceOrder"
-                                                        // onClick={this.clickHandler.bind(this, item)}
+                                                        onClick={this.clickHandler.bind(this, item)}
                                                         >
                                                     Request Delivery
                                                 </Button>
@@ -269,4 +272,4 @@ class RecommendForm extends Component {
 // export default RecommendForm1;
 
 const RecommendForm1 = Form.create({name: 'recommend-form'})(RecommendForm);
-export default RecommendForm;
+export default withRouter(RecommendForm);
