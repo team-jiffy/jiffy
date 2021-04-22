@@ -69,7 +69,7 @@ class SignUpForm extends React.Component {
                                 alert("request has been submitted successfully!");
                                 // TODO: Switch to UserHeader Component
                                     console.log("props: ", this.props)
-                                    this.props.setModalVisible();
+                                    this.props.setModal2Visible();
                                 
                             } 
                         }
