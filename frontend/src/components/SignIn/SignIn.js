@@ -74,15 +74,15 @@ class SignInFrom extends React.Component {
 
                         if (response.data.status === "OK" || response.data.message === "Success!") {
                             // TODO: Switch to UserHeader Component
-                         localStorage.setItem('currUser', username.toUpperCase());
-                         console.log(localStorage.getItem("currUser"));
+                        //  localStorage.setItem('currUser', username.toUpperCase());
+                        //  console.log(localStorage.getItem("currUser"));
 
                          localStorage.setItem("UID", response.data.user.uid);
                          localStorage.setItem("FirstName", response.data.user.firstName);
                          console.log("props: ",this.props)
 
 
-                          this.setState({userName: username})
+                        //   this.setState({userName: username})
                           this.props.setModal1Visible();
                           this.props.showUserHeaderHandler();
                          
