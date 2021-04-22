@@ -23,11 +23,11 @@
 }
 
 .logo {
-    content: url('../../assets/images/jiffy-logo.png');
-    width: 162.5px;
-    height: 23px;
+    content: url('../../assets/images/logo.png');
+    width: 170px;
+    height: 25px;
     position: absolute;
-    margin-top: 15px;
+    margin-top: 20px;
     margin-left: 30px;
     top:8px;
     /* margin-left: 30px; */

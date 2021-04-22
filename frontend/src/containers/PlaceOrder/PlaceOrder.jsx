@@ -5,6 +5,7 @@ import ConfirmInfo from "../../components/ConfirmInfo/ConfirmInfo";
 import DefaultHeader from "../../components/Topnav/DefaultHeader";
 import "./PlaceOrder.css";
 import UserHeader from "../../components/Topnav/UserHeader";
+import MyConfirmInfo from "../../components/ConfirmInfo/MyConfirmInfo"
 class PlaceOrder extends React.Component {
   constructor(props) {
     super(props);
@@ -42,7 +43,7 @@ class PlaceOrder extends React.Component {
         <Row className="place-order-boday">
           <Col span={12}>
             {" "}
-            <ConfirmInfo />
+            <MyConfirmInfo />
           </Col>
           <Col span={12} className="place-order-map">
             <SmallMap

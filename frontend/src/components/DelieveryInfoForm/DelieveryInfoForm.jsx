@@ -2,7 +2,6 @@ import React from "react";
 import "./DelieveryInfoForm.css";
 import { Form, Input, Row, Col, Select, Checkbox, Button } from "antd";
 import SwitchIcon from "../../assets/images/switch.svg";
-import MinIcon from "../../assets/images/minIcon.svg";
 import FromAutoComplete from "./FromAutoComplete";
 import ToAutoComplete from "./ToAutoComplete";
 import "./DelieveryInfoForm.css";
@@ -138,15 +137,14 @@ class DeliveryInfoForm extends React.Component {
               </Form.Item>
             </Col>
             <Col>
-            <Button className="min-icon">
-              <img
-              // style={{paddingLeft: "-250px"}}
-                className="min-icon"
-                src={MinIcon}
-                onClick={() => {
-                  this.props.isShowFormHandler();
-                }}
-              />
+            <Button className="min-icon"
+                    onClick={() => {
+                      this.props.isShowFormHandler();}}>
+              {/*<img*/}
+              {/*// style={{paddingLeft: "-250px"}}*/}
+              {/*  className="min-icon"*/}
+              {/*  src={MinIcon}*/}
+              {/*/>*/}
             </Button>
             </Col>
           </Row>

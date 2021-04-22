@@ -54,8 +54,7 @@ class RecommendForm extends Component {
             .then(response => {
                 console.log('reco ->', response);
                 console.log('reco data ->', response.data);
-                // const responseResults = response.data.recos;
-                const responseResults = response.data.results;
+                const responseResults = response.data.recos;
                 console.log("responseResults" + responseResults);
                 this.setState({
                     Results: this.setSettings(responseResults),
@@ -113,7 +112,7 @@ class RecommendForm extends Component {
                 mins = nextMins % 60;
                 let nextETA;
                 if (mins < 10) {
-                    nextETA = hours + ": 0" + mins;
+                    nextETA = hours + ":0" + mins;
                 } else {
                     nextETA = hours + ":" + mins;
                 }
