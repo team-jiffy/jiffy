@@ -25,14 +25,13 @@ class AddNewAddressForm extends Component {
         }
     }
 
-    // const UID: localStorage.getItem("UID"),
-
     handleSubmit = event => {
         event.preventDefault();
 
         this.props.form.validateFields( (err, values) => {   
                 if (!err) {   
                   console.log("values => ", values);
+
                 const { LastName, Phone, Email, Street1, City, State, Zip } = values;
 
                 const Contact= {
@@ -47,26 +46,28 @@ class AddNewAddressForm extends Component {
                         Zip: Zip, 
                     },
                 }
+               
                 console.log("Contact => ", Contact);
+                // console.log("UID => ", localStorage.setItem("UID", response.data.user.uid));
                   axios({
                         method: 'put',   
                         url: 'http://localhost:8081/contact/updateContact', 
                         data: {
                             UID: localStorage.getItem("UID"),
-                            Contact
+                            Contact: Contact
                         }
 
 
                     }).then(
                         response => {
                             console.log('New Address reponse => ', response);
-                            console.log('response.data => ', response.data);
+                            console.log('response.data => ', response.data.status);
     
-                            if (response.data.status === "OK" || response.data.message === "Success!") {
-                             // localStorage.setItem("UID", response.data.user.uid);
-                             console.log("props: ",this.props)
-                            //   this.props.setModalVisible()
-                             notice("Submit successful!")
+                            if (response.data.status === "200" || response.data.message === "add contact to user succeed") {
+                             alert("Submit successful!")
+                             this.props.setModal1Visible();
+
+                             
                             } else {
                                 alert("Submit failed!");
                                 
@@ -153,7 +154,7 @@ class AddNewAddressForm extends Component {
                     <Form.Item>
                         <p className="name">Full name</p>
                             {getFieldDecorator('LastName', {
-                                rules: [{ required: true, message: 'Please input fullname' }],
+                                rules: [{ required: true, message: 'Please input fullname!' }],
                                 })(
                                 <Input
                                     style={{background:'#F5F5F5'}}
@@ -166,7 +167,7 @@ class AddNewAddressForm extends Component {
                     <Form.Item>
                         <p className="phone">Phone</p>
                         {getFieldDecorator('Phone', {
-                            rules: [{ required: true, message: 'Please input phone number' }],
+                            rules: [{ required: true, message: 'Please input phone number!' }],
                             })(
                             <Input
                                 style={{background:'#F5F5F5'}}
@@ -179,7 +180,7 @@ class AddNewAddressForm extends Component {
                     <Form.Item>
                         <p className="email">Email</p>
                         {getFieldDecorator('Email', {
-                            rules: [{ required: true, message: 'Please input fullname' }],
+                            rules: [{ required: true, message: 'Please input email!' }],
                             })(
                             <Input
                                 style={{background:'#F5F5F5'}}

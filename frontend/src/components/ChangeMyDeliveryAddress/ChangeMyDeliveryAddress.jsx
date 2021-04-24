@@ -14,12 +14,22 @@ class ChangeMyDeliveryAddress extends React.Component {
     };    
   }
 
-  setModal1Visible(modal1Visible) {
-    this.setState({ modal1Visible });
+
+
+  setModal1Visible=() =>{ 
+    const isShow = this.state.modal1Visible;
+    this.setState({
+      modal1Visible: !isShow
+    });
+
   }
 
-  setModal2Visible(modal2Visible) {
-    this.setState({ modal2Visible });
+  setModal2Visible=()=> {
+    const isShow = this.state.modal2Visible;
+    this.setState({
+      modal2Visible: !isShow
+    });
+  
   }
 
   render() {
@@ -36,17 +46,16 @@ class ChangeMyDeliveryAddress extends React.Component {
                 <div class="card-body">
                   <Button 
                     className="plus-btn"
-                    onClick={() => this.setModal1Visible(true)}
+                    onClick={() => this.setModal1Visible()}
                   >
                     <i class="fa fa-plus" aria-hidden="true"></i>
                   </Button>
                   <Modal
                     title="Add New Address"
                     visible={this.state.modal1Visible}
-                    onOk={() => this.setModal1Visible(false)}
-                    onCancel={() => this.setModal1Visible(false)}
+                    onCancel={() => this.setModal1Visible()}
                   >
-                    <AddNewAddress />
+                    <AddNewAddress setModal1Visible={this.setModal1Visible}/>
                   </Modal>
                 </div>
               </div>
@@ -67,7 +76,7 @@ class ChangeMyDeliveryAddress extends React.Component {
                     User Info
                   </p>
                   <a href="#" class="card-link"
-                    onClick={() => this.setModal2Visible(true)}
+                    onClick={() => this.setModal2Visible()}
                   >
                     Edit
                   </a>
@@ -75,10 +84,10 @@ class ChangeMyDeliveryAddress extends React.Component {
                     title="Edit Addresss"
                     centered
                     visible={this.state.modal2Visible}
-                    onOk={() => this.setModal2Visible(false)}
-                    onCancel={() => this.setModal2Visible(false)}
+                    // onOk={() => this.setModal2Visible(false)}
+                    onCancel={() => this.setModal2Visible()}
                   >
-                    <EditAddress />
+                    <EditAddress setModal2Visible={this.setModal2Visible}/>
                   </Modal>
                   <a href="#" class="card-link">
                     Remove
