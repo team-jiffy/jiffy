@@ -14,7 +14,7 @@ import './SmallMap.css';
 
 const SmallMapComponent =   compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAb2fv1tmCYdP1vvN9s-g58QOCKog8R0LY&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyB05d86Ru3USFtKRKEIk_BsZU9EiQvdQIk&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `93vh` }} />,
     mapElement: <div style={{ height: `500px` }} />,

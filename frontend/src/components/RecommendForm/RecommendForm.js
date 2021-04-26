@@ -55,7 +55,7 @@ class RecommendForm extends Component {
                 console.log('reco ->', response);
                 console.log('reco data ->', response.data);
                 // const responseResults = response.data.recos;
-                const responseResults = response.data.results;
+                const responseResults = response.data.recos;
                 console.log("responseResults" + responseResults);
                 this.setState({
                     Results: this.setSettings(responseResults),
